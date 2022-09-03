@@ -9,7 +9,7 @@ const offers = store.offers;
     <ul>
       <li v-for="offer in offers" :key="offer.id">
         <div class="flex flex-row">
-          <h2>{{ offer.price }}</h2>
+          <h2>{{ offer.price }}€</h2>
           <p>{{ offer.car }}</p>
           <p>{{ offer.provider }}</p>
         </div>

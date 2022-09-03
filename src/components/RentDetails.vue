@@ -28,6 +28,11 @@ const calculate = () => {
       <label> Minutes</label>
       <input type="number" v-model="minutes" />
     </div>
-    <button @click="calculate">Calculate</button>
+    <button
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-2"
+      @click="calculate"
+    >
+      Calculate
+    </button>
   </div>
 </template>
