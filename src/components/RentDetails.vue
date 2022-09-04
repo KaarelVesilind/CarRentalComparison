@@ -18,8 +18,6 @@ const calculate = () => {
 </script>
 <template>
   <div>
-    <label for="distance">Distance</label>
-    <input type="number" v-model="distance" />
     <div class="flex flex-row">
       <label> Days</label>
       <input type="number" v-model="days" />
@@ -28,6 +26,8 @@ const calculate = () => {
       <label> Minutes</label>
       <input type="number" v-model="minutes" />
     </div>
+    <label for="distance">Distance</label>
+    <input type="number" v-model="distance" />
     <button
       class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-2"
       @click="calculate"
