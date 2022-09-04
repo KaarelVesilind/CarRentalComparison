@@ -33,22 +33,15 @@ function calculateOffers(distance, days, hours, minutes) {
       if (provider === "elmo") {
         extraInfo = car.cars.join(", ");
       }
-      // if (provider === "citybee") {
-      //   price = price[0];
-      //   extraInfo = price[1]; citybee packages
-      // }
+      if (typeof price !== "number" && provider === "citybee") {
+        const daysText = price.days > 0 ? price.days + " days " : "";
+        const hoursText = price.hours > 0 ? price.hours + " hours " : "";
+        extraInfo = `Use package: ${daysText}${hoursText}${price.distance} km`;
+        price = price.price;
+      }
       offers.push({
         id: offers.length + 1,
-        price: price
-          ? calculatePrice(
-              provider,
-              car,
-              distance,
-              days,
-              hours,
-              minutes
-            ).toFixed(2)
-          : 99999999999,
+        price: price.toFixed(2),
         car: car.name,
         provider: provider.toUpperCase(),
         extraInfo: extraInfo,
@@ -90,8 +83,51 @@ function calculateCityBeePrice(car, distance, days, hours, minutes) {
   if (cost < 2.29) {
     cost = 2.29;
   }
-  // TODO price packages
-  return cost;
+  // Calculate packages
+  const packages = car.packages;
+  let usePackage = {
+    days: 0,
+    hours: 0,
+    distance: 0,
+    price: Number.MAX_SAFE_INTEGER,
+  };
+  const totalTime = days * 24 + hours + minutes / 60;
+  for (const option of packages) {
+    const packageTotalTime = option.days * 24 + option.hours;
+    if (option.price < cost) {
+      // if fits exactly in the package
+      if (
+        distance <= option.distance &&
+        totalTime <= packageTotalTime &&
+        option.price < usePackage.price
+      ) {
+        console.log(option);
+        usePackage = option;
+      }
+      // if fits in the package with some extra time or distance
+      else {
+        let packageCostExtra = option.price;
+        // Add extra distance
+        if (distance > option.distance) {
+          packageCostExtra += (distance - option.distance) * price.km;
+        }
+        // Add extra time
+        if (totalTime > packageTotalTime) {
+          packageCostExtra +=
+            (totalTime - packageTotalTime) * 60 * price.minute;
+        }
+        if (packageCostExtra < cost) {
+          usePackage = option;
+          usePackage.price = packageCostExtra;
+        }
+      }
+    }
+  }
+  if (usePackage.days > 0 || usePackage.hours > 0 || usePackage.distance > 0) {
+    return usePackage;
+  } else {
+    return cost;
+  }
 }
 
 // --------------------- BOLT ---------------------
