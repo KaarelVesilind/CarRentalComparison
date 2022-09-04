@@ -2666,3 +2666,8 @@ export const providers = {
     },
   ],
 };
+export const traditional = {
+  skyrent: [],
+  // TODO add skyrent and other traditional rental firms.
+  // Calculation = day rent + km price(fuel consumption * fuel price)
+};
