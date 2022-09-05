@@ -27,7 +27,7 @@ const calculate = () => {
       <input type="number" v-model="hours" />
       <label> Minutes</label>
       <input type="number" v-model="minutes" />
-      <input
+      <!-- <input
         id="default-checkbox"
         type="checkbox"
         v-model="showTraditional"
@@ -37,7 +37,7 @@ const calculate = () => {
         for="default-checkbox"
         class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
         >Show traditional car rentals</label
-      >
+      > -->
     </div>
     <label for="distance">Distance</label>
     <input type="number" v-model="distance" />
