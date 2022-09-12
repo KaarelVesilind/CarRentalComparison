@@ -5,6 +5,7 @@ import { beast } from "@/providers/beast";
 import { bolt } from "@/providers/bolt";
 import { citybee } from "@/providers/citybee";
 import { elmo } from "@/providers/elmo";
+import { computed } from "vue";
 
 const cities = new Set(beast.cities, bolt.cities, citybee.cities, elmo.cities);
 
@@ -15,7 +16,21 @@ const hours = ref(0);
 const minutes = ref(0);
 const showTraditional = ref(false);
 
+const invalidValues = computed(() => {
+  return (
+    days.value < 0 ||
+    hours.value < 0 ||
+    minutes.value < 0 ||
+    minutes.value > 59 ||
+    hours.value > 23 ||
+    distance.value < 0
+  );
+});
+
 const calculate = () => {
+  if (invalidValues.value) {
+    return;
+  }
   store.setRentDetails({
     distance: distance.value || 0,
     days: days.value || 0,
@@ -56,7 +71,7 @@ const calculate = () => {
         <option v-for="city in cities" :key="city">{{ city }}</option>
       </select>
     </div>
-    <div class="w-full text-center sm:text-left left p-2">
+    <div class="w-full text-center sm:text-left left px-2">
       <button
         class="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 rounded m-2 w-full sm:w-24"
         @click="calculate"
@@ -64,5 +79,8 @@ const calculate = () => {
         Calculate
       </button>
     </div>
+    <p v-if="invalidValues" class="text-red-500 font-bold">
+      Invalid time or distance
+    </p>
   </div>
 </template>
