@@ -1,5 +1,10 @@
 import { defineStore } from "pinia";
-import { providers } from "./db";
+import { beast } from "@/providers/beast";
+import { bolt } from "@/providers/bolt";
+import { citybee } from "@/providers/citybee";
+import { elmo } from "@/providers/elmo";
+
+const providers = { beast, bolt, citybee, elmo };
 
 export const useStore = defineStore({
   id: "store",
