@@ -4,21 +4,10 @@ import { providers } from "./db";
 export const useStore = defineStore({
   id: "store",
   state: () => ({
-    distance: 0,
-    days: 0,
-    hours: 0,
-    minutes: 0,
     offers: [],
   }),
-  getters: {
-    doubleCount: (state) => state.counter * 2,
-  },
   actions: {
     setRentDetails({ distance, days, hours, minutes }) {
-      this.distance = distance;
-      this.days = days;
-      this.hours = hours;
-      this.minutes = minutes;
       this.offers = calculateOffers(distance, days, hours, minutes);
     },
   },
@@ -101,7 +90,7 @@ function calculateCityBeePrice(car, distance, days, hours, minutes) {
         totalTime <= packageTotalTime &&
         option.price < usePackage.price
       ) {
-        usePackage = option;
+        usePackage = { ...option };
       }
       // if fits in the package with some extra time or distance
       else {
@@ -116,7 +105,7 @@ function calculateCityBeePrice(car, distance, days, hours, minutes) {
             (totalTime - packageTotalTime) * 60 * price.minute;
         }
         if (packageCostExtra < cost && packageCostExtra < usePackage.price) {
-          usePackage = option;
+          usePackage = { ...option };
           usePackage.price = packageCostExtra;
         }
       }
