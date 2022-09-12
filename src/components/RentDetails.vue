@@ -10,10 +10,10 @@ const showTraditional = ref(false);
 
 const calculate = () => {
   store.setRentDetails({
-    distance: distance.value,
-    days: days.value,
-    hours: hours.value,
-    minutes: minutes.value,
+    distance: distance.value || 0,
+    days: days.value || 0,
+    hours: hours.value || 0,
+    minutes: minutes.value || 0,
     showTraditional: showTraditional.value,
   });
 };
