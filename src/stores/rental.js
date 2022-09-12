@@ -21,7 +21,7 @@ export const useStore = defineStore({
 function calculateOffers(distance, days, hours, minutes) {
   let offers = [];
   for (const provider in providers) {
-    for (const car of providers[provider]) {
+    for (const car of providers[provider].cars) {
       let price = calculatePrice(provider, car, distance, days, hours, minutes);
       let extraInfo = "";
       if (provider === "elmo") {

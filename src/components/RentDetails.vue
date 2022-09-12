@@ -1,6 +1,13 @@
 <script setup>
 import { ref } from "vue";
 import { useStore } from "@/stores/rental";
+import { beast } from "@/providers/beast";
+import { bolt } from "@/providers/bolt";
+import { citybee } from "@/providers/citybee";
+import { elmo } from "@/providers/elmo";
+
+const cities = new Set(beast.cities, bolt.cities, citybee.cities, elmo.cities);
+
 const store = useStore();
 const distance = ref(0);
 const days = ref(0);
@@ -21,32 +28,41 @@ const calculate = () => {
 <template>
   <div>
     <div class="flex flex-row">
-      <label> Days</label>
-      <input type="number" v-model="days" />
-      <label> Hours</label>
-      <input type="number" v-model="hours" />
-      <label> Minutes</label>
-      <input type="number" v-model="minutes" />
-      <!-- <input
+      <p>Days</p>
+      <input type="number" v-model="days" class="w-14" />
+      <p>Hours</p>
+      <input type="number" v-model="hours" class="w-14" />
+      <p>Minutes</p>
+      <input type="number" v-model="minutes" class="w-14" />
+    </div>
+    <div class="flex flex-row my-1">
+      <p>Distance</p>
+      <input type="number" v-model="distance" class="w-20" />
+      <input
         id="default-checkbox"
         type="checkbox"
         v-model="showTraditional"
-        class="ml-2 w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+        class="ml-2"
       />
-      <label
-        for="default-checkbox"
-        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-        >Show traditional car rentals</label
-      > -->
+      <p>Show traditional car rentals</p>
     </div>
-    <label for="distance">Distance</label>
-    <input type="number" v-model="distance" />
-
-    <button
-      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-2"
-      @click="calculate"
-    >
-      Calculate
-    </button>
+    <div class="flex flex-row">
+      <p>Start</p>
+      <select class="w-24">
+        <option v-for="city in cities" :key="city">{{ city }}</option>
+      </select>
+      <p>End</p>
+      <select class="w-24">
+        <option v-for="city in cities" :key="city">{{ city }}</option>
+      </select>
+    </div>
+    <div class="w-full text-center sm:text-left left p-2">
+      <button
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 rounded m-2 w-full sm:w-24"
+        @click="calculate"
+      >
+        Calculate
+      </button>
+    </div>
   </div>
 </template>

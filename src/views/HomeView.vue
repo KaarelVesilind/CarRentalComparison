@@ -4,7 +4,7 @@ import RentOffers from "../components/RentOffers.vue";
 </script>
 
 <template>
-  <main class="p-6">
+  <main>
     <h1>Short term car rental comparison</h1>
     <RentDetails />
     <RentOffers />
