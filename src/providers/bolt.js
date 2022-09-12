@@ -8,15 +8,15 @@ export const bolt = [
       day: 27.9,
     },
   },
-  {
-    name: "Škoda Octavia",
-    price: {
-      km: 0.23,
-      minute: 0.12,
-      hour: 4.99,
-      day: 27.9,
-    },
-  },
+  //   {
+  //     name: "Škoda Octavia",
+  //     price: {
+  //       km: 0.23,
+  //       minute: 0.12,
+  //       hour: 4.99,
+  //       day: 27.9,
+  //     },
+  //   },
   {
     name: "Audi A1",
     price: {
@@ -59,6 +59,15 @@ export const bolt = [
       km: 0.24,
       minute: 0.14,
       hour: 5.89,
+      day: 27.9,
+    },
+  },
+  {
+    name: "Škoda Fabia",
+    price: {
+      km: 0.23,
+      minute: 0.12,
+      hour: 4.99,
       day: 27.9,
     },
   },
