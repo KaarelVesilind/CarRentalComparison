@@ -188,7 +188,7 @@ function calculateBeastPrice(car, distance, days, hours, minutes) {
   let cost = 0;
   // ---- Time
   // Weeks
-  if (days > 7) {
+  if (days >= 7) {
     const weeks = Math.floor(days / 7);
     cost += weeks * price.week;
     days -= weeks * 7;
@@ -237,53 +237,81 @@ function calculateBeastPrice(car, distance, days, hours, minutes) {
 
 function calculateElmoPrice(car, distance, days, hours, minutes) {
   const price = car.price;
-  let cost = 0;
-  // Time
+
   //Months
-  if (days > 30) {
+  let monthsCost = 0;
+  if (days >= 30) {
     const months = Math.floor(days / 30);
-    cost += months * price.month;
+    monthsCost += months * price.month;
     days -= months * 30;
     distance -= months * 3000;
   }
-  //Weeks
-  if (days > 7) {
+  // Weeks
+  let weeksCost = 0;
+  if (days >= 7) {
     const weeks = Math.floor(days / 7);
-    const weeksCost = weeks * price.week;
-    if (weeksCost > price.month) {
-      cost += price.month;
+    days -= weeks * 7;
+    if (
+      weeks * price.week +
+        days * price.day +
+        hours * price.hour +
+        minutes * price.minute >
+      price.month
+    ) {
+      monthsCost += price.month;
       distance -= 3000;
       days = 0;
+      hours = 0;
+      minutes = 0;
     } else {
-      cost += weeks * price.week;
-      days -= weeks * 7;
+      weeksCost += weeks * price.week;
       distance -= weeks * 700;
     }
   }
+  //Days
+  let daysCost = 0;
+  if (days >= 1) {
+    if (
+      days * price.day + hours * price.hour + minutes * price.minute >
+      price.week
+    ) {
+      weeksCost += price.week;
+      distance -= 700;
+      days = 0;
+      hours = 0;
+      minutes = 0;
+    } else {
+      daysCost += days * price.day;
+    }
+  }
+  //Hours
+  let hoursCost = 0;
+  if (hours >= 1) {
+    if (hours * price.hour + minutes * price.minute > price.day) {
+      daysCost += price.day;
+      hours = 0;
+      minutes = 0;
+    } else {
+      hoursCost += hours * price.hour;
+    }
+  }
+  //Minutes
+  let minutesCost = 0;
+  if (minutes >= 1) {
+    minutesCost += minutes * price.minute;
+  }
+
   if (distance < 0) {
     distance = 0;
   }
   // Distance
+  let distanceCost = 0;
   if (distance > 100) {
-    cost += +100 * price.km + (distance - 100) * 0.1;
+    distanceCost += 100 * price.km + (distance - 100) * 0.1;
   } else {
-    cost += distance * price.km;
+    distanceCost += distance * price.km;
   }
-  //Days
-  if (days * price.day > price.week) {
-    cost += price.week;
-  } else {
-    cost += days * price.day;
-  }
-  //Hours
-  if (hours * price.hour > price.day) {
-    cost += price.day;
-  } else {
-    cost += hours * price.hour;
-  }
-  cost += minutes * price.minute;
-  if (car.name === "Rent5" && cost < 30) {
-    cost = 30;
-  }
-  return cost;
+  return (
+    monthsCost + weeksCost + daysCost + hoursCost + minutesCost + distanceCost
+  );
 }
