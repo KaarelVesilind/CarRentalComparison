@@ -12,34 +12,70 @@ export const useStore = defineStore({
     offers: [],
   }),
   actions: {
-    setRentDetails({ distance, days, hours, minutes }) {
-      this.offers = calculateOffers(distance, days, hours, minutes);
+    setRentDetails({
+      distance,
+      days,
+      hours,
+      minutes,
+      showTraditional,
+      start,
+      end,
+    }) {
+      this.offers = calculateOffers(
+        distance,
+        days,
+        hours,
+        minutes,
+        showTraditional,
+        start,
+        end
+      );
     },
   },
 });
 
-function calculateOffers(distance, days, hours, minutes) {
+function calculateOffers(
+  distance,
+  days,
+  hours,
+  minutes,
+  showTraditional,
+  start,
+  end
+) {
   let offers = [];
   for (const provider in providers) {
-    for (const car of providers[provider].cars) {
-      let price = calculatePrice(provider, car, distance, days, hours, minutes);
-      let extraInfo = "";
-      if (provider === "elmo") {
-        extraInfo = car.cars.join(", ");
+    if (
+      providers[provider].cities.includes(start) &&
+      providers[provider].cities.includes(end)
+    ) {
+      for (const car of providers[provider].cars) {
+        let price = calculatePrice(
+          provider,
+          car,
+          distance,
+          days,
+          hours,
+          minutes
+        );
+        let extraInfo = "";
+        if (provider === "elmo") {
+          extraInfo = car.cars.join(", ");
+        }
+        if (typeof price !== "number" && provider === "citybee") {
+          const daysText = price.days > 0 ? price.days + " days " : "";
+          const hoursText = price.hours > 0 ? price.hours + " hours " : "";
+          extraInfo = `Use package: ${daysText}${hoursText}${price.distance} km`;
+          price = price.price;
+        }
+        offers.push({
+          id: offers.length + 1,
+          price: price.toFixed(2),
+          car: car.name,
+          provider: provider.toUpperCase(),
+          extraInfo: extraInfo,
+        });
       }
-      if (typeof price !== "number" && provider === "citybee") {
-        const daysText = price.days > 0 ? price.days + " days " : "";
-        const hoursText = price.hours > 0 ? price.hours + " hours " : "";
-        extraInfo = `Use package: ${daysText}${hoursText}${price.distance} km`;
-        price = price.price;
-      }
-      offers.push({
-        id: offers.length + 1,
-        price: price.toFixed(2),
-        car: car.name,
-        provider: provider.toUpperCase(),
-        extraInfo: extraInfo,
-      });
     }
   }
   return offers.sort((a, b) => a.price - b.price);

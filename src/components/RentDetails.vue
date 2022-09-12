@@ -10,11 +10,13 @@ import { computed } from "vue";
 const cities = new Set(beast.cities, bolt.cities, citybee.cities, elmo.cities);
 
 const store = useStore();
-const distance = ref(0);
-const days = ref(0);
-const hours = ref(0);
-const minutes = ref(0);
+const distance = ref();
+const days = ref();
+const hours = ref();
+const minutes = ref();
 const showTraditional = ref(false);
+const start = ref("Tallinn");
+const end = ref("Tallinn");
 
 const invalidValues = computed(() => {
   return (
@@ -37,6 +39,8 @@ const calculate = () => {
     hours: hours.value || 0,
     minutes: minutes.value || 0,
     showTraditional: showTraditional.value,
+    start: start.value,
+    end: end.value,
   });
 };
 </script>
@@ -44,15 +48,15 @@ const calculate = () => {
   <div>
     <div class="flex flex-row">
       <p>Days</p>
-      <input type="number" v-model="days" class="w-14" />
+      <input type="number" v-model="days" class="w-14" placeholder="0" />
       <p>Hours</p>
-      <input type="number" v-model="hours" class="w-14" />
+      <input type="number" v-model="hours" class="w-14" placeholder="0" />
       <p>Minutes</p>
-      <input type="number" v-model="minutes" class="w-14" />
+      <input type="number" v-model="minutes" class="w-14" placeholder="0" />
     </div>
     <div class="flex flex-row my-1">
       <p>Distance</p>
-      <input type="number" v-model="distance" class="w-20" />
+      <input type="number" v-model="distance" class="w-20" placeholder="0" />
       <input
         id="default-checkbox"
         type="checkbox"
@@ -63,11 +67,11 @@ const calculate = () => {
     </div>
     <div class="flex flex-row">
       <p>Start</p>
-      <select class="w-24">
+      <select class="w-24" v-model="start">
         <option v-for="city in cities" :key="city">{{ city }}</option>
       </select>
       <p>End</p>
-      <select class="w-24">
+      <select class="w-24" v-model="end">
         <option v-for="city in cities" :key="city">{{ city }}</option>
       </select>
     </div>
