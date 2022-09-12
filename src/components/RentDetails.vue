@@ -1,10 +1,10 @@
 <script setup>
 import { ref } from "vue";
 import { useStore } from "@/stores/rental";
-import { beast } from "@/providers/beast";
-import { bolt } from "@/providers/bolt";
-import { citybee } from "@/providers/citybee";
-import { elmo } from "@/providers/elmo";
+import { beast } from "@/providers/shortTerm/beast";
+import { bolt } from "@/providers/shortTerm/bolt";
+import { citybee } from "@/providers/shortTerm/citybee";
+import { elmo } from "@/providers/shortTerm/elmo";
 import { computed } from "vue";
 
 const cities = new Set(beast.cities, bolt.cities, citybee.cities, elmo.cities);
@@ -63,7 +63,7 @@ const calculate = () => {
         v-model="showTraditional"
         class="ml-2"
       />
-      <p>Show traditional car rentals</p>
+      <p>Include traditional rentals</p>
     </div>
     <div class="flex flex-row">
       <p>Start</p>
@@ -77,7 +77,7 @@ const calculate = () => {
     </div>
     <div class="w-full text-center sm:text-left left px-2">
       <button
-        class="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 rounded m-2 w-full sm:w-24"
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 rounded my-2 w-full sm:w-24 relative"
         @click="calculate"
       >
         Calculate

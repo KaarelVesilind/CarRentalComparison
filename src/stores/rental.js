@@ -1,8 +1,8 @@
 import { defineStore } from "pinia";
-import { beast } from "@/providers/beast";
-import { bolt } from "@/providers/bolt";
-import { citybee } from "@/providers/citybee";
-import { elmo } from "@/providers/elmo";
+import { beast } from "@/providers/shortTerm/beast";
+import { bolt } from "@/providers/shortTerm/bolt";
+import { citybee } from "@/providers/shortTerm/citybee";
+import { elmo } from "@/providers/shortTerm/elmo";
 
 const providers = { beast, bolt, citybee, elmo };
 
