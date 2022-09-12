@@ -96,22 +96,35 @@ function calculatePrice(provider, car, distance, days, hours, minutes) {
 // --------------------- CITYBEE ---------------------
 function calculateCityBeePrice(car, distance, days, hours, minutes) {
   const price = car.price;
-  let cost = 0.5;
-  cost += distance * price.km;
-  // Time
-  cost += days * price.day;
-  if (hours * price.hour > price.day) {
-    cost += price.day;
-  } else {
-    cost += hours * price.hour;
+  const distanceCost = distance * price.km;
+  // Days
+  let daysCost = 0;
+  if (days >= 1) {
+    daysCost += days * price.day;
   }
-  if (minutes * price.minute > price.hour) {
-    cost += price.hour;
-  } else {
-    cost += minutes * price.minute;
+  // Hours
+  let hoursCost = 0;
+  if (hours >= 1) {
+    if (hours * price.hours + minutes * price.minutes > price.day) {
+      daysCost += price.day;
+      hours = 0;
+      minutes = 0;
+    } else {
+      hoursCost += hours * price.hours;
+    }
   }
-  if (cost < 2.29) {
-    cost = 2.29;
+  // Minutes
+  let minutesCost = 0;
+  if (minutes >= 1) {
+    if (minutes * price.minutes > price.hours) {
+      hoursCost += price.hours;
+    } else {
+      minutesCost += minutes * price.minutes;
+    }
+  }
+  const totalCost = 0.5 + distanceCost + daysCost + hoursCost + minutesCost;
+  if (totalCost < 2.29) {
+    return 2.29;
   }
   // Calculate packages
   const packages = car.packages;
@@ -124,7 +137,7 @@ function calculateCityBeePrice(car, distance, days, hours, minutes) {
   const totalTime = days * 24 + hours + minutes / 60;
   for (const option of packages) {
     const packageTotalTime = option.days * 24 + option.hours;
-    if (option.price < cost) {
+    if (option.price < totalCost) {
       // if fits exactly in the package
       if (
         distance <= option.distance &&
@@ -145,7 +158,10 @@ function calculateCityBeePrice(car, distance, days, hours, minutes) {
           packageCostExtra +=
             (totalTime - packageTotalTime) * 60 * price.minute;
         }
-        if (packageCostExtra < cost && packageCostExtra < usePackage.price) {
+        if (
+          packageCostExtra < totalCost &&
+          packageCostExtra < usePackage.price
+        ) {
           usePackage = { ...option };
           usePackage.price = packageCostExtra;
         }
@@ -155,7 +171,7 @@ function calculateCityBeePrice(car, distance, days, hours, minutes) {
   if (usePackage.days > 0 || usePackage.hours > 0 || usePackage.distance > 0) {
     return usePackage;
   } else {
-    return cost;
+    return totalCost;
   }
 }
 
