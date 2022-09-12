@@ -162,24 +162,40 @@ function calculateCityBeePrice(car, distance, days, hours, minutes) {
 // --------------------- BOLT ---------------------
 function calculateBoltPrice(car, distance, days, hours, minutes) {
   const price = car.price;
-  let cost = 0;
-  cost += distance * price.km;
-  // Time
-  cost += days * price.day;
-  if (hours * price.hour > price.day) {
-    cost += price.day;
+
+  const distanceCost = distance * price.km;
+  // Days
+  let daysCost = 0;
+  if (days >= 1) {
+    daysCost += days * price.day;
+  }
+  // Hours
+  let hoursCost = 0;
+  if (hours >= 1) {
+    if (hours * price.hours + minutes * price.minutes > price.day) {
+      daysCost += price.day;
+      hours = 0;
+      minutes = 0;
+    } else {
+      hoursCost += hours * price.hours;
+    }
+  }
+  // Minutes
+  let minutesCost = 0;
+  if (minutes >= 1) {
+    if (minutes * price.minutes > price.hours) {
+      hoursCost += price.hours;
+    } else {
+      minutesCost += minutes * price.minutes;
+    }
+  }
+
+  const totalCost = distanceCost + daysCost + hoursCost + minutesCost;
+  if (totalCost < 1.99) {
+    return 1.99;
   } else {
-    cost += hours * price.hour;
+    return totalCost;
   }
-  if (minutes * price.minute > price.hour) {
-    cost += price.hour;
-  } else {
-    cost += minutes * price.minute;
-  }
-  if (cost < 1.99) {
-    cost = 1.99;
-  }
-  return cost;
 }
 
 //--------------------- BEAST ---------------------
