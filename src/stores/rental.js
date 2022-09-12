@@ -156,7 +156,7 @@ function calculateBoltPrice(car, distance, days, hours, minutes) {
 function calculateBeastPrice(car, distance, days, hours, minutes) {
   const price = car.price;
   let cost = 0;
-  // Time
+  // ---- Time
   // Weeks
   if (days > 7) {
     const weeks = Math.floor(days / 7);
@@ -192,8 +192,10 @@ function calculateBeastPrice(car, distance, days, hours, minutes) {
   } else {
     cost += minuteCost;
   }
+  // ---- Distance
   // Distance
-  const freeDistance = days > 0 ? days * 300 : 300;
+  let freeDistance = days * 300;
+  freeDistance += totalMinutes > 0 ? 300 : 0;
   if (distance > freeDistance) {
     cost += (distance - freeDistance) * price.km;
   }
