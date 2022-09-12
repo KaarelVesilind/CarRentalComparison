@@ -185,52 +185,68 @@ function calculateBoltPrice(car, distance, days, hours, minutes) {
 //--------------------- BEAST ---------------------
 function calculateBeastPrice(car, distance, days, hours, minutes) {
   const price = car.price;
-  let cost = 0;
-  // ---- Time
-  // Weeks
-  if (days >= 7) {
-    const weeks = Math.floor(days / 7);
-    cost += weeks * price.week;
-    days -= weeks * 7;
-  }
-  // Days
-  if (days * price.day > price.week) {
-    cost += price.week;
-  } else if (days * price.day > price["3days"]) {
-    cost += price["3days"];
-  } else {
-    cost += days * price.day;
-  }
-  // Minutes
   let totalMinutes = minutes + hours * 60;
-  let minuteCost = 0;
-  // if rent under one day
-  if (days === 0) {
-    if (totalMinutes > 30) {
-      totalMinutes -= 30;
-    } else {
-      totalMinutes = 30;
-    }
-    minuteCost = price.minute * (totalMinutes - 30) + price.first30mins;
-    // if rent longer than one day
-  } else {
-    minuteCost = price.minute * totalMinutes;
-  }
-  if (minuteCost > price.day) {
-    cost += price.day;
-    days += 1;
-  } else {
-    cost += minuteCost;
-  }
   // ---- Distance
   // Distance
   let freeDistance = days * 300;
   freeDistance += totalMinutes > 0 ? 300 : 0;
+  let distanceCost = 0;
   if (distance > freeDistance) {
-    cost += (distance - freeDistance) * price.km;
+    distanceCost += (distance - freeDistance) * price.km;
+  }
+  // Weeks
+  let weeksCost = 0;
+  if (days >= 7) {
+    const weeks = Math.floor(days / 7);
+    days -= weeks * 7;
+    weeksCost += weeks * price.week;
+  }
+  // 3Days
+  let threeDaysCost = 0;
+  if (days >= 3) {
+    const threeDays = Math.floor(days / 3);
+    days -= threeDays * 3;
+    if (
+      threeDays * price.threeDays +
+        days * price.day +
+        totalMinutes * price.minute >
+      price.week
+    ) {
+      weeksCost += price.week;
+      days = 0;
+      totalMinutes = 0;
+    } else {
+      threeDaysCost += threeDays * price.threeDays;
+    }
+  }
+  // Days
+  let daysCost = 0;
+  if (days >= 1) {
+    if (days * price.day + totalMinutes * price.minute > price.threeDays) {
+      threeDaysCost += price.threeDays;
+    } else {
+      daysCost += days * price.day;
+    }
+  }
+  const shortRent = weeksCost === 0 && threeDaysCost === 0 && daysCost === 0;
+  // Minutes
+  let minutesCost = 0;
+  if (totalMinutes > 0 || shortRent) {
+    if (totalMinutes * price.minute > price.day) {
+      daysCost += price.day;
+    } else {
+      if (shortRent) {
+        if (totalMinutes < 30) {
+          totalMinutes = 30;
+        }
+        minutesCost += price.first30mins + (totalMinutes - 30) * price.minute;
+      } else {
+        minutesCost += totalMinutes * price.minute;
+      }
+    }
   }
 
-  return cost;
+  return weeksCost + threeDaysCost + daysCost + minutesCost + distanceCost;
 }
 
 //--------------------- ELMO ---------------------
