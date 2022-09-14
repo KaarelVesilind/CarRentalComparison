@@ -97,6 +97,7 @@ function calculatePrice(provider, car, distance, days, hours, minutes) {
 function calculateCityBeePrice(car, distance, days, hours, minutes) {
   const price = car.price;
   const distanceCost = distance * price.km;
+  const totalTime = days * 24 + hours + minutes / 60;
   // Days
   let daysCost = 0;
   if (days >= 1) {
@@ -134,7 +135,6 @@ function calculateCityBeePrice(car, distance, days, hours, minutes) {
     distance: 0,
     price: Number.MAX_SAFE_INTEGER,
   };
-  const totalTime = days * 24 + hours + minutes / 60;
   for (const option of packages) {
     const packageTotalTime = option.days * 24 + option.hours;
     if (option.price < totalCost) {
