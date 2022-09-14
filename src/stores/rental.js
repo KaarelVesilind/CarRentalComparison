@@ -238,7 +238,7 @@ function calculateBeastPrice(car, distance, days, hours, minutes) {
     const threeDays = Math.floor(days / 3);
     days -= threeDays * 3;
     if (
-      threeDays * price.threeDays +
+      threeDays * price["3days"] +
         days * price.day +
         totalMinutes * price.minute >
       price.week
@@ -247,14 +247,14 @@ function calculateBeastPrice(car, distance, days, hours, minutes) {
       days = 0;
       totalMinutes = 0;
     } else {
-      threeDaysCost += threeDays * price.threeDays;
+      threeDaysCost += threeDays * price["3days"];
     }
   }
   // Days
   let daysCost = 0;
   if (days >= 1) {
-    if (days * price.day + totalMinutes * price.minute > price.threeDays) {
-      threeDaysCost += price.threeDays;
+    if (days * price.day + totalMinutes * price.minute > price["3days"]) {
+      threeDaysCost += price["3days"];
     } else {
       daysCost += days * price.day;
     }
