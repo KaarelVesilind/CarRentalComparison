@@ -105,21 +105,21 @@ function calculateCityBeePrice(car, distance, days, hours, minutes) {
   // Hours
   let hoursCost = 0;
   if (hours >= 1) {
-    if (hours * price.hours + minutes * price.minutes > price.day) {
+    if (hours * price.hour + minutes * price.minute > price.day) {
       daysCost += price.day;
       hours = 0;
       minutes = 0;
     } else {
-      hoursCost += hours * price.hours;
+      hoursCost += hours * price.hour;
     }
   }
   // Minutes
   let minutesCost = 0;
   if (minutes >= 1) {
-    if (minutes * price.minutes > price.hours) {
-      hoursCost += price.hours;
+    if (minutes * price.minute > price.hour) {
+      hoursCost += price.hour;
     } else {
-      minutesCost += minutes * price.minutes;
+      minutesCost += minutes * price.minute;
     }
   }
   const totalCost = 0.5 + distanceCost + daysCost + hoursCost + minutesCost;
@@ -188,24 +188,23 @@ function calculateBoltPrice(car, distance, days, hours, minutes) {
   // Hours
   let hoursCost = 0;
   if (hours >= 1) {
-    if (hours * price.hours + minutes * price.minutes > price.day) {
+    if (hours * price.hour + minutes * price.minute > price.day) {
       daysCost += price.day;
       hours = 0;
       minutes = 0;
     } else {
-      hoursCost += hours * price.hours;
+      hoursCost += hours * price.hour;
     }
   }
   // Minutes
   let minutesCost = 0;
   if (minutes >= 1) {
-    if (minutes * price.minutes > price.hours) {
-      hoursCost += price.hours;
+    if (minutes * price.minute > price.hour) {
+      hoursCost += price.hour;
     } else {
-      minutesCost += minutes * price.minutes;
+      minutesCost += minutes * price.minute;
     }
   }
-
   const totalCost = distanceCost + daysCost + hoursCost + minutesCost;
   if (totalCost < 1.99) {
     return 1.99;
