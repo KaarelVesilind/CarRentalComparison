@@ -20,7 +20,7 @@ export const beast = {
         minute: 0.25,
         day: 139.99,
         "3days": 339.99,
-        week: 549.99,
+        week: 649.99,
       },
     },
     {
