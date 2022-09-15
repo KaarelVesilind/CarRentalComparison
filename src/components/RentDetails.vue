@@ -57,13 +57,14 @@ const calculate = () => {
     <div class="flex flex-row my-1">
       <p>Distance</p>
       <input type="number" v-model="distance" class="w-20" placeholder="0" />
-      <input
+      <p>Kilometers</p>
+      <!-- <input
         id="default-checkbox"
         type="checkbox"
         v-model="showTraditional"
         class="ml-2"
       />
-      <p>Include traditional rentals</p>
+      <p>Include traditional rentals</p> -->
     </div>
     <div class="flex flex-row">
       <p>Start</p>
