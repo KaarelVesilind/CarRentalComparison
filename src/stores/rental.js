@@ -260,17 +260,21 @@ function calculateBeastPrice(car, distance, days, hours, minutes) {
     }
   }
   const shortRent = weeksCost === 0 && threeDaysCost === 0 && daysCost === 0;
+  const shortRentPrice = price.first30mins + (totalMinutes - 30) * price.minute;
   // Minutes
   let minutesCost = 0;
   if (totalMinutes > 0 || shortRent) {
-    if (totalMinutes * price.minute > price.day) {
+    if (
+      totalMinutes * price.minute > price.day ||
+      (shortRent && shortRentPrice > price.day)
+    ) {
       daysCost += price.day;
     } else {
       if (shortRent) {
         if (totalMinutes < 30) {
           totalMinutes = 30;
         }
-        minutesCost += price.first30mins + (totalMinutes - 30) * price.minute;
+        minutesCost += shortRentPrice;
       } else {
         minutesCost += totalMinutes * price.minute;
       }
