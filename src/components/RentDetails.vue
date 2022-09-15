@@ -78,10 +78,13 @@ const calculate = () => {
     </div>
     <div class="w-full text-center sm:text-left left px-2">
       <button
-        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 rounded my-2 w-full sm:w-24 relative"
+        class="bg-blue-500 text-white font-bold py-2 rounded my-2 w-full sm:w-24 relative"
+        :class="
+          invalidValues ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-700'
+        "
         @click="calculate"
       >
-        Calculate
+        Search
       </button>
     </div>
     <p v-if="invalidValues" class="text-red-500 font-bold">
