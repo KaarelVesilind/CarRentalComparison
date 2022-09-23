@@ -62,12 +62,17 @@ function calculateOffers(
         if (provider === "elmo") {
           extraInfo = car.cars.join(", ");
         }
-        if (typeof price !== "number" && provider === "citybee") {
-          const daysText = price.days > 0 ? price.days + " days " : "";
-          const hoursText = price.hours > 0 ? price.hours + " hours " : "";
-          extraInfo = `Use package: ${daysText}${hoursText}${price.distance} km`;
-          price = price.price;
+        if (provider === "citybee") {
+          if (typeof price === "object") {
+            const daysText = price.days > 0 ? price.days + " days " : "";
+            const hoursText = price.hours > 0 ? price.hours + " hours " : "";
+            extraInfo += `Use package: ${daysText}${hoursText}${price.distance} km `;
+            price = price.price;
+          }
+          const cashback = price * 0.07;
+          extraInfo += `| Cashback ${cashback.toFixed(2)}€ `;
         }
+
         offers.push({
           id: offers.length + 1,
           price: price.toFixed(2),
