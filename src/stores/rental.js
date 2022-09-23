@@ -99,10 +99,12 @@ function calculatePrice(provider, car, distance, days, hours, minutes) {
   }
 }
 // --------------------- CITYBEE ---------------------
-function calculateCityBeePrice(car, distance, days, hours, minutes) {
-  const price = car.price;
-  const distanceCost = distance * price.km;
-  const totalTime = days * 24 + hours + minutes / 60;
+function citybeeTimeCalculation(totalTime, price) {
+  let days = Math.floor(totalTime / 1440);
+  totalTime -= days * 1440;
+  let hours = Math.floor(totalTime / 60);
+  totalTime -= hours * 60;
+  let minutes = totalTime;
   // Days
   let daysCost = 0;
   if (days >= 1) {
@@ -128,6 +130,18 @@ function calculateCityBeePrice(car, distance, days, hours, minutes) {
       minutesCost += minutes * price.minute;
     }
   }
+  return { daysCost, hoursCost, minutesCost };
+}
+
+function calculateCityBeePrice(car, distance, days, hours, minutes) {
+  const price = car.price;
+  const distanceCost = distance * price.km;
+  const totalTime = days * 24 * 60 + hours * 60 + minutes;
+  // Time
+  let { daysCost, hoursCost, minutesCost } = citybeeTimeCalculation(
+    totalTime,
+    price
+  );
   const totalCost = 0.5 + distanceCost + daysCost + hoursCost + minutesCost;
   if (totalCost < 2.29) {
     return 2.29;
@@ -141,7 +155,7 @@ function calculateCityBeePrice(car, distance, days, hours, minutes) {
     price: Number.MAX_SAFE_INTEGER,
   };
   for (const option of packages) {
-    const packageTotalTime = option.days * 24 + option.hours;
+    const packageTotalTime = option.days * 24 * 60 + option.hours * 60;
     if (option.price < totalCost) {
       // if fits exactly in the package
       if (
@@ -160,8 +174,12 @@ function calculateCityBeePrice(car, distance, days, hours, minutes) {
         }
         // Add extra time
         if (totalTime > packageTotalTime) {
+          let extraTime = totalTime - packageTotalTime;
+          let extraCostTime = citybeeTimeCalculation(extraTime, price);
           packageCostExtra +=
-            (totalTime - packageTotalTime) * 60 * price.minute;
+            extraCostTime.daysCost +
+            extraCostTime.hoursCost +
+            extraCostTime.minutesCost;
         }
         if (
           packageCostExtra < totalCost &&
