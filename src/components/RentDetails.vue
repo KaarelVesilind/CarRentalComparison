@@ -48,7 +48,14 @@ const calculate = () => {
   <div>
     <div class="flex flex-row">
       <p>Days</p>
-      <input type="number" v-model="days" class="w-14" placeholder="0" />
+      <input
+        type="number"
+        v-model="days"
+        class="w-14"
+        placeholder="0"
+        id="days"
+        autocomplete="off"
+      />
       <p>Hours</p>
       <input type="number" v-model="hours" class="w-14" placeholder="0" />
       <p>Minutes</p>
