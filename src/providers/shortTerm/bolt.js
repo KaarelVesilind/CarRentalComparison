@@ -208,5 +208,14 @@ export const bolt = {
         day: 35.9,
       },
     },
+    {
+      name: "Audi Q8",
+      price: {
+        km: 0.35,
+        minute: 0.84,
+        hour: 49.9,
+        day: 249,
+      },
+    },
   ],
 };
