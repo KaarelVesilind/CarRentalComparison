@@ -382,7 +382,6 @@ function calculateElmoPrice(car, distance, days, hours, minutes) {
   if (monthsCost > 0 || weeksCost > 0) {
     // Extra distance cost
     distanceCost += distance * 0.1;
-    distance = 0;
   } else if (distance > 100) {
     distanceCost += 100 * price.km + (distance - 100) * 0.1;
   } else {
