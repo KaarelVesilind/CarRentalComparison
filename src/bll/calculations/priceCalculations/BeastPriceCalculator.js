@@ -14,14 +14,14 @@ export default class BeastPriceCalculator {
         // Weeks
         let weeksCost = 0;
         if (searchParamsObj.days >= 7) {
-            const weeks = Math.floor(days / 7);
+            const weeks = Math.floor(searchParamsObj.days / 7);
             searchParamsObj.days -= weeks * 7;
             weeksCost += weeks * price.week;
         }
         // 3Days
         let threeDaysCost = 0;
         if (searchParamsObj.days >= 3) {
-            const threeDays = Math.floor(days / 3);
+            const threeDays = Math.floor(searchParamsObj.days / 3);
             searchParamsObj.days -= threeDays * 3;
             if (
                 threeDays * price["3days"] +

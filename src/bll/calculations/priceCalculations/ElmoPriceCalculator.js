@@ -6,7 +6,7 @@ export default class ElmoPriceCalculator {
         //Months
         let monthsCost = 0;
         if (searchParamsObj.days >= 30) {
-            const months = Math.floor(days / 30);
+            const months = Math.floor(searchParamsObj.days / 30);
             monthsCost += months * price.month;
             searchParamsObj.days -= months * 30;
             searchParamsObj.distance -= months * 3000;
@@ -14,7 +14,7 @@ export default class ElmoPriceCalculator {
         // Weeks
         let weeksCost = 0;
         if (searchParamsObj.days >= 7) {
-            const weeks = Math.floor(days / 7);
+            const weeks = Math.floor(searchParamsObj.days / 7);
             searchParamsObj.days -= weeks * 7;
             if (
                 weeks * price.week +
@@ -46,7 +46,7 @@ export default class ElmoPriceCalculator {
                 searchParamsObj.hours = 0;
                 searchParamsObj.minutes = 0;
             } else {
-                daysCost += days * price.day;
+                daysCost += searchParamsObj.days * price.day;
             }
         }
         //Hours
@@ -57,7 +57,7 @@ export default class ElmoPriceCalculator {
                 searchParamsObj.hours = 0;
                 searchParamsObj.minutes = 0;
             } else {
-                hoursCost += hours * price.hour;
+                hoursCost += searchParamsObj.hours * price.hour;
             }
         }
         //Minutes
@@ -75,7 +75,7 @@ export default class ElmoPriceCalculator {
             // Extra distance cost
             distanceCost += searchParamsObj.distance * 0.1;
         } else if (searchParamsObj.distance > 100) {
-            distanceCost += 100 * price.km + (distance - 100) * 0.1;
+            distanceCost += 100 * price.km + (searchParamsObj.distance - 100) * 0.1;
         } else {
             distanceCost += searchParamsObj.distance * price.km;
         }
