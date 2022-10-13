@@ -18,7 +18,9 @@ export default class OffersCalculator {
         this.providers[provider].cities.includes(searchParamsObj.end)
       ) {
         for (const car of this.providers[provider].cars) {
-          let price = this._calculatePrice(provider, car, searchParamsObj);
+          let price = this._calculatePrice(provider, car, {
+            ...searchParamsObj,
+          });
           let extraInfo = "";
           ({ extraInfo, price } = this._addExtraInfo(
             provider,
@@ -42,7 +44,8 @@ export default class OffersCalculator {
 
   _addExtraInfo(provider, extraInfo, car, price) {
     if (provider === "elmo") {
-      extraInfo = car.cars.join(", ");
+      extraInfo = car.cars.join(", ") + price.extraInfo;
+      price = price.price;
     }
     if (provider === "citybee") {
       if (typeof price === "object") {

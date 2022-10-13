@@ -1,7 +1,6 @@
 export default class ElmoPriceCalculator {
   calculatePrice(car, searchParamsObj) {
     const price = car.price;
-
     //Months
     let monthsCost = 0;
     if (searchParamsObj.days >= 30) {
@@ -84,8 +83,28 @@ export default class ElmoPriceCalculator {
     } else {
       distanceCost += searchParamsObj.distance * price.km;
     }
-    return (
-      monthsCost + weeksCost + daysCost + hoursCost + minutesCost + distanceCost
-    );
+    let extraInfo = "";
+    if (monthsCost > 0 || weeksCost > 0) {
+      extraInfo += ` | Contact ELMO for`;
+      let and = false;
+      if (monthsCost > 0) {
+        extraInfo += ` ${monthsCost / price.month} month(s) package`;
+        and = true;
+      }
+      if (weeksCost > 0) {
+        extraInfo += `${and ? " and " : ""}`;
+        extraInfo += ` ${weeksCost / price.week}week(s) package`;
+      }
+    }
+    return {
+      extraInfo: extraInfo,
+      price:
+        monthsCost +
+        weeksCost +
+        daysCost +
+        hoursCost +
+        minutesCost +
+        distanceCost,
+    };
   }
 }
