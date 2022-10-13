@@ -20,19 +20,12 @@ export default class OffersCalculator {
         for (const car of this.providers[provider].cars) {
           let price = this._calculatePrice(provider, car, searchParamsObj);
           let extraInfo = "";
-          if (provider === "elmo") {
-            extraInfo = car.cars.join(", ");
-          }
-          if (provider === "citybee") {
-            if (typeof price === "object") {
-              const daysText = price.days > 0 ? price.days + " days " : "";
-              const hoursText = price.hours > 0 ? price.hours + " hours " : "";
-              extraInfo += `Use package: ${daysText}${hoursText}${price.distance} km `;
-              price = price.price;
-            }
-            const cashback = price * 0.07;
-            extraInfo += `| Cashback ${cashback.toFixed(2)}€ `;
-          }
+          ({ extraInfo, price } = this._addExtraInfo(
+            provider,
+            extraInfo,
+            car,
+            price
+          ));
 
           offers.push({
             id: offers.length + 1,
@@ -45,6 +38,23 @@ export default class OffersCalculator {
       }
     }
     return offers.sort((a, b) => a.price - b.price);
+  }
+
+  _addExtraInfo(provider, extraInfo, car, price) {
+    if (provider === "elmo") {
+      extraInfo = car.cars.join(", ");
+    }
+    if (provider === "citybee") {
+      if (typeof price === "object") {
+        const daysText = price.days > 0 ? price.days + " days " : "";
+        const hoursText = price.hours > 0 ? price.hours + " hours " : "";
+        extraInfo += `Use package: ${daysText}${hoursText}${price.distance} km `;
+        price = price.price;
+      }
+      const cashback = price * 0.07;
+      extraInfo += `| Cashback ${cashback.toFixed(2)}€ `;
+    }
+    return { extraInfo, price };
   }
 
   _calculatePrice(provider, car, searchParamsObj) {
