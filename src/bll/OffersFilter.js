@@ -1,8 +1,24 @@
+
 export default class OffersFilter {
   filter(offers, filterConditionsObj) {
-    console.log("offers", offers);
-    console.log("filterConditionsObj", filterConditionsObj);
+    let filteredOffers = [...offers];
 
-    return [];
+    for (const condition in filterConditionsObj) {
+      switch (condition) {
+        case "bodyType":
+          filteredOffers = this._searchOffers(
+            filteredOffers,
+            filterConditionsObj[condition]
+          );
+          break;
+      }
+    }
+
+    return filteredOffers;
+  }
+
+  _searchOffers(offers, value) {
+    if (!value) return offers;
+    return offers.filter((offer) => offer.car.bodyType === value);
   }
 }
