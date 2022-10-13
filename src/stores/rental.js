@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import OffersCalculator from "../bll/calculations/OffersCalculator"
+import OffersCalculator from "../bll/calculations/OffersCalculator";
 
 export const useStore = defineStore({
   id: "store",
