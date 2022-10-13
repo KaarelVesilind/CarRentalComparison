@@ -16,6 +16,25 @@ export default class CityBeePriceCalculator {
       return 2.29;
     }
     // Calculate packages
+    let usePackage = this._calculatePackages(
+      car,
+      totalCost,
+      searchParamsObj,
+      totalTime,
+      price
+    );
+    if (
+      usePackage.days > 0 ||
+      usePackage.hours > 0 ||
+      usePackage.distance > 0
+    ) {
+      return usePackage;
+    } else {
+      return totalCost;
+    }
+  }
+
+  _calculatePackages(car, totalCost, searchParamsObj, totalTime, price) {
     const packages = car.packages;
     let usePackage = {
       days: 0,
@@ -34,6 +53,7 @@ export default class CityBeePriceCalculator {
         ) {
           usePackage = { ...option };
         }
+
         // if fits in the package with some extra time or distance
         else {
           let packageCostExtra = option.price;
@@ -61,15 +81,7 @@ export default class CityBeePriceCalculator {
         }
       }
     }
-    if (
-      usePackage.days > 0 ||
-      usePackage.hours > 0 ||
-      usePackage.distance > 0
-    ) {
-      return usePackage;
-    } else {
-      return totalCost;
-    }
+    return usePackage;
   }
 
   _calculateTime(totalTime, price) {
