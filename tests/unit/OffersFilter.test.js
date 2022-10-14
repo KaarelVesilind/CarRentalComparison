@@ -13,7 +13,7 @@ describe("Offers filter", function () {
     const _filterConditionsObj = JSON.parse(
       JSON.stringify(filterConditionsObj)
     );
-    _filterConditionsObj.bodyType = "HATCHBACK";
+    _filterConditionsObj.bodyType.HATCHBACK = true;
 
     // ACT
     const result = offersFilter.filter(offers, _filterConditionsObj);

@@ -1,5 +1,12 @@
 export const filterConditionsObj = {
-  bodyType: null,
+  bodyType: {
+    HATCHBACK: false,
+    SEDAN: false,
+    TOURING: false,
+    MINIVAN: false,
+    VAN: false,
+    CABRIOLET: false,
+  },
   cargo: false,
   petFriendly: false,
   gearBox: null,
