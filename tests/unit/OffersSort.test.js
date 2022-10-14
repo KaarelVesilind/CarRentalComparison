@@ -22,5 +22,6 @@ describe("Offers sort", function () {
       ),
       `List is not in descending order \n received: ${JSON.stringify(result)}`
     ).toBe(true);
+ 
   });
 });
