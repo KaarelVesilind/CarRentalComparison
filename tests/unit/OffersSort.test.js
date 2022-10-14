@@ -1,4 +1,3 @@
-import { bolt } from "../../src/providers/shortTerm/bolt";
 import OffersSort from "../../src/bll/OffersSort";
 import { SortState } from "../../src/models/enums/SortState";
 
@@ -7,8 +6,10 @@ describe("Offers sort", function () {
 
   test("price in descending order", async () => {
     // ARRANGE
-    const offers = bolt.cars.map((car, index) => {
-      return { price: index };
+    const offers = [...Array(10)].map(() => {
+      return {
+        price: Math.floor(Math.random() * 10000),
+      };
     });
 
     // ACT
@@ -16,7 +17,9 @@ describe("Offers sort", function () {
 
     // ASSERT
     expect(
-      result.every((offer, index) => result[index].price > offer.price),
+      result.every(
+        (offer, index) => index === 0 || offer.price <= result[index - 1].price
+      ),
       `List is not in descending order \n received: ${JSON.stringify(result)}`
     ).toBe(true);
   });
