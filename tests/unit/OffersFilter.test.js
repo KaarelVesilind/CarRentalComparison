@@ -19,4 +19,19 @@ describe("Offers filter", function () {
       expectedOffersIds.sort()
     );
   });
+
+  test("motor ELECTRIC", async () => {
+    // ARRANGE
+    const expectedOffersIds = [4, 8, 9, 10, 11, 12, 13];
+    const offers = offersTestData;
+    filterConditionsObj.motor.ELECTRIC = true;
+
+    // ACT
+    const result = offersFilter.filter(offers, filterConditionsObj);
+
+    // ASSERT
+    expect(result.map((offer) => offer.id).sort()).toEqual(
+      expectedOffersIds.sort()
+    );
+  });
 });
