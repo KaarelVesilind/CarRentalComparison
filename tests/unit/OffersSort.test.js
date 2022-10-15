@@ -46,7 +46,8 @@ describe("Offers sort", function () {
     // ASSERT
     expect(
       result.every(
-        (offer, index) => index === 0 || offer.name >= result[index - 1].name
+        (offer, index) =>
+          index === 0 || offer.car.name <= result[index - 1].car.name
       ),
       `List is not in descending order \n received: ${JSON.stringify(result)}`
     ).toBe(true);

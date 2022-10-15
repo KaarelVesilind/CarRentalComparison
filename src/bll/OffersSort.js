@@ -12,6 +12,11 @@ export default class OffersSort {
         offers.sort((offer1, offer2) =>
           offer1.provider.localeCompare(offer2.provider)
         );
+        break;
+      case "name":
+        offers.sort((offer1, offer2) =>
+          offer1.car.name.localeCompare(offer2.car.name)
+        );
       // TODO provider, mark, model, bodyType, gearbox
     }
 
