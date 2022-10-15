@@ -36,4 +36,19 @@ describe("Offers sort", function () {
       `List is not in descending order \n received: ${JSON.stringify(result)}`
     ).toBe(true);
   });
+
+  test("model names in descending order", async () => {
+    // ARRANGE
+    const offers = offersTestData;
+
+    // ACT
+    const result = offersSort.sort(offers, SortState.DOWN, "name");
+    // ASSERT
+    expect(
+      result.every(
+        (offer, index) => index === 0 || offer.name >= result[index - 1].name
+      ),
+      `List is not in descending order \n received: ${JSON.stringify(result)}`
+    ).toBe(true);
+  });
 });
