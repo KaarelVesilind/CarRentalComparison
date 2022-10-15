@@ -3,6 +3,139 @@ export const citybee = {
   cars: [
     {
       name: "Toyota Yaris",
+      bodyType: "HATCHBACK",
+      motor: "PETROL",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
+      price: {
+        km: 0.22,
+        minute: 0.13,
+        hour: 4.99,
+        day: 27.89,
+      },
+      packages: [
+        {
+          days: 0,
+          hours: 1,
+          distance: 10,
+          price: 7.49,
+        },
+        {
+          days: 0,
+          hours: 2,
+          distance: 20,
+          price: 13.99,
+        },
+        {
+          days: 0,
+          hours: 3,
+          distance: 30,
+          price: 19.99,
+        },
+        {
+          days: 1,
+          hours: 0,
+          distance: 50,
+          price: 31,
+        },
+        {
+          days: 1,
+          hours: 0,
+          distance: 150,
+          price: 49,
+        },
+        {
+          days: 1,
+          hours: 0,
+          distance: 250,
+          price: 64,
+        },
+        {
+          days: 1,
+          hours: 0,
+          distance: 350,
+          price: 85,
+        },
+        {
+          days: 2,
+          hours: 0,
+          distance: 100,
+          price: 60,
+        },
+        {
+          days: 2,
+          hours: 0,
+          distance: 250,
+          price: 85,
+        },
+        {
+          days: 2,
+          hours: 0,
+          distance: 400,
+          price: 108,
+        },
+        {
+          days: 3,
+          hours: 0,
+          distance: 175,
+          price: 96,
+        },
+        {
+          days: 3,
+          hours: 0,
+          distance: 300,
+          price: 116,
+        },
+        {
+          days: 3,
+          hours: 0,
+          distance: 500,
+          price: 148,
+        },
+        {
+          days: 7,
+          hours: 0,
+          distance: 600,
+          price: 222,
+        },
+        {
+          days: 7,
+          hours: 0,
+          distance: 900,
+          price: 283,
+        },
+        {
+          days: 14,
+          hours: 0,
+          distance: 600,
+          price: 401,
+        },
+        {
+          days: 14,
+          hours: 0,
+          distance: 1000,
+          price: 479,
+        },
+        {
+          days: 28,
+          hours: 0,
+          distance: 1800,
+          price: 706,
+        },
+        {
+          days: 28,
+          hours: 0,
+          distance: 2500,
+          price: 871,
+        },
+      ],
+    },
+    {
+      name: "Škoda Fabia",
+      bodyType: "HATCHBACK",
+      motor: "PETROL",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.22,
         minute: 0.13,
@@ -128,6 +261,10 @@ export const citybee = {
     },
     {
       name: "Peugeot 208",
+      bodyType: "HATCHBACK",
+      motor: "PETROL",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.22,
         minute: 0.13,
@@ -253,6 +390,139 @@ export const citybee = {
     },
     {
       name: "Citroen C3",
+      bodyType: "HATCHBACK",
+      motor: "PETROL",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
+      price: {
+        km: 0.22,
+        minute: 0.13,
+        hour: 4.99,
+        day: 27.89,
+      },
+      packages: [
+        {
+          days: 0,
+          hours: 1,
+          distance: 10,
+          price: 7.49,
+        },
+        {
+          days: 0,
+          hours: 2,
+          distance: 20,
+          price: 13.99,
+        },
+        {
+          days: 0,
+          hours: 3,
+          distance: 30,
+          price: 19.99,
+        },
+        {
+          days: 1,
+          hours: 0,
+          distance: 50,
+          price: 31,
+        },
+        {
+          days: 1,
+          hours: 0,
+          distance: 150,
+          price: 49,
+        },
+        {
+          days: 1,
+          hours: 0,
+          distance: 250,
+          price: 64,
+        },
+        {
+          days: 1,
+          hours: 0,
+          distance: 350,
+          price: 85,
+        },
+        {
+          days: 2,
+          hours: 0,
+          distance: 100,
+          price: 60,
+        },
+        {
+          days: 2,
+          hours: 0,
+          distance: 250,
+          price: 85,
+        },
+        {
+          days: 2,
+          hours: 0,
+          distance: 400,
+          price: 108,
+        },
+        {
+          days: 3,
+          hours: 0,
+          distance: 175,
+          price: 96,
+        },
+        {
+          days: 3,
+          hours: 0,
+          distance: 300,
+          price: 116,
+        },
+        {
+          days: 3,
+          hours: 0,
+          distance: 500,
+          price: 148,
+        },
+        {
+          days: 7,
+          hours: 0,
+          distance: 600,
+          price: 222,
+        },
+        {
+          days: 7,
+          hours: 0,
+          distance: 900,
+          price: 283,
+        },
+        {
+          days: 14,
+          hours: 0,
+          distance: 600,
+          price: 401,
+        },
+        {
+          days: 14,
+          hours: 0,
+          distance: 1000,
+          price: 479,
+        },
+        {
+          days: 28,
+          hours: 0,
+          distance: 1800,
+          price: 706,
+        },
+        {
+          days: 28,
+          hours: 0,
+          distance: 2500,
+          price: 871,
+        },
+      ],
+    },
+    {
+      name: "Renault Clio",
+      bodyType: "HATCHBACK",
+      motor: "PETROL",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.22,
         minute: 0.13,
@@ -378,6 +648,10 @@ export const citybee = {
     },
     {
       name: "Ford Fiesta",
+      bodyType: "HATCHBACK",
+      motor: "PETROL",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.22,
         minute: 0.13,
@@ -503,6 +777,10 @@ export const citybee = {
     },
     {
       name: "Toyota Corolla",
+      bodyType: "HATCHBACK",
+      motor: "PETROL",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.24,
         minute: 0.15,
@@ -628,6 +906,10 @@ export const citybee = {
     },
     {
       name: "Volkswagen Golf 8",
+      TbodyType: "HATCHBACK",
+      motor: "PETROL",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.24,
         minute: 0.21,
@@ -753,6 +1035,10 @@ export const citybee = {
     },
     {
       name: "Ford Focus",
+      bodyType: "HATCHBACK",
+      motor: "PETROL",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.24,
         minute: 0.21,
@@ -878,6 +1164,10 @@ export const citybee = {
     },
     {
       name: "BMW 118i",
+      bodyType: "HATCHBACK",
+      motor: "PETROL",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.26,
         minute: 0.23,
@@ -1003,6 +1293,10 @@ export const citybee = {
     },
     {
       name: "Volkswagen T-Cross",
+      bodyType: "TOURING",
+      motor: "PETROL",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.24,
         minute: 0.16,
@@ -1128,6 +1422,10 @@ export const citybee = {
     },
     {
       name: "Nissan Juke",
+      bodyType: "TOURING",
+      motor: "PETROL",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.24,
         minute: 0.16,
@@ -1253,6 +1551,10 @@ export const citybee = {
     },
     {
       name: "Volkswagen T-Roc",
+      bodyType: "TOURING",
+      motor: "PETROL",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.24,
         minute: 0.16,
@@ -1378,6 +1680,10 @@ export const citybee = {
     },
     {
       name: "Volkswagen T-Roc R-Line",
+      bodyType: "TOURING",
+      motor: "PETROL",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.26,
         minute: 0.18,
@@ -1503,6 +1809,10 @@ export const citybee = {
     },
     {
       name: "Toyota C-HR",
+      bodyType: "TOURING",
+      motor: "PETROL",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.24,
         minute: 0.19,
@@ -1628,6 +1938,10 @@ export const citybee = {
     },
     {
       name: "Toyota Yaris Cross",
+      bodyType: "TOURING",
+      motor: "PETROL",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.24,
         minute: 0.2,
@@ -1753,6 +2067,10 @@ export const citybee = {
     },
     {
       name: "Volkswagen Taigo",
+      bodyType: "TOURING",
+      motor: "PETROL",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.24,
         minute: 0.2,
@@ -1878,6 +2196,10 @@ export const citybee = {
     },
     {
       name: "Peugeot 2008",
+      bodyType: "TOURING",
+      motor: "PETROL",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.24,
         minute: 0.21,
@@ -2013,6 +2335,10 @@ export const citybee = {
     },
     {
       name: "Ford Kuga",
+      bodyType: "TOURING",
+      motor: "PETROL",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.26,
         minute: 0.23,
@@ -2138,6 +2464,10 @@ export const citybee = {
     },
     {
       name: "Toyota RAV4",
+      bodyType: "TOURING",
+      motor: "PETROL",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.27,
         minute: 0.24,
@@ -2263,6 +2593,10 @@ export const citybee = {
     },
     {
       name: "BMW X1",
+      bodyType: "TOURING",
+      motor: "PETROL",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.29,
         minute: 0.27,
@@ -2388,6 +2722,10 @@ export const citybee = {
     },
     {
       name: "Skoda Kamiq",
+      bodyType: "TOURING",
+      motor: "PETROL",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.25,
         minute: 0.16,
@@ -2513,6 +2851,10 @@ export const citybee = {
     },
     {
       name: "Nissan Qashqai",
+      bodyType: "TOURING",
+      motor: "PETROL",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.26,
         minute: 0.23,
@@ -2638,6 +2980,10 @@ export const citybee = {
     },
     {
       name: "Volkswagen Crafter",
+      bodyType: "VAN",
+      motor: "PETROL",
+      petFriendly: true,
+      gearBox: "MANUAL",
       price: {
         km: 0.27,
         minute: 0.27,
@@ -2645,6 +2991,43 @@ export const citybee = {
         day: 39.9,
       },
       packages: [
+        {
+          days: 0,
+          hours: 1,
+          distance: 10,
+          price: 11.49,
+        },
+        {
+          days: 0,
+          hours: 2,
+          distance: 20,
+          price: 22.49,
+        },
+        {
+          days: 0,
+          hours: 3,
+          distance: 30,
+          price: 32.99,
+        },
+        {
+          days: 1,
+          hours: 0,
+          distance: 50,
+          price: 50,
+        },
+
+        {
+          days: 2,
+          hours: 0,
+          distance: 50,
+          price: 85,
+        },
+        {
+          days: 3,
+          hours: 0,
+          distance: 50,
+          price: 118,
+        },
         {
           days: 7,
           hours: 0,
@@ -2667,6 +3050,10 @@ export const citybee = {
     },
     {
       name: "Renault Master",
+      bodyType: "VAN",
+      motor: "PETROL",
+      petFriendly: true,
+      gearBox: "MANUAL",
       price: {
         km: 0.27,
         minute: 0.27,
@@ -2674,6 +3061,113 @@ export const citybee = {
         day: 39.9,
       },
       packages: [
+        {
+          days: 0,
+          hours: 1,
+          distance: 10,
+          price: 11.49,
+        },
+        {
+          days: 0,
+          hours: 2,
+          distance: 20,
+          price: 22.49,
+        },
+        {
+          days: 0,
+          hours: 3,
+          distance: 30,
+          price: 32.99,
+        },
+        {
+          days: 1,
+          hours: 0,
+          distance: 50,
+          price: 50,
+        },
+
+        {
+          days: 2,
+          hours: 0,
+          distance: 50,
+          price: 85,
+        },
+        {
+          days: 3,
+          hours: 0,
+          distance: 50,
+          price: 118,
+        },
+        {
+          days: 7,
+          hours: 0,
+          distance: 100,
+          price: 260,
+        },
+        {
+          days: 14,
+          hours: 0,
+          distance: 200,
+          price: 520,
+        },
+        {
+          days: 28,
+          hours: 0,
+          distance: 750,
+          price: 800,
+        },
+      ],
+    },
+    {
+      name: "Ford Transit",
+      bodyType: "VAN",
+      motor: "PETROL",
+      petFriendly: true,
+      gearBox: "MANUAL",
+      price: {
+        km: 0.27,
+        minute: 0.27,
+        hour: 8.9,
+        day: 39.9,
+      },
+      packages: [
+        {
+          days: 0,
+          hours: 1,
+          distance: 10,
+          price: 11.49,
+        },
+        {
+          days: 0,
+          hours: 2,
+          distance: 20,
+          price: 22.49,
+        },
+        {
+          days: 0,
+          hours: 3,
+          distance: 30,
+          price: 32.99,
+        },
+        {
+          days: 1,
+          hours: 0,
+          distance: 50,
+          price: 50,
+        },
+
+        {
+          days: 2,
+          hours: 0,
+          distance: 50,
+          price: 85,
+        },
+        {
+          days: 3,
+          hours: 0,
+          distance: 50,
+          price: 118,
+        },
         {
           days: 7,
           hours: 0,

@@ -4,6 +4,9 @@ export const bolt = {
     {
       name: "Toyota Corolla",
       bodyType: "HATCHBACK",
+      motor: "PETROL",
+      petFriendly: true,
+      gearBox: "MANUAL",
       price: {
         km: 0.24,
         minute: 0.14,
