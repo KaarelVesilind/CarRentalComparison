@@ -4,7 +4,7 @@ export const elmo = {
     {
       name: "Rent1",
       bodyType: "HATCHBACK",
-      motor: "HYBRID",
+      motor: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       cars: [
@@ -13,7 +13,6 @@ export const elmo = {
         "Toyota Yaris",
         "Nissan Leaf",
       ],
-
       price: {
         km: 0.2,
         minute: 0.11,
@@ -26,7 +25,7 @@ export const elmo = {
     {
       name: "Rent2",
       bodyType: "HATCHBACK",
-      motor: "HYBRID",
+      motor: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       cars: ["Volkswagen e-Up '20", "Renault Clio"],
@@ -58,7 +57,7 @@ export const elmo = {
     {
       name: "Rent4",
       bodyType: "TOURING",
-      motor: "HYBRID",
+      motor: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       cars: ["Renault Arkana", "Audi A5"],

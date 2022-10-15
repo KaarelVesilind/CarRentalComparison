@@ -3,6 +3,10 @@ export const beast = {
   cars: [
     {
       name: "Tesla Model 3 Standard Range",
+      bodyType: "SEDAN",
+      motor: "ELECTRIC",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.2,
         first30mins: 14.99,
@@ -14,6 +18,10 @@ export const beast = {
     },
     {
       name: "Tesla Model 3 Long Range",
+      bodyType: "SEDAN",
+      motor: "ELECTRIC",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.2,
         first30mins: 19.99,
@@ -25,6 +33,10 @@ export const beast = {
     },
     {
       name: "Tesla Model 3 Performance",
+      bodyType: "SEDAN",
+      motor: "ELECTRIC",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.2,
         first30mins: 24.99,
@@ -36,6 +48,10 @@ export const beast = {
     },
     {
       name: "Tesla Model Y Long Range",
+      bodyType: "TOURING",
+      motor: "ELECTRIC",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.25,
         first30mins: 24.99,
@@ -47,6 +63,10 @@ export const beast = {
     },
     {
       name: "Tesla Model X Ludicrous Perf",
+      bodyType: "TOURING",
+      motor: "ELECTRIC",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.3,
         first30mins: 39.99,

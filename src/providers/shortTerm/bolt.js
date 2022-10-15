@@ -4,9 +4,9 @@ export const bolt = {
     {
       name: "Toyota Corolla",
       bodyType: "HATCHBACK",
-      motor: "PETROL",
+      motor: "HYBRID",
       petFriendly: true,
-      gearBox: "MANUAL",
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.24,
         minute: 0.14,
@@ -26,6 +26,9 @@ export const bolt = {
     {
       name: "Audi A1",
       bodyType: "HATCHBACK",
+      motor: "PETROL",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.22,
         minute: 0.16,
@@ -36,6 +39,9 @@ export const bolt = {
     {
       name: "Audi A3",
       bodyType: "HATCHBACK",
+      motor: "PETROL",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.24,
         minute: 0.16,
@@ -46,6 +52,9 @@ export const bolt = {
     {
       name: "Hyundai i20",
       bodyType: "HATCHBACK",
+      motor: "PETROL",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.23,
         minute: 0.12,
@@ -56,6 +65,9 @@ export const bolt = {
     {
       name: "Toyota Yaris",
       bodyType: "HATCHBACK",
+      motor: "HYBRID",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.2,
         minute: 0.12,
@@ -65,7 +77,10 @@ export const bolt = {
     },
     {
       name: "Škoda Scala",
-      bodyType: "WAGON",
+      bodyType: "TOURING",
+      motor: "PETROL",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.24,
         minute: 0.14,
@@ -76,6 +91,9 @@ export const bolt = {
     {
       name: "Škoda Fabia",
       bodyType: "HATCHBACK",
+      motor: "PETROL",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.23,
         minute: 0.12,
@@ -86,6 +104,9 @@ export const bolt = {
     {
       name: "VW ID.3",
       bodyType: "HATCHBACK",
+      motor: "ELECTRIC",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.24,
         minute: 0.14,
@@ -96,6 +117,9 @@ export const bolt = {
     {
       name: "Toyota Yaris Cross",
       bodyType: "TOURING",
+      motor: "HYBRID",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.24,
         minute: 0.14,
@@ -106,6 +130,9 @@ export const bolt = {
     {
       name: "VW T-Cross",
       bodyType: "TOURING",
+      motor: "PETROL",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.24,
         minute: 0.15,
@@ -116,6 +143,9 @@ export const bolt = {
     {
       name: "Audi Q2",
       bodyType: "TOURING",
+      motor: "PETROL",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.24,
         minute: 0.16,
@@ -126,6 +156,9 @@ export const bolt = {
     {
       name: "VW T-Roc",
       bodyType: "TOURING",
+      motor: "PETROL",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.24,
         minute: 0.15,
@@ -136,6 +169,9 @@ export const bolt = {
     {
       name: "Škoda Kamiq",
       bodyType: "TOURING",
+      motor: "PETROL",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.24,
         minute: 0.14,
@@ -145,6 +181,10 @@ export const bolt = {
     },
     {
       name: "Toyota C-HR",
+      bodyType: "TOURING",
+      motor: "HYBRID",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.24,
         minute: 0.14,
@@ -155,6 +195,9 @@ export const bolt = {
     {
       name: "Audi e-tron",
       bodyType: "TOURING",
+      motor: "ELECTRIC",
+      petFriendly: false,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.25,
         minute: 0.69,
@@ -165,6 +208,9 @@ export const bolt = {
     {
       name: "Toyota RAV4",
       bodyType: "TOURING",
+      motor: "PETROL",
+      petFriendly: false,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.25,
         minute: 0.3,
@@ -175,6 +221,9 @@ export const bolt = {
     {
       name: "BMW 4 Convertible",
       bodyType: "CABRIOLET",
+      motor: "PETROL",
+      petFriendly: false,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.35,
         minute: 0.49,
@@ -185,6 +234,9 @@ export const bolt = {
     {
       name: "VW T-Roc Cabrio",
       bodyType: "CABRIOLET",
+      motor: "PETROL",
+      petFriendly: false,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.25,
         minute: 0.3,
@@ -195,6 +247,9 @@ export const bolt = {
     {
       name: "VW Arteon",
       bodyType: "TOURING",
+      motor: "PETROL",
+      petFriendly: false,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.25,
         minute: 0.3,
@@ -205,6 +260,9 @@ export const bolt = {
     {
       name: "Toyota Land Cruiser",
       bodyType: "TOURING",
+      motor: "PETROL",
+      petFriendly: false,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.34,
         minute: 0.49,
@@ -215,6 +273,9 @@ export const bolt = {
     {
       name: "Mercedes Sprinter",
       bodyType: "VAN",
+      motor: "PETROL",
+      petFriendly: false,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.27,
         minute: 0.15,
@@ -225,6 +286,22 @@ export const bolt = {
     {
       name: "VW Crafter",
       bodyType: "VAN",
+      motor: "PETROL",
+      petFriendly: false,
+      gearBox: "AUTOMATIC",
+      price: {
+        km: 0.27,
+        minute: 0.13,
+        hour: 6.9,
+        day: 35.9,
+      },
+    },
+    {
+      name: "VW Crafter",
+      bodyType: "VAN",
+      motor: "ELECTRIC",
+      petFriendly: false,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.27,
         minute: 0.13,
@@ -235,6 +312,9 @@ export const bolt = {
     {
       name: "Audi Q8",
       bodyType: "TOURING",
+      motor: "PETROL",
+      petFriendly: false,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.35,
         minute: 0.84,
