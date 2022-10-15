@@ -17,7 +17,7 @@ export default class OffersSort {
         offers.sort((offer1, offer2) =>
           offer1.car.name.localeCompare(offer2.car.name)
         );
-      // TODO provider, mark, model, bodyType, gearbox
+      // TODO bodyType, gearbox
     }
 
     if (sortState === SortState.DOWN) offers.reverse();

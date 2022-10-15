@@ -52,4 +52,17 @@ describe("Offers sort", function () {
       `List is not in descending order \n received: ${JSON.stringify(result)}`
     ).toBe(true);
   });
+
+  test("model names in original order", async () => {
+    // ARRANGE
+    const offers = offersTestData;
+
+    // ACT
+    const result = offersSort.sort(offers, SortState.NONE, "name");
+    // ASSERT
+    expect(
+      result,
+      `List is not in descending order \n received: ${JSON.stringify(result)}`
+    ).toEqual(offers);
+  });
 });

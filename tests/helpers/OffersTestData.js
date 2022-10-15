@@ -8,7 +8,7 @@ export const offersTestData = [
       petFriendly: true,
       gearBox: "AUTOMATIC",
     },
-    price: 1,
+    price: 0,
     provider: "bolt",
   },
   {
@@ -20,7 +20,7 @@ export const offersTestData = [
       petFriendly: false,
       gearBox: "AUTOMATIC",
     },
-    price: 1,
+    price: 72.5,
     provider: "bolt",
   },
   {
@@ -32,7 +32,7 @@ export const offersTestData = [
       petFriendly: false,
       gearBox: "AUTOMATIC",
     },
-    price: 1,
+    price: 72.5,
     provider: "bolt",
   },
   {
@@ -44,7 +44,7 @@ export const offersTestData = [
       petFriendly: true,
       gearBox: "AUTOMATIC",
     },
-    price: 1,
+    price: 72.5,
     provider: "bolt",
   },
   {
@@ -56,7 +56,7 @@ export const offersTestData = [
       petFriendly: true,
       gearBox: "AUTOMATIC",
     },
-    price: 1,
+    price: 3.2,
     provider: "citybee",
   },
   {
@@ -68,7 +68,7 @@ export const offersTestData = [
       petFriendly: true,
       gearBox: "MANUAL",
     },
-    price: 1,
+    price: 666.56,
     provider: "citybee",
   },
   {
@@ -80,7 +80,7 @@ export const offersTestData = [
       petFriendly: true,
       gearBox: "AUTOMATIC",
     },
-    price: 1,
+    price: 43.5,
     provider: "citybee",
   },
   {
@@ -92,7 +92,7 @@ export const offersTestData = [
       petFriendly: true,
       gearBox: "AUTOMATIC",
     },
-    price: 1,
+    price: 12.4,
     provider: "beast",
   },
   {
@@ -104,7 +104,7 @@ export const offersTestData = [
       petFriendly: true,
       gearBox: "AUTOMATIC",
     },
-    price: 1,
+    price: 22.5,
     provider: "beast",
   },
   {
@@ -116,7 +116,7 @@ export const offersTestData = [
       petFriendly: true,
       gearBox: "AUTOMATIC",
     },
-    price: 1,
+    price: 32.06,
     provider: "beast",
   },
   {
@@ -134,7 +134,7 @@ export const offersTestData = [
         "Nissan Leaf",
       ],
     },
-    price: 1,
+    price: 75,
     provider: "elmo",
   },
   {
@@ -147,7 +147,7 @@ export const offersTestData = [
       gearBox: "AUTOMATIC",
       cars: ["Tesla Model 3 SR+"],
     },
-    price: 1,
+    price: 88,
     provider: "elmo",
   },
   {
@@ -160,7 +160,7 @@ export const offersTestData = [
       gearBox: "AUTOMATIC",
       cars: ["Renault Zoe", "Peugeot e-208 GT"],
     },
-    price: 1,
+    price: 999,
     provider: "elmo",
   },
 ];
