@@ -20,7 +20,7 @@ describe("Offers filter", function () {
     );
   });
 
-  test("motor ELECTRIC", async () => {
+  test("motorType ELECTRIC", async () => {
     // ARRANGE
     const expectedOffersIds = [4, 8, 9, 10, 11, 12, 13];
     const offers = offersTestData;

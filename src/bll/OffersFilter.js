@@ -10,6 +10,12 @@ export default class OffersFilter {
             filterConditionsObj[condition]
           );
           break;
+        case "motorType":
+          filteredOffers = this._searchMotor(
+            filteredOffers,
+            filterConditionsObj[condition]
+          );
+          break;
         // TODO cargo, petFriendly, gearBox, provider
       }
     }
@@ -21,5 +27,13 @@ export default class OffersFilter {
     const haveSomeBodyType = Object.values(value).some((bodyType) => bodyType);
     if (!haveSomeBodyType) return offers;
     return offers.filter((offer) => value[offer.car.bodyType]);
+  }
+
+  _searchMotor(offers, value) {
+    const haveSomeMotorType = Object.values(value).some(
+      (motorType) => motorType
+    );
+    if (!haveSomeMotorType) return offers;
+    return offers.filter((offer) => value[offer.car.motorType]);
   }
 }
