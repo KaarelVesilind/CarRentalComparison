@@ -1,24 +1,22 @@
 import OffersFilter from "../../src/bll/OffersFilter";
-import { bolt } from "../../src/providers/shortTerm/bolt";
+import { offersTestData } from "../helpers/OffersTestData";
 import { filterConditionsObj } from "../../src/models/FilterConditionsObj";
 
 describe("Offers filter", function () {
   const offersFilter = new OffersFilter();
 
-  test("bodyType HATCHBACK count", async () => {
+  test("bodyType HATCHBACK", async () => {
     // ARRANGE
-    const offers = bolt.cars.map((car) => {
-      return { car };
-    });
-    const _filterConditionsObj = JSON.parse(
-      JSON.stringify(filterConditionsObj)
-    );
-    _filterConditionsObj.bodyType.HATCHBACK = true;
+    const expectedOffersIds = [4, 1, 5, 11, 13];
+    const offers = offersTestData;
+    filterConditionsObj.bodyType.HATCHBACK = true;
 
     // ACT
-    const result = offersFilter.filter(offers, _filterConditionsObj);
+    const result = offersFilter.filter(offers, filterConditionsObj);
 
     // ASSERT
-    expect(result.length).toBe(7);
+    expect(result.map((offer) => offer.id).sort()).toEqual(
+      expectedOffersIds.sort()
+    );
   });
 });
