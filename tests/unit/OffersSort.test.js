@@ -1,16 +1,13 @@
 import OffersSort from "../../src/bll/OffersSort";
 import { SortState } from "../../src/models/enums/SortState";
+import { offersTestData } from "../helpers/OffersTestData";
 
 describe("Offers sort", function () {
   const offersSort = new OffersSort();
 
   test("price in descending order", async () => {
     // ARRANGE
-    const offers = [...Array(10)].map(() => {
-      return {
-        price: Math.floor(Math.random() * 10000),
-      };
-    });
+    const offers = offersTestData;
 
     // ACT
     const result = offersSort.sort(offers, SortState.DOWN, "price");
@@ -22,6 +19,22 @@ describe("Offers sort", function () {
       ),
       `List is not in descending order \n received: ${JSON.stringify(result)}`
     ).toBe(true);
- 
+  });
+
+  test("providers in ascending order", async () => {
+    // ARRANGE
+    const offers = offersTestData;
+
+    // ACT
+    const result = offersSort.sort(offers, SortState.UP, "provider");
+
+    // ASSERT
+    expect(
+      result.every(
+        (offer, index) =>
+          index === 0 || offer.provider <= result[index - 1].provider
+      ),
+      `List is not in descending order \n received: ${JSON.stringify(result)}`
+    ).toBe(true);
   });
 });
