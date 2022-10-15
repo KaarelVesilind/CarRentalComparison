@@ -37,7 +37,7 @@ describe("Offers filter", function () {
 
   test("betFriendly true", async () => {
     // ARRANGE
-    const expectedOffersIds = [1, 4, 5, 6, 7, 8, 9, 10, 12, 13];
+    const expectedOffersIds = [1, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
     const offers = offersTestData;
     filterConditionsObj.petFriendly = true;
 

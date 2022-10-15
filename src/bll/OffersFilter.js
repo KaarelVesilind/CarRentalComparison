@@ -16,7 +16,13 @@ export default class OffersFilter {
             filterConditionsObj[condition]
           );
           break;
-        // TODO cargo, petFriendly, gearBox, provider
+        case "petFriendly":
+          filteredOffers = this._searchPetFriendly(
+            filteredOffers,
+            filterConditionsObj[condition]
+          );
+          break;
+        // TODO gearBox, provider, multiple filters, no filters,
       }
     }
 
@@ -35,5 +41,10 @@ export default class OffersFilter {
     );
     if (!haveSomeMotorType) return offers;
     return offers.filter((offer) => value[offer.car.motorType]);
+  }
+
+  _searchPetFriendly(offers, value) {
+    if (!value) return offers;
+    return offers.filter((offer) => offer.car.petFriendly);
   }
 }
