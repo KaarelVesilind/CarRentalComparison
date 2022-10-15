@@ -4,7 +4,7 @@ export const elmo = {
     {
       name: "Rent1",
       bodyType: "HATCHBACK",
-      motor: "ELECTRIC",
+      motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       cars: [
@@ -25,7 +25,7 @@ export const elmo = {
     {
       name: "Rent2",
       bodyType: "HATCHBACK",
-      motor: "ELECTRIC",
+      motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       cars: ["Volkswagen e-Up '20", "Renault Clio"],
@@ -41,7 +41,7 @@ export const elmo = {
     {
       name: "Rent3",
       bodyType: "HATCHBACK",
-      motor: "ELECTRIC",
+      motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       cars: ["Renault Zoe", "Peugeot e-208 GT"],
@@ -57,7 +57,7 @@ export const elmo = {
     {
       name: "Rent4",
       bodyType: "TOURING",
-      motor: "ELECTRIC",
+      motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       cars: ["Renault Arkana", "Audi A5"],
@@ -73,7 +73,7 @@ export const elmo = {
     {
       name: "Rent5",
       bodyType: "SEDAN",
-      motor: "ELECTRIC",
+      motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       cars: ["Tesla Model 3 SR+"],

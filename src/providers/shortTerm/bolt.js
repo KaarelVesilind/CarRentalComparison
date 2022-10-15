@@ -4,7 +4,7 @@ export const bolt = {
     {
       name: "Toyota Corolla",
       bodyType: "HATCHBACK",
-      motor: "HYBRID",
+      motorType: "HYBRID",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       price: {
@@ -26,7 +26,7 @@ export const bolt = {
     {
       name: "Audi A1",
       bodyType: "HATCHBACK",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       price: {
@@ -39,7 +39,7 @@ export const bolt = {
     {
       name: "Audi A3",
       bodyType: "HATCHBACK",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       price: {
@@ -52,7 +52,7 @@ export const bolt = {
     {
       name: "Hyundai i20",
       bodyType: "HATCHBACK",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       price: {
@@ -65,7 +65,7 @@ export const bolt = {
     {
       name: "Toyota Yaris",
       bodyType: "HATCHBACK",
-      motor: "HYBRID",
+      motorType: "HYBRID",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       price: {
@@ -78,7 +78,7 @@ export const bolt = {
     {
       name: "Škoda Scala",
       bodyType: "TOURING",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       price: {
@@ -91,7 +91,7 @@ export const bolt = {
     {
       name: "Škoda Fabia",
       bodyType: "HATCHBACK",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       price: {
@@ -104,7 +104,7 @@ export const bolt = {
     {
       name: "VW ID.3",
       bodyType: "HATCHBACK",
-      motor: "ELECTRIC",
+      motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       price: {
@@ -117,7 +117,7 @@ export const bolt = {
     {
       name: "Toyota Yaris Cross",
       bodyType: "TOURING",
-      motor: "HYBRID",
+      motorType: "HYBRID",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       price: {
@@ -130,7 +130,7 @@ export const bolt = {
     {
       name: "VW T-Cross",
       bodyType: "TOURING",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       price: {
@@ -143,7 +143,7 @@ export const bolt = {
     {
       name: "Audi Q2",
       bodyType: "TOURING",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       price: {
@@ -156,7 +156,7 @@ export const bolt = {
     {
       name: "VW T-Roc",
       bodyType: "TOURING",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       price: {
@@ -169,7 +169,7 @@ export const bolt = {
     {
       name: "Škoda Kamiq",
       bodyType: "TOURING",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       price: {
@@ -182,7 +182,7 @@ export const bolt = {
     {
       name: "Toyota C-HR",
       bodyType: "TOURING",
-      motor: "HYBRID",
+      motorType: "HYBRID",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       price: {
@@ -195,7 +195,7 @@ export const bolt = {
     {
       name: "Audi e-tron",
       bodyType: "TOURING",
-      motor: "ELECTRIC",
+      motorType: "ELECTRIC",
       petFriendly: false,
       gearBox: "AUTOMATIC",
       price: {
@@ -208,7 +208,7 @@ export const bolt = {
     {
       name: "Toyota RAV4",
       bodyType: "TOURING",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: false,
       gearBox: "AUTOMATIC",
       price: {
@@ -221,7 +221,7 @@ export const bolt = {
     {
       name: "BMW 4 Convertible",
       bodyType: "CABRIOLET",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: false,
       gearBox: "AUTOMATIC",
       price: {
@@ -234,7 +234,7 @@ export const bolt = {
     {
       name: "VW T-Roc Cabrio",
       bodyType: "CABRIOLET",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: false,
       gearBox: "AUTOMATIC",
       price: {
@@ -247,7 +247,7 @@ export const bolt = {
     {
       name: "VW Arteon",
       bodyType: "TOURING",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: false,
       gearBox: "AUTOMATIC",
       price: {
@@ -260,7 +260,7 @@ export const bolt = {
     {
       name: "Toyota Land Cruiser",
       bodyType: "TOURING",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: false,
       gearBox: "AUTOMATIC",
       price: {
@@ -273,7 +273,7 @@ export const bolt = {
     {
       name: "Mercedes Sprinter",
       bodyType: "VAN",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: false,
       gearBox: "AUTOMATIC",
       price: {
@@ -286,7 +286,7 @@ export const bolt = {
     {
       name: "VW Crafter",
       bodyType: "VAN",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: false,
       gearBox: "AUTOMATIC",
       price: {
@@ -299,7 +299,7 @@ export const bolt = {
     {
       name: "VW Crafter",
       bodyType: "VAN",
-      motor: "ELECTRIC",
+      motorType: "ELECTRIC",
       petFriendly: false,
       gearBox: "AUTOMATIC",
       price: {
@@ -312,7 +312,7 @@ export const bolt = {
     {
       name: "Audi Q8",
       bodyType: "TOURING",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: false,
       gearBox: "AUTOMATIC",
       price: {

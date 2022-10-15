@@ -4,7 +4,7 @@ export const beast = {
     {
       name: "Tesla Model 3 Standard Range",
       bodyType: "SEDAN",
-      motor: "ELECTRIC",
+      motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       price: {
@@ -19,7 +19,7 @@ export const beast = {
     {
       name: "Tesla Model 3 Long Range",
       bodyType: "SEDAN",
-      motor: "ELECTRIC",
+      motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       price: {
@@ -34,7 +34,7 @@ export const beast = {
     {
       name: "Tesla Model 3 Performance",
       bodyType: "SEDAN",
-      motor: "ELECTRIC",
+      motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       price: {
@@ -49,7 +49,7 @@ export const beast = {
     {
       name: "Tesla Model Y Long Range",
       bodyType: "TOURING",
-      motor: "ELECTRIC",
+      motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       price: {
@@ -64,7 +64,7 @@ export const beast = {
     {
       name: "Tesla Model X Ludicrous Perf",
       bodyType: "TOURING",
-      motor: "ELECTRIC",
+      motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       price: {

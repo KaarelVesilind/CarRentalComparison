@@ -4,7 +4,7 @@ export const citybee = {
     {
       name: "Toyota Yaris",
       bodyType: "HATCHBACK",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       price: {
@@ -133,7 +133,7 @@ export const citybee = {
     {
       name: "Škoda Fabia",
       bodyType: "HATCHBACK",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       price: {
@@ -262,7 +262,7 @@ export const citybee = {
     {
       name: "Peugeot 208",
       bodyType: "HATCHBACK",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       price: {
@@ -391,7 +391,7 @@ export const citybee = {
     {
       name: "Citroen C3",
       bodyType: "HATCHBACK",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       price: {
@@ -520,7 +520,7 @@ export const citybee = {
     {
       name: "Renault Clio",
       bodyType: "HATCHBACK",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       price: {
@@ -649,7 +649,7 @@ export const citybee = {
     {
       name: "Ford Fiesta",
       bodyType: "HATCHBACK",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       price: {
@@ -778,7 +778,7 @@ export const citybee = {
     {
       name: "Toyota Corolla",
       bodyType: "HATCHBACK",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       price: {
@@ -907,7 +907,7 @@ export const citybee = {
     {
       name: "Volkswagen Golf 8",
       TbodyType: "HATCHBACK",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       price: {
@@ -1036,7 +1036,7 @@ export const citybee = {
     {
       name: "Ford Focus",
       bodyType: "HATCHBACK",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       price: {
@@ -1165,7 +1165,7 @@ export const citybee = {
     {
       name: "BMW 118i",
       bodyType: "HATCHBACK",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       price: {
@@ -1294,7 +1294,7 @@ export const citybee = {
     {
       name: "Volkswagen T-Cross",
       bodyType: "TOURING",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       price: {
@@ -1423,7 +1423,7 @@ export const citybee = {
     {
       name: "Nissan Juke",
       bodyType: "TOURING",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       price: {
@@ -1552,7 +1552,7 @@ export const citybee = {
     {
       name: "Volkswagen T-Roc",
       bodyType: "TOURING",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       price: {
@@ -1681,7 +1681,7 @@ export const citybee = {
     {
       name: "Volkswagen T-Roc R-Line",
       bodyType: "TOURING",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       price: {
@@ -1810,7 +1810,7 @@ export const citybee = {
     {
       name: "Toyota C-HR",
       bodyType: "TOURING",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       price: {
@@ -1939,7 +1939,7 @@ export const citybee = {
     {
       name: "Toyota Yaris Cross",
       bodyType: "TOURING",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       price: {
@@ -2068,7 +2068,7 @@ export const citybee = {
     {
       name: "Volkswagen Taigo",
       bodyType: "TOURING",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       price: {
@@ -2197,7 +2197,7 @@ export const citybee = {
     {
       name: "Peugeot 2008",
       bodyType: "TOURING",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       price: {
@@ -2210,6 +2210,10 @@ export const citybee = {
     },
     {
       name: "Jeep Compass",
+      bodyType: "TOURING",
+      motorType: "PETROL",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
       price: {
         km: 0.26,
         minute: 0.23,
@@ -2336,7 +2340,7 @@ export const citybee = {
     {
       name: "Ford Kuga",
       bodyType: "TOURING",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       price: {
@@ -2465,7 +2469,7 @@ export const citybee = {
     {
       name: "Toyota RAV4",
       bodyType: "TOURING",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       price: {
@@ -2594,7 +2598,7 @@ export const citybee = {
     {
       name: "BMW X1",
       bodyType: "TOURING",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       price: {
@@ -2723,7 +2727,7 @@ export const citybee = {
     {
       name: "Skoda Kamiq",
       bodyType: "TOURING",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       price: {
@@ -2852,7 +2856,7 @@ export const citybee = {
     {
       name: "Nissan Qashqai",
       bodyType: "TOURING",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       price: {
@@ -2981,7 +2985,7 @@ export const citybee = {
     {
       name: "Volkswagen Crafter",
       bodyType: "VAN",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: true,
       gearBox: "MANUAL",
       price: {
@@ -3051,7 +3055,7 @@ export const citybee = {
     {
       name: "Renault Master",
       bodyType: "VAN",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: true,
       gearBox: "MANUAL",
       price: {
@@ -3121,7 +3125,7 @@ export const citybee = {
     {
       name: "Ford Transit",
       bodyType: "VAN",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: true,
       gearBox: "MANUAL",
       price: {

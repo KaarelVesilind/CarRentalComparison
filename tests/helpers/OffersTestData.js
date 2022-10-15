@@ -4,7 +4,7 @@ export const offersTestData = [
     car: {
       name: "Toyota Corolla",
       bodyType: "HATCHBACK",
-      motor: "HYBRID",
+      motorType: "HYBRID",
       petFriendly: true,
       gearBox: "AUTOMATIC",
     },
@@ -16,7 +16,7 @@ export const offersTestData = [
     car: {
       name: "Toyota Land Cruiser",
       bodyType: "TOURING",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: false,
       gearBox: "AUTOMATIC",
     },
@@ -28,7 +28,7 @@ export const offersTestData = [
     car: {
       name: "VW Crafter",
       bodyType: "VAN",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: false,
       gearBox: "AUTOMATIC",
     },
@@ -40,7 +40,7 @@ export const offersTestData = [
     car: {
       name: "VW ID.3",
       bodyType: "HATCHBACK",
-      motor: "ELECTRIC",
+      motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
     },
@@ -52,7 +52,7 @@ export const offersTestData = [
     car: {
       name: "Peugeot 208",
       bodyType: "HATCHBACK",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
     },
@@ -64,7 +64,7 @@ export const offersTestData = [
     car: {
       name: "Ford Transit",
       bodyType: "VAN",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: true,
       gearBox: "MANUAL",
     },
@@ -76,7 +76,7 @@ export const offersTestData = [
     car: {
       name: "BMW X1",
       bodyType: "TOURING",
-      motor: "PETROL",
+      motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
     },
@@ -88,7 +88,7 @@ export const offersTestData = [
     car: {
       name: "Tesla Model 3 Standard Range",
       bodyType: "SEDAN",
-      motor: "ELECTRIC",
+      motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
     },
@@ -100,7 +100,7 @@ export const offersTestData = [
     car: {
       name: "Tesla Model X Ludicrous Perf",
       bodyType: "TOURING",
-      motor: "ELECTRIC",
+      motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
     },
@@ -112,7 +112,7 @@ export const offersTestData = [
     car: {
       name: "Tesla Model 3 Performance",
       bodyType: "SEDAN",
-      motor: "ELECTRIC",
+      motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
     },
@@ -124,7 +124,7 @@ export const offersTestData = [
     car: {
       name: "Rent1",
       bodyType: "HATCHBACK",
-      motor: "ELECTRIC",
+      motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       cars: [
@@ -142,7 +142,7 @@ export const offersTestData = [
     car: {
       name: "Rent5",
       bodyType: "SEDAN",
-      motor: "ELECTRIC",
+      motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       cars: ["Tesla Model 3 SR+"],
@@ -155,7 +155,7 @@ export const offersTestData = [
     car: {
       name: "Rent3",
       bodyType: "HATCHBACK",
-      motor: "ELECTRIC",
+      motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       cars: ["Renault Zoe", "Peugeot e-208 GT"],
