@@ -27,12 +27,11 @@ describe("Offers sort", function () {
 
     // ACT
     const result = offersSort.sort(offers, SortState.UP, "provider");
-
     // ASSERT
     expect(
       result.every(
         (offer, index) =>
-          index === 0 || offer.provider <= result[index - 1].provider
+          index === 0 || offer.provider >= result[index - 1].provider
       ),
       `List is not in descending order \n received: ${JSON.stringify(result)}`
     ).toBe(true);

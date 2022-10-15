@@ -8,6 +8,10 @@ export default class OffersSort {
       case "price":
         offers.sort((offer1, offer2) => offer1.price - offer2.price);
         break;
+      case "provider":
+        offers.sort((offer1, offer2) =>
+          offer1.provider.localeCompare(offer2.provider)
+        );
       // TODO provider, mark, model, bodyType, gearbox
     }
 
