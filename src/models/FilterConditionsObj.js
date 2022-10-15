@@ -7,9 +7,16 @@ export const filterConditionsObj = {
     VAN: false,
     CABRIOLET: false,
   },
-  cargo: false,
+  motor: {
+    PETROL: false,
+    HYBRID: false,
+    ELECTRIC: false,
+  },
   petFriendly: false,
-  gearBox: null,
+  gearBox: {
+    MANUAL: false,
+    AUTOMATIC: false,
+  },
   provider: {
     beast: false,
     bolt: false,
