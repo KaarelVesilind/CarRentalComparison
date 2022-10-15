@@ -7,7 +7,7 @@ export const filterConditionsObj = {
     VAN: false,
     CABRIOLET: false,
   },
-  motor: {
+  motorType: {
     PETROL: false,
     HYBRID: false,
     ELECTRIC: false,

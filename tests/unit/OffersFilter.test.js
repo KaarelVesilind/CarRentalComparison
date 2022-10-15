@@ -9,10 +9,11 @@ describe("Offers filter", function () {
     // ARRANGE
     const expectedOffersIds = [4, 1, 5, 11, 13];
     const offers = offersTestData;
-    filterConditionsObj.bodyType.HATCHBACK = true;
+    const conditionsObj = JSON.parse(JSON.stringify(filterConditionsObj));
+    conditionsObj.bodyType.HATCHBACK = true;
 
     // ACT
-    const result = offersFilter.filter(offers, filterConditionsObj);
+    const result = offersFilter.filter(offers, conditionsObj);
 
     // ASSERT
     expect(result.map((offer) => offer.id).sort()).toEqual(
@@ -24,11 +25,11 @@ describe("Offers filter", function () {
     // ARRANGE
     const expectedOffersIds = [4, 8, 9, 10, 11, 12, 13];
     const offers = offersTestData;
-    filterConditionsObj.motor.ELECTRIC = true;
+    const conditionsObj = JSON.parse(JSON.stringify(filterConditionsObj));
+    conditionsObj.motorType.ELECTRIC = true;
 
     // ACT
-    const result = offersFilter.filter(offers, filterConditionsObj);
-
+    const result = offersFilter.filter(offers, conditionsObj);
     // ASSERT
     expect(result.map((offer) => offer.id).sort()).toEqual(
       expectedOffersIds.sort()
@@ -39,11 +40,11 @@ describe("Offers filter", function () {
     // ARRANGE
     const expectedOffersIds = [1, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
     const offers = offersTestData;
-    filterConditionsObj.petFriendly = true;
+    const conditionsObj = JSON.parse(JSON.stringify(filterConditionsObj));
+    conditionsObj.petFriendly = true;
 
     // ACT
-    const result = offersFilter.filter(offers, filterConditionsObj);
-
+    const result = offersFilter.filter(offers, conditionsObj);
     // ASSERT
     expect(result.map((offer) => offer.id).sort()).toEqual(
       expectedOffersIds.sort()
