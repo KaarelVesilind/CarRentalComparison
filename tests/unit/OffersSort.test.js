@@ -65,4 +65,18 @@ describe("Offers sort", function () {
       `List is not in descending order \n received: ${JSON.stringify(result)}`
     ).toEqual(offers);
   });
+
+  test("gearbox in descending order", async () => {
+    const offers = offersTestData;
+
+    const result = offersSort.sort(offers, SortState.DOWN, "gearBox");
+    
+    expect(
+      result.every(
+        (offer, index) =>
+          index === 0 || offer.car.gearBox <= result[index - 1].car.gearBox
+      ),
+      `List is not in descending order \n received: ${JSON.stringify(result)}`
+    ).toBe(true);
+  });
 });
