@@ -17,7 +17,13 @@ export default class OffersSort {
         offers.sort((offer1, offer2) =>
           offer1.car.name.localeCompare(offer2.car.name)
         );
-      // TODO bodyType, gearbox
+        break;
+      case "gearBox":
+        offers.sort((offer1, offer2) =>
+          offer1.car.gearBox.localeCompare(offer2.car.gearBox)
+        );
+        break;
+      // TODO bodyType
     }
 
     if (sortState === SortState.DOWN) offers.reverse();
