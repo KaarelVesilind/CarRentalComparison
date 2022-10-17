@@ -22,12 +22,18 @@ export default class OffersFilter {
             filterConditionsObj[condition]
           );
           break;
-        // TODO gearBox, provider, multiple filters, no filters,
+        case "gearBox":
+          filteredOffers = this._searchGearBox(
+            filteredOffers,
+            filterConditionsObj[condition]
+          );
+          break;
+        // TODO provider, multiple filters, no filters,
       }
     }
 
     return filteredOffers;
-  }
+  };
 
   _searchBodyTypes(offers, value) {
     const haveSomeBodyType = Object.values(value).some((bodyType) => bodyType);
@@ -47,4 +53,10 @@ export default class OffersFilter {
     if (!value) return offers;
     return offers.filter((offer) => offer.car.petFriendly);
   }
+
+  _searchGearBox(offers, value) {
+    const haveSomeGearBox = Object.values(value).some((gearBox) => gearBox);
+    if (!haveSomeGearBox) return offers;
+    return offers.filter((offer) => value[offer.car.gearBox]);
+  };
 }
