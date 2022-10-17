@@ -28,7 +28,7 @@ export default class OffersFilter {
             filterConditionsObj[condition]
           );
           break;
-        // TODO provider, multiple filters, no filters,
+        // TODO provider, no filters,
       }
     }
 

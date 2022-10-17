@@ -64,4 +64,18 @@ describe("Offers filter", function () {
     );
   });
 
+  test("it should filter by motorType ELECTRIC and HYBRID", async () => {
+    const expectedOffersIds = [1, 4, 8, 9, 10, 11, 12, 13];
+    const offers = offersTestData;
+    const conditionsObj = JSON.parse(JSON.stringify(filterConditionsObj));
+    conditionsObj.motorType.ELECTRIC = true;
+    conditionsObj.motorType.HYBRID = true;
+    conditionsObj.petFriendly = true;
+
+    const result = offersFilter.filter(offers, conditionsObj);
+
+    expect(result.map((offer) => offer.id).sort()).toEqual(
+      expectedOffersIds.sort()
+    );
+  });
 });
