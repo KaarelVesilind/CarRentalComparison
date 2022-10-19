@@ -91,4 +91,17 @@ describe("Offers filter", function () {
       expectedOffersIds.sort()
     );
   });
+
+  test("no filter", async () => {
+    const expectedOffersIds = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+    const offers = offersTestData;
+    const conditionsObj = JSON.parse(JSON.stringify(filterConditionsObj));
+
+    const result = offersFilter.filter(offers, conditionsObj);
+
+    expect(result.map((offer) => offer.id).sort()).toEqual(
+      expectedOffersIds.sort()
+    );
+  });
+
 });
