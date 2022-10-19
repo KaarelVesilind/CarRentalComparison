@@ -79,4 +79,25 @@ describe("Offers sort", function () {
       `List is not in descending order \n received: ${JSON.stringify(result)}`
     ).toBe(true);
   });
+
+
+  //bodyType
+  test("bodytype in descending order", async () => {
+    
+    // ARRANGE
+    const offers = offersTestData;
+    
+    // ACT
+    const result = offersSort.sort(offers, SortState.DOWN, "bodyType");
+    
+    // ASSERT
+    expect(
+      result.every(
+        (offer, index) =>
+          index === 0 || offer.car.bodyType <= result[index - 1].car.bodyType
+      ),
+      `List is not in descending order \n received: ${JSON.stringify(result)}`
+    ).toBe(true);
+  });
 });
+
