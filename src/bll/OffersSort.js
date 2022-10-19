@@ -24,6 +24,11 @@ export default class OffersSort {
         );
         break;
       // TODO bodyType
+      case "bodyType":
+        offers.sort((offer1, offer2) =>
+		      offer1.car.bodyType.localeCompare(offer2.car.bodyType)
+        );
+        break;
     }
 
     if (sortState === SortState.DOWN) offers.reverse();
