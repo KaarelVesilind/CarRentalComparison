@@ -78,4 +78,17 @@ describe("Offers filter", function () {
       expectedOffersIds.sort()
     );
   });
+
+  test("provider elmo", async () => {
+    const expectedOffersIds = [11, 12, 13];
+    const offers = offersTestData;
+    const conditionsObj = JSON.parse(JSON.stringify(filterConditionsObj));
+    conditionsObj.provider.elmo = true;
+
+    const result = offersFilter.filter(offers, conditionsObj);
+
+    expect(result.map((offer) => offer.id).sort()).toEqual(
+      expectedOffersIds.sort()
+    );
+  });
 });
