@@ -28,7 +28,12 @@ export default class OffersFilter {
             filterConditionsObj[condition]
           );
           break;
-        // TODO provider, no filters,
+        case "provider":
+          filteredOffers = this._searchProvider(
+            filteredOffers,
+            filterConditionsObj[condition]
+          );
+          break;
       }
     }
 
@@ -59,4 +64,10 @@ export default class OffersFilter {
     if (!haveSomeGearBox) return offers;
     return offers.filter((offer) => value[offer.car.gearBox]);
   };
+
+  _searchProvider(offers, value){
+		const haveSomeProvider = Object.values(value).some((provider) => provider);
+		if (!haveSomeProvider) return offers;
+		return offers.filter((offer) => value[offer.provider]);
+	};
 }
