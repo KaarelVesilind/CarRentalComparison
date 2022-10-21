@@ -38,14 +38,14 @@ describe("Elmo price calculator", function () {
     // ASSERT
     expect(Number(result.toFixed(2))).toBe(700);
   });
-  test("Rent 1 -  6day 400km", async () => {
+  test("Rent 1 -  6day 23h 59min", async () => {
     // ARRANGE
     const car = elmo.cars.find((car) => car.name === "Rent1");
     const searchParamsObj = {
-      distance: 400,
+      distance: 0,
       days: 6,
-      hours: 0,
-      minutes: 0,
+      hours: 23,
+      minutes: 59,
     };
 
     // ACT
