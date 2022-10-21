@@ -69,6 +69,7 @@ export default class BeastPriceCalculator {
         minutesCost += totalMinutes * price.minute;
       }
     }
+    console.log(weeksCost, threeDaysCost, daysCost, minutesCost, distanceCost);
     return weeksCost + threeDaysCost + daysCost + minutesCost + distanceCost;
   }
 }
