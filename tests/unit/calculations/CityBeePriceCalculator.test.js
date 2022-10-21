@@ -15,9 +15,27 @@ describe("CityBee price calculator", function () {
     };
 
     // ACT
-    const result = cityBeePriceCalculator.calculatePrice(car, searchParamsObj);
-
+    let result = cityBeePriceCalculator.calculatePrice(car, searchParamsObj);
+    result = result.price ?? result;
     // ASSERT
     expect(result).toBe(5.3);
+  });
+
+  test("Ford Fiesta - 1h 4min 31km", async () => {
+    // ARRANGE
+    const car = citybee.cars.find((car) => car.name === "Ford Fiesta");
+    const searchParamsObj = {
+      distance: 31,
+      days: 0,
+      hours: 1,
+      minutes: 4,
+    };
+
+    // ACT
+    let result = cityBeePriceCalculator.calculatePrice(car, searchParamsObj);
+    result = result.price ?? result;
+
+    // ASSERT
+    expect(Number(result.toFixed(2))).toBe(12.63);
   });
 });
