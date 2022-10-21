@@ -72,4 +72,21 @@ describe("CityBee price calculator", function () {
     // ASSERT
     expect(result).toBe(9.49);
   });
+
+  test("Volkswagen T-Roc - 1day 9h 9km", async () => {
+    // ARRANGE
+    const car = citybee.cars.find((car) => car.name === "Volkswagen T-Roc");
+    const searchParamsObj = {
+      distance: 9,
+      days: 1,
+      hours: 9,
+      minutes: 0,
+    };
+
+    // ACT
+    let result = cityBeePriceCalculator.calculatePrice(car, searchParamsObj);
+    result = result.price ?? result;
+    // ASSERT
+    expect(result).toBe(69);
+  });
 });
