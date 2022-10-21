@@ -38,7 +38,7 @@ export default class OffersFilter {
     }
 
     return filteredOffers;
-  };
+  }
 
   _searchBodyTypes(offers, value) {
     const haveSomeBodyType = Object.values(value).some((bodyType) => bodyType);
@@ -63,11 +63,11 @@ export default class OffersFilter {
     const haveSomeGearBox = Object.values(value).some((gearBox) => gearBox);
     if (!haveSomeGearBox) return offers;
     return offers.filter((offer) => value[offer.car.gearBox]);
-  };
+  }
 
-  _searchProvider(offers, value){
-		const haveSomeProvider = Object.values(value).some((provider) => provider);
-		if (!haveSomeProvider) return offers;
-		return offers.filter((offer) => value[offer.provider]);
-	};
+  _searchProvider(offers, value) {
+    const haveSomeProvider = Object.values(value).some((provider) => provider);
+    if (!haveSomeProvider) return offers;
+    return offers.filter((offer) => value[offer.provider]);
+  }
 }

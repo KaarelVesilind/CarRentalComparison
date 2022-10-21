@@ -22,4 +22,23 @@ describe("Beast price calculator", function () {
     // ASSERT
     expect(result).toBe(14.99);
   });
+
+  test("Tesla Model 3 Standard Range - 2 days 10h", async () => {
+    // ARRANGE
+    const car = beast.cars.find(
+      (car) => car.name === "Tesla Model 3 Standard Range"
+    );
+    const searchParamsObj = {
+      distance: 0,
+      days: 2,
+      hours: 10,
+      minutes: 0,
+    };
+
+    // ACT
+    const result = beastPriceCalculator.calculatePrice(car, searchParamsObj);
+
+    // ASSERT
+    expect(result).toBe(289.99);
+  });
 });
