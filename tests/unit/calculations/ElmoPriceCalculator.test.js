@@ -54,4 +54,21 @@ describe("Elmo price calculator", function () {
     // ASSERT
     expect(Number(result.toFixed(2))).toBe(225);
   });
+
+  test("Rent 1 -  23h 59min", async () => {
+    // ARRANGE
+    const car = elmo.cars.find((car) => car.name === "Rent1");
+    const searchParamsObj = {
+      distance: 0,
+      days: 0,
+      hours: 23,
+      minutes: 59,
+    };
+
+    // ACT
+    let result = elmoPriceCalculator.calculatePrice(car, searchParamsObj);
+    result = result.price ?? result;
+    // ASSERT
+    expect(Number(result.toFixed(2))).toBe(30);
+  });
 });
