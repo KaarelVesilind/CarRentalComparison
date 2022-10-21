@@ -74,7 +74,6 @@ export default class BeastPriceCalculator {
 
     const distanceCost =
       Math.max(searchParamsObj.distance - freeDistance, 0) * price.km;
-    console.log(weeksCost, threeDaysCost, daysCost, minutesCost, distanceCost);
     return weeksCost + threeDaysCost + daysCost + minutesCost + distanceCost;
   }
 
