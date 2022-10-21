@@ -106,4 +106,21 @@ describe("CityBee price calculator", function () {
     // ASSERT
     expect(result).toBe(7.49);
   });
+
+  test("Volkswagen T-Roc - 59min 20km", async () => {
+    // ARRANGE
+    const car = citybee.cars.find((car) => car.name === "Volkswagen T-Roc");
+    const searchParamsObj = {
+      distance: 20,
+      days: 0,
+      hours: 0,
+      minutes: 59,
+    };
+
+    // ACT
+    let result = cityBeePriceCalculator.calculatePrice(car, searchParamsObj);
+    result = result.price ?? result;
+    // ASSERT
+    expect(result).toBe(11.89);
+  });
 });
