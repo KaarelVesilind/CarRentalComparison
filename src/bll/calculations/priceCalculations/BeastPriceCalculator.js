@@ -43,6 +43,7 @@ export default class BeastPriceCalculator {
         price["3days"]
       ) {
         threeDaysCost += price["3days"];
+        totalMinutes = 0;
       } else {
         daysCost += searchParamsObj.days * price.day;
       }
@@ -68,7 +69,7 @@ export default class BeastPriceCalculator {
         minutesCost += totalMinutes * price.minute;
       }
     }
-
+    console.log(weeksCost, threeDaysCost, daysCost, minutesCost, distanceCost);
     return weeksCost + threeDaysCost + daysCost + minutesCost + distanceCost;
   }
 }
