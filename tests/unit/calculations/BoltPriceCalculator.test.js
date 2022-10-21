@@ -51,4 +51,21 @@ describe("Bolt price calculator", function () {
     // ASSERT
     expect(result).toBe(20.37);
   });
+
+  test("Volkswagen T-Roc - 10min", async () => {
+    // ARRANGE
+    const car = bolt.cars.find((car) => car.name === "VW T-Roc");
+    const searchParamsObj = {
+      distance: 0,
+      days: 0,
+      hours: 0,
+      minutes: 10,
+    };
+
+    // ACT
+    const result = boltPriceCalculator.calculatePrice(car, searchParamsObj);
+
+    // ASSERT
+    expect(result).toBe(1.99);
+  });
 });
