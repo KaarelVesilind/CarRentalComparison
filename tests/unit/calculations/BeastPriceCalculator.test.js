@@ -41,4 +41,23 @@ describe("Beast price calculator", function () {
     // ASSERT
     expect(result).toBe(289.99);
   });
+
+  test("Tesla Model 3 Standard Range - 1 week 5 days 5h", async () => {
+    // ARRANGE
+    const car = beast.cars.find(
+      (car) => car.name === "Tesla Model 3 Standard Range"
+    );
+    const searchParamsObj = {
+      distance: 0,
+      days: 12,
+      hours: 10,
+      minutes: 0,
+    };
+
+    // ACT
+    const result = beastPriceCalculator.calculatePrice(car, searchParamsObj);
+
+    // ASSERT
+    expect(result).toBe(1099.98);
+  });
 });
