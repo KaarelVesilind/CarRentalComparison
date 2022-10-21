@@ -77,6 +77,6 @@ describe("Beast price calculator", function () {
     const result = beastPriceCalculator.calculatePrice(car, searchParamsObj);
 
     // ASSERT
-    expect(result).toBe(630);
+    expect(result).toBe(629.97);
   });
 });
