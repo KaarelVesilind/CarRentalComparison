@@ -79,4 +79,22 @@ describe("Beast price calculator", function () {
     // ASSERT
     expect(result).toBe(629.97);
   });
+  test("Tesla Model 3 Standard Range - 20min, 30km", async () => {
+    // ARRANGE
+    const car = beast.cars.find(
+      (car) => car.name === "Tesla Model 3 Standard Range"
+    );
+    const searchParamsObj = {
+      distance: 30,
+      days: 0,
+      hours: 0,
+      minutes: 20,
+    };
+
+    // ACT
+    const result = beastPriceCalculator.calculatePrice(car, searchParamsObj);
+
+    // ASSERT
+    expect(result).toBe(14.99);
+  });
 });
