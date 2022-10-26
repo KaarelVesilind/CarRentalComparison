@@ -1,5 +1,10 @@
 # CarRentComparison
 
+## Development guidelines
+* every ticket in separate branch and make pull request when ready
+* Add id-s to every interactive html element
+
+
 This template should help get you started developing with Vue 3 in Vite.
 Test kommentaar.
 
