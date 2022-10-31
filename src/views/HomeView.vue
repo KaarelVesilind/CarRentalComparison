@@ -1,12 +1,10 @@
 <script setup>
-import RentDetails from "../components/RentDetails.vue";
-import RentOffers from "../components/RentOffers.vue";
+import OffersView from "@/views/OffersView.vue";
 </script>
 
 <template>
   <main>
-    <h1>Short term car rental comparison</h1>
-    <RentDetails />
-    <RentOffers />
+    <!--    OffersView  is right now our home view-->
+    <OffersView />
   </main>
 </template>
