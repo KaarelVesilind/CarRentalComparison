@@ -243,7 +243,7 @@ export const elmo = {
       ],
     },
     {
-      name: "TESLA MODEL 3 SR+",
+      name: "Tesla Model 3 SR+",
       bodyType: "SEDAN",
       motorType: "ELECTRIC",
       petFriendly: true,

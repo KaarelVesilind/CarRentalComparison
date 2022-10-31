@@ -1,4 +1,20 @@
+import { calculateTime } from "./helpers";
+
 export default class ElmoPriceCalculator {
+  // Global variable to calculate weeks and months
+  cheapest = {
+    months: 0,
+    weeks: 0,
+    withNormalPricing: {
+      daysCost: 0,
+      hoursCost: 0,
+      minutesCost: 0,
+      distanceCost: 0,
+    },
+    totalCost: Infinity,
+  };
+
+  // Price calculation function
   calculatePrice(car, searchParamsObj) {
     const price = car.price;
     let distanceCost = 0;
@@ -7,128 +23,151 @@ export default class ElmoPriceCalculator {
     } else {
       distanceCost = searchParamsObj.distance * price.km;
     }
-
     const totalTime =
       searchParamsObj.days * 24 * 60 +
       searchParamsObj.hours * 60 +
       searchParamsObj.minutes;
 
     // Time
-    let { daysCost, hoursCost, minutesCost } = this._calculateTime(
-      totalTime,
-      price
-    );
+    let { daysCost, hoursCost, minutesCost } = calculateTime(totalTime, price);
+    // Calculate if weeks or months package comes cheaper
+    this._calculatePackages({
+      timeLeft: totalTime,
+      distanceLeft: searchParamsObj.distance,
+      months: 0,
+      weeks: 0,
+      totalCost: 0,
+      onlyWeeks: false,
+      price: price,
+      weekPrice: car.packages[0],
+      monthPrice: car.packages[1],
+    });
 
-    let { monthsCost, weeksCost } = this._calculateTime(
-      searchParamsObj.months * 30 * 24 * 60 +
-        searchParamsObj.weeks * 7 * 24 * 60,
-      price
-    );
-
+    let monthsCost = 0;
+    let weeksCost = 0;
     let extraInfo = "";
-    if (monthsCost > 0 || weeksCost > 0) {
+    if (
+      (this.cheapest.months > 0 || this.cheapest.weeks > 0) &&
+      this.cheapest.totalCost <
+        distanceCost + daysCost + hoursCost + minutesCost
+    ) {
+      monthsCost = this.cheapest.months * car.packages[1].price;
+      weeksCost = this.cheapest.weeks * car.packages[0].price;
+      daysCost = this.cheapest.withNormalPricing.daysCost;
+      hoursCost = this.cheapest.withNormalPricing.hoursCost;
+      minutesCost = this.cheapest.withNormalPricing.minutesCost;
+      distanceCost = this.cheapest.withNormalPricing.distanceCost;
+
       extraInfo += ` | Contact ELMO for`;
       let and = false;
       if (monthsCost > 0) {
-        extraInfo += ` ${monthsCost / price.month} month(s) package`;
+        extraInfo += ` ${this.cheapest.months} month(s) package`;
         and = true;
       }
       if (weeksCost > 0) {
         extraInfo += `${and ? " and " : ""}`;
-        extraInfo += ` ${weeksCost / price.week}week(s) package`;
+        extraInfo += ` ${this.cheapest.weeks} week(s) package`;
       }
+    }
+    let totalCost =
+      monthsCost +
+      weeksCost +
+      daysCost +
+      hoursCost +
+      minutesCost +
+      distanceCost;
+    if (car.name === "Tesla Model 3 SR+" && totalCost < 30) {
+      totalCost = 30;
     }
     return {
       extraInfo: extraInfo,
-      price:
-        monthsCost +
-        weeksCost +
-        daysCost +
-        hoursCost +
-        minutesCost +
-        distanceCost,
+      price: totalCost,
     };
   }
 
-  _calculatePackages(car, totalCost, searchParamsObj, totalTime, price) {
-    const packages = Array.reverse(car.packages);
-    let months = 0;
-    let weeks = 0;
-    let bundlePrice = Number.MAX_SAFE_INTEGER;
-    for (const option of packages) {
-      const packageTotalTime = option.days * 24 * 60 + option.hours * 60;
-      if (option.price < totalCost) {
-        // if fits exactly in the package
-        if (
-          searchParamsObj.distance <= option.distance &&
-          totalTime <= packageTotalTime &&
-          option.price < usePackage.price
-        ) {
-          usePackage = { ...option };
+  _calculatePackages({
+    timeLeft,
+    distanceLeft,
+    months,
+    weeks,
+    totalCost,
+    onlyWeeks,
+    price,
+    weekPrice,
+    monthPrice,
+  }) {
+    if (totalCost > this.cheapest.totalCost) {
+      return;
+    }
+    if (timeLeft <= 0 && distanceLeft <= 0) {
+      if (totalCost < this.cheapest.totalCost) {
+        this.cheapest.totalCost = totalCost;
+        this.cheapest.months = months;
+        this.cheapest.weeks = weeks;
+        this.cheapest.withNormalPricing = {
+          daysCost: 0,
+          hoursCost: 0,
+          minutesCost: 0,
+          distanceCost: 0,
+        };
+      }
+      return;
+    } else {
+      if (months > 0 || weeks > 0) {
+        // if we need to add some extra time to package
+        let withNormalPricing = totalCost;
+        let normalTime = {
+          daysCost: 0,
+          hoursCost: 0,
+          minutesCost: 0,
+        };
+        let normalDistance = 0;
+        if (timeLeft > 0) {
+          normalTime = calculateTime(timeLeft, price);
+          withNormalPricing +=
+            normalTime.daysCost + normalTime.hoursCost + normalTime.minutesCost;
         }
-
-        // if fits in the package with some extra time or distance
-        else {
-          let packageCostExtra = option.price;
-          // Add extra distance
-          if (searchParamsObj.distance > option.distance) {
-            packageCostExtra +=
-              (searchParamsObj.distance - option.distance) * price.km;
-          }
-          // Add extra time
-          if (totalTime > packageTotalTime) {
-            let extraTime = totalTime - packageTotalTime;
-            let extraCostTime = this._calculateTime(extraTime, price);
-            packageCostExtra +=
-              extraCostTime.daysCost +
-              extraCostTime.hoursCost +
-              extraCostTime.minutesCost;
-          }
-          if (
-            packageCostExtra < totalCost &&
-            packageCostExtra < usePackage.price
-          ) {
-            usePackage = { ...option };
-            usePackage.price = packageCostExtra;
-          }
+        if (distanceLeft > 0) {
+          normalDistance = distanceLeft * 0.1;
+          withNormalPricing += normalDistance;
+        }
+        if (withNormalPricing < this.cheapest.totalCost) {
+          this.cheapest.months = months;
+          this.cheapest.weeks = weeks;
+          this.cheapest.totalCost = withNormalPricing;
+          this.cheapest.withNormalPricing = {
+            daysCost: normalTime.daysCost,
+            hoursCost: normalTime.hoursCost,
+            minutesCost: normalTime.minutesCost,
+            distanceCost: normalDistance,
+          };
         }
       }
-    }
-    return usePackage;
-  }
-
-  // TODO REFACTOR - same as CityBeePriceCalculator
-  _calculateTime(totalTime, price) {
-    let days = Math.floor(totalTime / 1440);
-    totalTime -= days * 1440;
-    let hours = Math.floor(totalTime / 60);
-    totalTime -= hours * 60;
-    let minutes = totalTime;
-    // Days
-    let daysCost = 0;
-    if (days >= 1) {
-      daysCost += days * price.day;
-    }
-    // Hours
-    let hoursCost = 0;
-    if (hours >= 1) {
-      if (hours * price.hour + minutes * price.minute > price.day) {
-        daysCost += price.day;
-        hours = 0;
-        minutes = 0;
-      } else {
-        hoursCost += hours * price.hour;
+      // We first add months and the weeks, and that's why we have onlyWeeks parameter
+      if (!onlyWeeks) {
+        this._calculatePackages({
+          timeLeft: timeLeft - 30 * 24 * 60,
+          distanceLeft: distanceLeft - 3000,
+          months: months + 1,
+          weeks: weeks,
+          totalCost: totalCost + monthPrice.price,
+          onlyWeeks: false,
+          price: price,
+          weekPrice: weekPrice,
+          monthPrice: monthPrice,
+        });
       }
+      this._calculatePackages({
+        timeLeft: timeLeft - 7 * 24 * 60,
+        distanceLeft: distanceLeft - 700,
+        months: months,
+        weeks: weeks + 1,
+        totalCost: totalCost + weekPrice.price,
+        onlyWeeks: true,
+        price: price,
+        weekPrice: weekPrice,
+        monthPrice: monthPrice,
+      });
     }
-    // Minutes
-    let minutesCost = 0;
-    if (minutes >= 1) {
-      if (minutes * price.minute > price.hour) {
-        hoursCost += price.hour;
-      } else {
-        minutesCost += minutes * price.minute;
-      }
-    }
-    return { daysCost, hoursCost, minutesCost };
   }
 }

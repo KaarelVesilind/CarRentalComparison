@@ -44,7 +44,7 @@ export default class OffersCalculator {
 
   _addExtraInfo(provider, extraInfo, car, price) {
     if (provider === "elmo") {
-      extraInfo = car.cars.join(", ") + price.extraInfo;
+      extraInfo = price.extraInfo;
       price = price.price;
     }
     if (provider === "citybee") {
