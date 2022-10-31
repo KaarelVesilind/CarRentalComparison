@@ -3,9 +3,9 @@ import ElmoPriceCalculator from "../../../src/bll/calculations/priceCalculations
 describe("Elmo price calculator", function () {
   const elmoPriceCalculator = new ElmoPriceCalculator();
 
-  test("Rent 1 - 3801km 38day 1h 1min", async () => {
+  test("Volkswagen e-Up!'19 - 3801km 38day 1h 1min", async () => {
     // ARRANGE
-    const car = elmo.cars.find((car) => car.name === "Rent1");
+    const car = elmo.cars.find((car) => car.name === "Volkswagen e-Up!'19");
     const searchParamsObj = {
       distance: 3801,
       days: 38,
@@ -18,12 +18,12 @@ describe("Elmo price calculator", function () {
     result = result.price ?? result;
 
     // ASSERT
-    expect(Number(result.toFixed(2))).toBe(971.81);
+    expect(Number(result.toFixed(2))).toBe(974.81);
   });
 
-  test("Rent 1 -  28day ", async () => {
+  test("Volkswagen e-Up!'19 - 28day ", async () => {
     // ARRANGE
-    const car = elmo.cars.find((car) => car.name === "Rent1");
+    const car = elmo.cars.find((car) => car.name === "Volkswagen e-Up!'19");
     const searchParamsObj = {
       distance: 0,
       days: 28,
@@ -38,9 +38,9 @@ describe("Elmo price calculator", function () {
     // ASSERT
     expect(Number(result.toFixed(2))).toBe(700);
   });
-  test("Rent 1 -  6day 23h 59min", async () => {
+  test("Volkswagen e-Up!'19 -  6day 23h 59min", async () => {
     // ARRANGE
-    const car = elmo.cars.find((car) => car.name === "Rent1");
+    const car = elmo.cars.find((car) => car.name === "Volkswagen e-Up!'19");
     const searchParamsObj = {
       distance: 0,
       days: 6,
@@ -55,9 +55,9 @@ describe("Elmo price calculator", function () {
     expect(Number(result.toFixed(2))).toBe(225);
   });
 
-  test("Rent 1 -  23h 59min", async () => {
+  test("Volkswagen e-Up!'19 -  23h 59min", async () => {
     // ARRANGE
-    const car = elmo.cars.find((car) => car.name === "Rent1");
+    const car = elmo.cars.find((car) => car.name === "Volkswagen e-Up!'19");
     const searchParamsObj = {
       distance: 0,
       days: 0,
@@ -69,12 +69,12 @@ describe("Elmo price calculator", function () {
     let result = elmoPriceCalculator.calculatePrice(car, searchParamsObj);
     result = result.price ?? result;
     // ASSERT
-    expect(Number(result.toFixed(2))).toBe(30);
+    expect(Number(result.toFixed(2))).toBe(33);
   });
 
-  test("Rent 1 -  23h 59min 101km", async () => {
+  test("Volkswagen e-Up!'19 -  23h 59min 101km", async () => {
     // ARRANGE
-    const car = elmo.cars.find((car) => car.name === "Rent1");
+    const car = elmo.cars.find((car) => car.name === "Volkswagen e-Up!'19");
     const searchParamsObj = {
       distance: 101,
       days: 0,
@@ -86,6 +86,6 @@ describe("Elmo price calculator", function () {
     let result = elmoPriceCalculator.calculatePrice(car, searchParamsObj);
     result = result.price ?? result;
     // ASSERT
-    expect(Number(result.toFixed(2))).toBe(50.1);
+    expect(Number(result.toFixed(2))).toBe(53.1);
   });
 });

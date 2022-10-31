@@ -2,90 +2,272 @@ export const elmo = {
   cities: ["Tallinn", "Tartu"],
   cars: [
     {
-      name: "Rent1",
+      name: "Volkswagen e-Up!'19",
       bodyType: "HATCHBACK",
       motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      cars: [
-        "Volkswagen e-Up '19",
-        "Skoda Citigo",
-        "Toyota Yaris",
-        "Nissan Leaf",
+      image_url: "https://elmorent.ee/wp-content/uploads/2020/08/VW-e-Up20.png",
+      price: {
+        km: 0.2,
+        minute: 0.11,
+        hour: 6.6,
+        day: 33,
+      },
+      packages: [
+        {
+          days: 7,
+          distance: 700,
+          price: 225,
+        },
+        {
+          days: 30,
+          distance: 3000,
+          price: 700,
+        },
       ],
-      price: {
-        km: 0.2,
-        minute: 0.11,
-        hour: 6.6,
-        day: 30,
-        week: 225,
-        month: 700,
-      },
     },
     {
-      name: "Rent2",
+      name: "Škoda Citigo",
       bodyType: "HATCHBACK",
       motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      cars: ["Volkswagen e-Up '20", "Renault Clio"],
+      image_url:
+        "https://elmorent.ee/wp-content/uploads/2020/08/Skoda-Citigo20.png",
       price: {
         km: 0.2,
         minute: 0.11,
         hour: 6.6,
-        day: 35,
-        week: 260,
-        month: 799,
+        day: 33,
       },
+      packages: [
+        {
+          days: 7,
+          distance: 700,
+          price: 225,
+        },
+        {
+          days: 30,
+          distance: 3000,
+          price: 799,
+        },
+      ],
     },
     {
-      name: "Rent3",
+      name: "Toyota Yaris Hybrid",
+      bodyType: "HATCHBACK",
+      motorType: "HYBRID",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
+      image_url:
+        "https://elmorent.ee/wp-content/uploads/2020/08/Elmo-rent-toyota-vaiksem.png",
+      price: {
+        km: 0.2,
+        minute: 0.11,
+        hour: 6.6,
+        day: 33,
+      },
+      packages: [
+        {
+          days: 7,
+          distance: 700,
+          price: 249,
+        },
+        {
+          days: 30,
+          distance: 3000,
+          price: 799,
+        },
+      ],
+    },
+    {
+      name: "Nissan Leaf",
+      bodyType: "HATCHBACK",
+      motorType: "HYBRID",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
+      image_url:
+        "https://elmorent.ee/wp-content/uploads/2017/07/Elmo-rent-nissan-leaf-1.png",
+      price: {
+        km: 0.2,
+        minute: 0.11,
+        hour: 6.6,
+        day: 33,
+      },
+      packages: [
+        {
+          days: 7,
+          distance: 700,
+          price: 249,
+        },
+        {
+          days: 30,
+          distance: 3000,
+          price: 799,
+        },
+      ],
+    },
+    {
+      name: "Volkswagen e-Up'20",
       bodyType: "HATCHBACK",
       motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      cars: ["Renault Zoe", "Peugeot e-208 GT"],
+      image_url: "https://elmorent.ee/wp-content/uploads/2020/08/VW-e-Up20.png",
+      price: {
+        km: 0.2,
+        minute: 0.11,
+        hour: 6.6,
+        day: 33,
+      },
+      packages: [
+        {
+          days: 7,
+          distance: 700,
+          price: 260,
+        },
+        {
+          days: 30,
+          distance: 3000,
+          price: 799,
+        },
+      ],
+    },
+    {
+      name: "Renault Clio Hybrid",
+      bodyType: "HATCHBACK",
+      motorType: "HYBRID",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
+      image_url:
+        "https://elmorent.ee/wp-content/uploads/2021/07/Clio-600x338.png",
+      price: {
+        km: 0.2,
+        minute: 0.11,
+        hour: 6.6,
+        day: 33,
+      },
+      packages: [
+        {
+          days: 7,
+          distance: 700,
+          price: 260,
+        },
+        {
+          days: 30,
+          distance: 3000,
+          price: 825,
+        },
+      ],
+    },
+    {
+      name: "Renault Zoe",
+      bodyType: "HATCHBACK",
+      motorType: "ELECTRIC",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
+      image_url:
+        "https://elmorent.ee/wp-content/uploads/2020/05/Renault-Zoe-20.png",
       price: {
         km: 0.2,
         minute: 0.13,
         hour: 7.8,
-        day: 42,
-        week: 275,
-        month: 825,
+        day: 39,
       },
+      packages: [
+        {
+          days: 7,
+          distance: 700,
+          price: 275,
+        },
+        {
+          days: 30,
+          distance: 3000,
+          price: 825,
+        },
+      ],
     },
     {
-      name: "Rent4",
-      bodyType: "TOURING",
+      name: "Peuget e-208 GT",
+      bodyType: "HATCHBACK",
       motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      cars: ["Renault Arkana", "Audi A5"],
+      image_url:
+        "https://elmorent.ee/wp-content/uploads/2020/05/Renault-Zoe-20.png",
+      price: {
+        km: 0.2,
+        minute: 0.13,
+        hour: 7.8,
+        day: 39,
+      },
+      packages: [
+        {
+          days: 7,
+          distance: 700,
+          price: 275,
+        },
+        {
+          days: 30,
+          distance: 3000,
+          price: 890,
+        },
+      ],
+    },
+    {
+      name: "Renault Arkana Hybrid",
+      bodyType: "HATCHBACK",
+      motorType: "ELECTRIC",
+      petFriendly: true,
+      gearBox: "AUTOMATIC",
+      image_url:
+        "https://elmorent.ee/wp-content/uploads/2021/10/Arkana_kodulehele.png",
       price: {
         km: 0.22,
         minute: 0.15,
-        hour: 9,
-        day: 49,
-        week: 350,
-        month: 890,
+        hour: 9.0,
+        day: 45,
       },
+      packages: [
+        {
+          days: 7,
+          distance: 700,
+          price: 350,
+        },
+        {
+          days: 30,
+          distance: 3000,
+          price: 890,
+        },
+      ],
     },
     {
-      name: "Rent5",
+      name: "Tesla Model 3 SR+",
       bodyType: "SEDAN",
       motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      cars: ["Tesla Model 3 SR+"],
+      image_url:
+        "https://elmorent.ee/wp-content/uploads/2021/08/ELMO-Tesla.png",
       price: {
-        km: 0.22,
+        km: 0.2,
         minute: 0.25,
         hour: 15,
-        day: 99,
-        week: 525,
-        month: 1599,
+        day: 75,
       },
-      min_price: 30,
+      packages: [
+        {
+          days: 7,
+          distance: 700,
+          price: 525,
+        },
+        {
+          days: 30,
+          distance: 3000,
+          price: 1599,
+        },
+      ],
     },
   ],
 };
