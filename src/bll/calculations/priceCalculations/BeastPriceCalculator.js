@@ -23,7 +23,8 @@ export default class BeastPriceCalculator {
         threeDays * price["3days"] +
           searchParamsObj.days * price.day +
           extraMinutes.daysCost +
-          extraMinutes.minutesCost >
+          extraMinutes.minutesCost +
+          price.start >
         price.week
       ) {
         weeksCost += price.week;
@@ -42,7 +43,8 @@ export default class BeastPriceCalculator {
       if (
         searchParamsObj.days * price.day +
           extraMinutes.daysCost +
-          extraMinutes.minutesCost >
+          extraMinutes.minutesCost +
+          price.start >
         price["3days"]
       ) {
         threeDaysCost += price["3days"];
@@ -53,43 +55,31 @@ export default class BeastPriceCalculator {
         freeDistance += searchParamsObj.days * 300;
       }
     }
-    const shortRent = weeksCost === 0 && threeDaysCost === 0 && daysCost === 0;
-    // Short Rent
-    if (shortRent && totalMinutes < 30) {
-      totalMinutes = 30;
-    }
-    const shortRentPrice =
-      price.first30mins + (totalMinutes - 30) * price.minute;
-    // Minutes
-    let minutesCost = 0;
-    const minutes = this.calculateMinute(
-      totalMinutes,
-      price,
-      shortRent,
-      shortRentPrice
-    );
+    const minutes = this.calculateMinute(totalMinutes, price);
     freeDistance += minutes.freeDistance;
     daysCost += minutes.daysCost;
-    minutesCost += minutes.minutesCost;
+    const minutesCost = minutes.minutesCost;
 
     const distanceCost =
       Math.max(searchParamsObj.distance - freeDistance, 0) * price.km;
-    return weeksCost + threeDaysCost + daysCost + minutesCost + distanceCost;
+    return (
+      weeksCost +
+      threeDaysCost +
+      daysCost +
+      minutesCost +
+      distanceCost +
+      price.start
+    );
   }
 
-  calculateMinute(totalMinutes, price, shortRent = false, shortRentPrice = 0) {
+  calculateMinute(totalMinutes, price) {
     let freeDistance = 0;
     let daysCost = 0;
     let minutesCost = 0;
     if (totalMinutes > 0) {
       freeDistance += 300;
-      if (
-        totalMinutes * price.minute > price.day ||
-        (shortRent && shortRentPrice > price.day)
-      ) {
+      if (totalMinutes * price.minute > price.day) {
         daysCost += price.day;
-      } else if (shortRent) {
-        minutesCost += shortRentPrice;
       } else {
         minutesCost += totalMinutes * price.minute;
       }

@@ -9,7 +9,7 @@ export const beast = {
       gearBox: "AUTOMATIC",
       price: {
         km: 0.2,
-        first30mins: 14.99,
+        start: 4.99,
         minute: 0.22,
         day: 119.99,
         "3days": 289.99,
@@ -24,7 +24,7 @@ export const beast = {
       gearBox: "AUTOMATIC",
       price: {
         km: 0.2,
-        first30mins: 19.99,
+        start: 4.99,
         minute: 0.25,
         day: 139.99,
         "3days": 339.99,
@@ -39,7 +39,7 @@ export const beast = {
       gearBox: "AUTOMATIC",
       price: {
         km: 0.2,
-        first30mins: 24.99,
+        start: 9.99,
         minute: 0.29,
         day: 159.99,
         "3days": 379.99,
@@ -54,7 +54,7 @@ export const beast = {
       gearBox: "AUTOMATIC",
       price: {
         km: 0.25,
-        first30mins: 24.99,
+        start: 9.99,
         minute: 0.35,
         day: 189.99,
         "3days": 459.99,
@@ -69,7 +69,7 @@ export const beast = {
       gearBox: "AUTOMATIC",
       price: {
         km: 0.3,
-        first30mins: 39.99,
+        start: 9.99,
         minute: 0.49,
         day: 269.99,
         "3days": 649.99,
