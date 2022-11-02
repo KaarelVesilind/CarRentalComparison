@@ -10,7 +10,7 @@ export const beast = {
       price: {
         km: 0.2,
         start: 4.99,
-        minute: 0.22,
+        minute: 0.25,
         day: 119.99,
         "3days": 289.99,
         week: 549.99,
@@ -25,7 +25,7 @@ export const beast = {
       price: {
         km: 0.2,
         start: 4.99,
-        minute: 0.25,
+        minute: 0.29,
         day: 139.99,
         "3days": 339.99,
         week: 649.99,
@@ -40,7 +40,7 @@ export const beast = {
       price: {
         km: 0.2,
         start: 9.99,
-        minute: 0.29,
+        minute: 0.33,
         day: 159.99,
         "3days": 379.99,
         week: 749.99,
@@ -55,7 +55,7 @@ export const beast = {
       price: {
         km: 0.25,
         start: 9.99,
-        minute: 0.35,
+        minute: 0.4,
         day: 189.99,
         "3days": 459.99,
         week: 899.99,
@@ -70,7 +70,7 @@ export const beast = {
       price: {
         km: 0.3,
         start: 9.99,
-        minute: 0.49,
+        minute: 0.56,
         day: 269.99,
         "3days": 649.99,
         week: 1299.99,

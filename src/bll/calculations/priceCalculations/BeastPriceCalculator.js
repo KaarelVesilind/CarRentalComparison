@@ -23,8 +23,7 @@ export default class BeastPriceCalculator {
         threeDays * price["3days"] +
           searchParamsObj.days * price.day +
           extraMinutes.daysCost +
-          extraMinutes.minutesCost +
-          price.start >
+          extraMinutes.minutesCost >
         price.week
       ) {
         weeksCost += price.week;
@@ -43,8 +42,7 @@ export default class BeastPriceCalculator {
       if (
         searchParamsObj.days * price.day +
           extraMinutes.daysCost +
-          extraMinutes.minutesCost +
-          price.start >
+          extraMinutes.minutesCost >
         price["3days"]
       ) {
         threeDaysCost += price["3days"];
