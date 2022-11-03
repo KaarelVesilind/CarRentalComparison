@@ -7,6 +7,8 @@ export const bolt = {
       motorType: "HYBRID",
       petFriendly: true,
       gearBox: "AUTOMATIC",
+      image_url:
+        "https://images.bolt.eu/store/2022/2022-07-08/455bd1fc-9e91-4fd0-97a3-af7706cee2bb.png",
       price: {
         km: 0.24,
         minute: 0.14,
@@ -55,6 +57,8 @@ export const bolt = {
       motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
+      image_url:
+        "https://images.bolt.eu/store/2021/2021-08-04/f818348d-dfe7-457a-b7ec-2d13f3d152fd.png",
       price: {
         km: 0.23,
         minute: 0.12,
@@ -68,6 +72,7 @@ export const bolt = {
       motorType: "HYBRID",
       petFriendly: true,
       gearBox: "AUTOMATIC",
+      image_url: "https://images.bolt.eu/rentals/car_models/yaris_black.png",
       price: {
         km: 0.2,
         minute: 0.12,
@@ -94,6 +99,8 @@ export const bolt = {
       motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
+      image_url:
+        "https://images.bolt.eu/store/2022/2022-05-25/839c7880-6862-4488-8bdd-6c22825c6bf9.png",
       price: {
         km: 0.23,
         minute: 0.12,
@@ -107,6 +114,7 @@ export const bolt = {
       motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
+      image_url: "https://images.bolt.eu/rentals/car_models/id3_blue.png",
       price: {
         km: 0.24,
         minute: 0.14,
@@ -120,6 +128,8 @@ export const bolt = {
       motorType: "HYBRID",
       petFriendly: true,
       gearBox: "AUTOMATIC",
+      image_url:
+        "https://images.bolt.eu/store/2022/2022-07-28/620bdf8c-6ef3-421c-a59a-be75029e58d0.png",
       price: {
         km: 0.24,
         minute: 0.14,
@@ -146,6 +156,8 @@ export const bolt = {
       motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
+      image_url:
+        "https://images.bolt.eu/store/2022/2022-04-20/4efda9a2-90f6-4d2f-8e05-3ed6de45fb61.png",
       price: {
         km: 0.24,
         minute: 0.16,
@@ -159,6 +171,7 @@ export const bolt = {
       motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
+      image_url: "https://images.bolt.eu/rentals/car_models/troc_grey.png",
       price: {
         km: 0.24,
         minute: 0.15,
@@ -172,6 +185,7 @@ export const bolt = {
       motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
+      image_url: "https://images.bolt.eu/rentals/car_models/kamiq_white.png",
       price: {
         km: 0.24,
         minute: 0.14,
@@ -185,6 +199,8 @@ export const bolt = {
       motorType: "HYBRID",
       petFriendly: true,
       gearBox: "AUTOMATIC",
+      image_url:
+        "https://images.bolt.eu/store/2022/2022-07-29/9464e2e0-0fb8-43fd-9518-41f397a61775.png",
       price: {
         km: 0.24,
         minute: 0.14,
@@ -198,6 +214,8 @@ export const bolt = {
       motorType: "ELECTRIC",
       petFriendly: false,
       gearBox: "AUTOMATIC",
+      image_url:
+        "https://images.bolt.eu/store/2022/2022-04-20/f6375ab4-5302-4155-8006-e4596eea9c20.png",
       price: {
         km: 0.25,
         minute: 0.69,
@@ -211,6 +229,8 @@ export const bolt = {
       motorType: "PETROL",
       petFriendly: false,
       gearBox: "AUTOMATIC",
+      image_url:
+        "https://images.bolt.eu/store/2022/2022-01-21/afca4b89-6439-4e58-8ee9-7700736e7026.png",
       price: {
         km: 0.25,
         minute: 0.3,
@@ -237,6 +257,8 @@ export const bolt = {
       motorType: "PETROL",
       petFriendly: false,
       gearBox: "AUTOMATIC",
+      image_url:
+        "https://images.bolt.eu/rentals/car_models/vw_troc_cabrio_gray_v2.png",
       price: {
         km: 0.25,
         minute: 0.3,
@@ -250,6 +272,8 @@ export const bolt = {
       motorType: "PETROL",
       petFriendly: false,
       gearBox: "AUTOMATIC",
+      image_url:
+        "https://images.bolt.eu/store/2022/2022-09-12/056e744f-53d8-4ad4-a863-8cf76730c0dd.png",
       price: {
         km: 0.25,
         minute: 0.3,
@@ -276,6 +300,8 @@ export const bolt = {
       motorType: "PETROL",
       petFriendly: false,
       gearBox: "AUTOMATIC",
+      image_url:
+        "https://images.bolt.eu/store/2022/2022-06-02/57c2f81c-a9a5-49f0-a818-b18dba854633.png",
       price: {
         km: 0.27,
         minute: 0.15,
@@ -289,6 +315,8 @@ export const bolt = {
       motorType: "PETROL",
       petFriendly: false,
       gearBox: "AUTOMATIC",
+      image_url:
+        "https://images.bolt.eu/rentals/car_models/vw_crafter_white.png",
       price: {
         km: 0.27,
         minute: 0.13,
@@ -302,6 +330,8 @@ export const bolt = {
       motorType: "ELECTRIC",
       petFriendly: false,
       gearBox: "AUTOMATIC",
+      image_url:
+        "https://images.bolt.eu/rentals/car_models/vw_crafter_white.png",
       price: {
         km: 0.27,
         minute: 0.13,
@@ -309,25 +339,27 @@ export const bolt = {
         day: 35.9,
       },
     },
-    {
-      name: "Audi Q8",
-      bodyType: "TOURING",
-      motorType: "PETROL",
-      petFriendly: false,
-      gearBox: "AUTOMATIC",
-      price: {
-        km: 0.35,
-        minute: 0.84,
-        hour: 49.9,
-        day: 249,
-      },
-    },
+    // {
+    //   name: "Audi Q8",
+    //   bodyType: "TOURING",
+    //   motorType: "PETROL",
+    //   petFriendly: false,
+    //   gearBox: "AUTOMATIC",
+    //   price: {
+    //     km: 0.35,
+    //     minute: 0.84,
+    //     hour: 49.9,
+    //     day: 249,
+    //   },
+    // },
     {
       name: "Audi Q5",
       bodyType: "TOURING",
       motorType: "PETROL",
       petFriendly: false,
       gearBox: "AUTOMATIC",
+      image_url:
+        "https://images.bolt.eu/store/2022/2022-09-01/b41c596d-eed8-4618-b9d5-bcd97e96919e.png",
       price: {
         min: 7.99,
         km: 0.35,
