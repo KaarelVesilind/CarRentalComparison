@@ -322,5 +322,19 @@ export const bolt = {
         day: 249,
       },
     },
+    {
+      name: "Audi Q5",
+      bodyType: "TOURING",
+      motorType: "PETROL",
+      petFriendly: false,
+      gearBox: "AUTOMATIC",
+      price: {
+        min: 7.99,
+        km: 0.35,
+        minute: 0.69,
+        hour: 39.9,
+        day: 149.9,
+      },
+    },
   ],
 };
