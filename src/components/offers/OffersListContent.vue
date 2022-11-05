@@ -1,16 +1,18 @@
 <script setup>
-import { useStore } from "@/stores/rental";
-import { computed } from "vue";
 import OffersListCard from "@/components/offers/OffersListCard.vue";
-const store = useStore();
-const offers = computed(() => store.offers);
 </script>
 <template>
-  <div v-if="offers">
-    <div v-for="offer in offers" :key="offer.id">
+  <div v-if="offers && offers.length > 0">
+    <div v-for="(offer, index) in offers" :key="offer.id">
       <OffersListCard
-        :offer=offer
+        :class="'border-l-2 border-r-2 border-b-2 ' + (index === 0 ? 'border-t-2' : '')"
+        :offer="offer"
       />
     </div>
   </div>
 </template>
+<script>
+export default {
+  props: ["offers"],
+};
+</script>

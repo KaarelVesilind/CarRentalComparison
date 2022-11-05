@@ -4,48 +4,53 @@ export default {
 };
 </script>
 <template>
-  <div class="offer-card">
-    <div class="empty-car-image" />
-    <div>
-      {{ offer.price }}
+  <div class="flex p-4 gap-4">
+    <img
+      v-if="offer.car.imageUrl"
+      :src="offer.car.imageUrl"
+      height="64"
+      width="96"
+      class="rounded"
+      alt="car image"
+    />
+    <img
+      v-else
+      src="/src/assets/no-image-found.png"
+      height="64"
+      width="96"
+      class="rounded"
+      alt="car image"
+    />
+    <div class="flex gap-2 text-xs">
+      <p>
+        {{ offer.price }}
+      </p>
+      <p>
+        {{ offer.provider }}
+      </p>
+      <p>
+        {{ offer.car.name }}
+      </p>
+      <p>
+        {{ offer.car.bodyType }}
+      </p>
+      <p>
+        {{ offer.car.motorType }}
+      </p>
+      <p>
+        {{ offer.car.motorType }}
+      </p>
+      <p>
+        {{ offer.car.petFriendly }}
+      </p>
+      <p>
+        {{ offer.car.gearBox }}
+      </p>
     </div>
-    <div>
-      {{ offer.provider }}
-    </div>
-    <div>
-      {{ offer.car.name }}
-    </div>
-    <div>
-      {{ offer.car.bodyType }}
-    </div>
-    <div>
-      {{ offer.car.motorType }}
-    </div>
-    <div>
-      {{ offer.car.motorType }}
-    </div>
-    <div>
-      {{ offer.car.petFriendly }}
-    </div>
-    <div>
-      {{ offer.car.gearBox }}
-    </div>
+
   </div>
 </template>
 
 <style lang="scss" scoped>
-@import "@/GlobalVariables.scss";
 
-.offer-card {
-  border: 1px solid $gray;
-  display: flex;
-  padding: 8px;
-}
-
-.empty-car-image {
-  background: $gray;
-  width: 100px;
-  height: 60px;
-  border-radius: 4px;
-}
 </style>

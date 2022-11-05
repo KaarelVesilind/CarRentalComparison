@@ -32,7 +32,7 @@ export default class OffersCalculator {
           offers.push({
             id: offers.length + 1,
             price: price.toFixed(2),
-            car: car.name,
+            car: car,
             provider: provider.toUpperCase(),
             extraInfo: extraInfo,
           });
