@@ -8,7 +8,7 @@ import "./assets/main.css";
 
 const app = createApp(App);
 app.use(VueGtag, {
-  config: { id: import.meta.env.VITE_GOOGLE_ANALYTICS_ID },
+  config: { id: "G-ZJX16HT3KE" },
 });
 app.use(createPinia());
 app.use(router);
