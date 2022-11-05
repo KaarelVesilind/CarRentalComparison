@@ -21,9 +21,13 @@
     </div>
   </div>
 </template>
-<script>
+<script setup>
 import TopNavBar from "@/components/global/TopNavBar.vue";
-export default {
-  components: { TopNavBar },
-};
+import { event } from "vue-gtag";
+
+event("page_view", {
+  page_title: "Home",
+  page_location: "https://kaarelvesilind.github.io/carrentalcomparison/",
+  page_path: "/",
+});
 </script>
