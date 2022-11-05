@@ -7,7 +7,7 @@ export const beast = {
       motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      image_url:
+      imageUrl:
         "http://beast.rent/wp-content/uploads/2021/04/Model-3-Must-1.png",
       price: {
         km: 0.2,
@@ -24,7 +24,7 @@ export const beast = {
       motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      image_url:
+      imageUrl:
         "http://beast.rent/wp-content/uploads/2021/06/Model-3-Punane-1.png",
       price: {
         km: 0.2,
@@ -41,7 +41,7 @@ export const beast = {
       motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      image_url: "http://beast.rent/wp-content/uploads/2021/04/M3P-png.png",
+      imageUrl: "http://beast.rent/wp-content/uploads/2021/04/M3P-png.png",
       price: {
         km: 0.2,
         start: 9.99,
@@ -57,7 +57,7 @@ export const beast = {
       motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      image_url:
+      imageUrl:
         "http://beast.rent/wp-content/uploads/2022/03/beast_mYlr_er_ib_r19-4.jpg",
       price: {
         km: 0.25,
@@ -74,7 +74,7 @@ export const beast = {
       motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      image_url:
+      imageUrl:
         "http://beast.rent/wp-content/uploads/2021/04/P100D-X-Icon-V2.png",
       price: {
         km: 0.3,

@@ -7,7 +7,7 @@ export const citybee = {
       motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      image_url:
+      imageUrl:
         "https://citybee.ee/wp-content/uploads/2021/08/CityBee_ToyotaYaris_EE-768x454.png",
       price: {
         km: 0.22,
@@ -138,7 +138,7 @@ export const citybee = {
       motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      image_url:
+      imageUrl:
         "https://citybee.lt/wp-content/uploads/2021/07/Skoda-Fabia-WhiteMoon-768x454.png",
       price: {
         km: 0.22,
@@ -269,7 +269,7 @@ export const citybee = {
       motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      image_url:
+      imageUrl:
         "https://citybee.ee/wp-content/uploads/2021/08/CityBee_Peugeot208_EE-768x454.png",
       price: {
         km: 0.22,
@@ -400,7 +400,7 @@ export const citybee = {
       motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      image_url: "https://citybee.ee/wp-content/uploads/2022/04/Citroen-C3.png",
+      imageUrl: "https://citybee.ee/wp-content/uploads/2022/04/Citroen-C3.png",
       price: {
         km: 0.22,
         minute: 0.13,
@@ -530,7 +530,7 @@ export const citybee = {
       motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      image_url:
+      imageUrl:
         "https://files-ee.citybee.tech/images/bffb20e1-1174-42be-9310-8859b7889215.png",
       price: {
         km: 0.22,
@@ -661,7 +661,7 @@ export const citybee = {
       motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      image_url:
+      imageUrl:
         "https://files-ee.citybee.tech/images/c17b0635-cc06-4f6d-8c57-714d9be67f35.png",
       price: {
         km: 0.22,
@@ -792,7 +792,7 @@ export const citybee = {
       motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      image_url:
+      imageUrl:
         "https://citybee.ee/wp-content/uploads/2021/08/CityBee_ToyotaCorolla_Hatch_EE-768x454.png",
       price: {
         km: 0.24,
@@ -923,7 +923,7 @@ export const citybee = {
       motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      image_url:
+      imageUrl:
         "https://citybee.ee/wp-content/uploads/2021/08/CityBee_VW_Golf8_EE-768x454.png",
       price: {
         km: 0.24,
@@ -1054,7 +1054,7 @@ export const citybee = {
       motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      image_url:
+      imageUrl:
         "https://files-ee.citybee.tech/images/e934c126-121e-4cad-904a-090cc90b8969.png",
       price: {
         km: 0.24,
@@ -1185,7 +1185,7 @@ export const citybee = {
       motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      image_url: "https://citybee.ee/wp-content/uploads/2022/04/BMW-118i.png",
+      imageUrl: "https://citybee.ee/wp-content/uploads/2022/04/BMW-118i.png",
       price: {
         km: 0.26,
         minute: 0.23,
@@ -1315,7 +1315,7 @@ export const citybee = {
       motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      image_url:
+      imageUrl:
         "https://citybee.ee/wp-content/uploads/2021/08/CityBee_VW_T-Cross_EE-768x454.png",
       price: {
         km: 0.24,
@@ -1446,7 +1446,7 @@ export const citybee = {
       motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      image_url:
+      imageUrl:
         "https://files-ee.citybee.tech/images/baea33ea-0305-4b67-a598-b5fc0950830e.png",
       price: {
         km: 0.24,
@@ -1577,7 +1577,7 @@ export const citybee = {
       motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      image_url:
+      imageUrl:
         "https://citybee.ee/wp-content/uploads/2021/08/VW_TRoc_icon_EE-768x454.png",
       price: {
         km: 0.24,
@@ -1708,7 +1708,7 @@ export const citybee = {
       motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      image_url:
+      imageUrl:
         "https://files-ee.citybee.tech/images/4fdef8e0-0036-4621-aff9-66e55634b161.png",
       price: {
         km: 0.26,
@@ -1839,7 +1839,7 @@ export const citybee = {
       motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      image_url:
+      imageUrl:
         "https://files-ee.citybee.tech/images/d3245015-188e-42bd-b0aa-e98d58e0926f.png",
       price: {
         km: 0.24,
@@ -1970,7 +1970,7 @@ export const citybee = {
       motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      image_url:
+      imageUrl:
         "https://citybee.ee/wp-content/uploads/2022/04/83155c4c-f137-4ebc-881e-9d51728aa1a5.png",
       price: {
         km: 0.24,
@@ -2101,7 +2101,7 @@ export const citybee = {
       motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      image_url:
+      imageUrl:
         "https://files-ee.citybee.tech/images/a7ef1ef2-2ace-454a-8151-2adff796644e.png",
       price: {
         km: 0.24,
@@ -2246,7 +2246,7 @@ export const citybee = {
       motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      image_url:
+      imageUrl:
         "https://files-ee.citybee.tech/images/929e0d52-b2c6-4ac4-a6e7-a7443d7a12cd.png",
       price: {
         km: 0.26,
@@ -2377,7 +2377,7 @@ export const citybee = {
       motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      image_url:
+      imageUrl:
         "https://files-ee.citybee.tech/images/f374da70-1919-4b4d-ba6f-59308a9f6c04.png",
       price: {
         km: 0.26,
@@ -2508,7 +2508,7 @@ export const citybee = {
       motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      image_url:
+      imageUrl:
         "https://files-ee.citybee.tech/images/a9426700-c1a5-4b42-a54a-9878b0639393.png",
       price: {
         km: 0.27,
@@ -2639,7 +2639,7 @@ export const citybee = {
       motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      image_url:
+      imageUrl:
         "https://citybee.ee/wp-content/uploads/2022/04/a6777e26-f06c-415a-862e-6ff339324285.png",
       price: {
         km: 0.29,
@@ -2770,7 +2770,7 @@ export const citybee = {
       motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      image_url:
+      imageUrl:
         "https://files-ee.citybee.tech/images/af626c4e-7247-4437-a6b5-6dc9e475a27b.png",
       price: {
         km: 0.25,
@@ -2901,7 +2901,7 @@ export const citybee = {
       motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      image_url:
+      imageUrl:
         "https://files-ee.citybee.tech/images/78ada031-ad89-4441-88d5-3813ffacef89.png",
       price: {
         km: 0.26,
@@ -3032,7 +3032,7 @@ export const citybee = {
       motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      image_url:
+      imageUrl:
         "https://files-ee.citybee.tech/images/af98ce28-1940-4d8d-b5c3-74dd2cb95f2d.png",
       price: {
         km: 0.25,
@@ -3163,7 +3163,7 @@ export const citybee = {
       motorType: "PETROL",
       petFriendly: true,
       gearBox: "MANUAL",
-      image_url:
+      imageUrl:
         "https://files-ee.citybee.tech/images/192b86c6-f153-45b2-bf98-151396fffae2.png",
       price: {
         km: 0.27,
@@ -3235,7 +3235,7 @@ export const citybee = {
       motorType: "PETROL",
       petFriendly: true,
       gearBox: "MANUAL",
-      image_url:
+      imageUrl:
         "https://files-ee.citybee.tech/images/be81a2a2-e1ef-4db6-8830-610ea70c7349.png",
       price: {
         km: 0.27,
@@ -3307,7 +3307,7 @@ export const citybee = {
       motorType: "PETROL",
       petFriendly: true,
       gearBox: "MANUAL",
-      image_url:
+      imageUrl:
         "https://files-ee.citybee.tech/images/a94092de-4686-47b7-a406-fe05def6d61a.png",
       price: {
         km: 0.27,
