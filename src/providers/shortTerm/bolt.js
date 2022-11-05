@@ -1,5 +1,5 @@
 export const bolt = {
-  cities: ["Tallinn"],
+  cities: ["Tallinn", "Tartu"],
   cars: [
     {
       name: "Toyota Corolla",
