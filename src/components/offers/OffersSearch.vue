@@ -95,7 +95,7 @@ const calculate = () => {
       </button>
     </div>
     <p v-if="invalidValues" class="text-red-500 font-bold">
-      Invalid time or distance
+      Invalid time or distance!
     </p>
   </div>
 </template>
