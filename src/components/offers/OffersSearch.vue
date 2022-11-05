@@ -47,25 +47,17 @@
     </div>
   </div>
 </template>
-<script>
+<script setup>
 import { useStore } from "@/stores/rental";
 import { beast } from "@/providers/shortTerm/beast";
 import { bolt } from "@/providers/shortTerm/bolt";
 import { citybee } from "@/providers/shortTerm/citybee";
 import { elmo } from "@/providers/shortTerm/elmo";
+import { ref } from "vue";
 
-export default {
-  name: "OfferSearch",
-  data() {
-    return {
-      cities: new Set(beast.cities, bolt.cities, citybee.cities, elmo.cities),
-    };
-  },
-  computed: {
-    searchParamsObj() {
-      const store = useStore();
-      return store.searchParamsObj;
-    },
-  },
-};
+const cities = ref(
+  new Set(beast.cities, bolt.cities, citybee.cities, elmo.cities)
+);
+const store = useStore();
+const searchParamsObj = ref(store.searchParamsObj);
 </script>

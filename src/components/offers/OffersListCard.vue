@@ -1,7 +1,9 @@
-<script>
-export default {
-  props: ["offer"],
-};
+<script setup>
+defineProps({
+  offer: {
+    required: true,
+  },
+});
 </script>
 <template>
   <div class="flex p-4 gap-4">
@@ -47,10 +49,7 @@ export default {
         {{ offer.car.gearBox }}
       </p>
     </div>
-
   </div>
 </template>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

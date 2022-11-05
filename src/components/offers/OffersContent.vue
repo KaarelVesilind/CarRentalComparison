@@ -1,15 +1,13 @@
-<script setup></script>
+<script setup>
+import OffersListContent from "@/components/offers/OffersListContent.vue";
+defineProps({
+  offers: {
+    required: true,
+  },
+});
+</script>
 <template>
   <div>
-    <OffersListContent
-    :offers="offers"
-    />
+    <OffersListContent :offers="offers" />
   </div>
 </template>
-<script>
-import OffersListContent from "@/components/offers/OffersListContent.vue";
-export default {
-  props: ['offers'],
-  components: { OffersListContent },
-};
-</script>

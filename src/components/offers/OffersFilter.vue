@@ -1,16 +1,9 @@
 <template>
   <div>filter here</div>
 </template>
-<script>
+<script setup>
 import { useStore } from "@/stores/rental";
+import { ref } from "vue";
 
-export default {
-  name: "OfferSearch",
-  computed: {
-    filterConditionsObj() {
-      const store = useStore();
-      return store.filterConditionsObj;
-    },
-  },
-};
+const filterConditionsObj = ref(useStore().filterConditionsObj);
 </script>
