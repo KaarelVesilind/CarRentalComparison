@@ -33,8 +33,8 @@ export default class BoltPriceCalculator {
       }
     }
     const totalCost = distanceCost + daysCost + hoursCost + minutesCost;
-    if (totalCost < 1.99) {
-      return 1.99;
+    if (totalCost < (price.min ?? 1.99)) {
+      return price.min ?? 1.99;
     } else {
       return totalCost;
     }

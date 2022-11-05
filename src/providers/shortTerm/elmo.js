@@ -7,7 +7,7 @@ export const elmo = {
       motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      image_url: "https://elmorent.ee/wp-content/uploads/2020/08/VW-e-Up20.png",
+      imageUrl: "https://elmorent.ee/wp-content/uploads/2020/08/VW-e-Up20.png",
       price: {
         km: 0.2,
         minute: 0.11,
@@ -33,7 +33,7 @@ export const elmo = {
       motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      image_url:
+      imageUrl:
         "https://elmorent.ee/wp-content/uploads/2020/08/Skoda-Citigo20.png",
       price: {
         km: 0.2,
@@ -60,7 +60,7 @@ export const elmo = {
       motorType: "HYBRID",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      image_url:
+      imageUrl:
         "https://elmorent.ee/wp-content/uploads/2020/08/Elmo-rent-toyota-vaiksem.png",
       price: {
         km: 0.2,
@@ -87,7 +87,7 @@ export const elmo = {
       motorType: "HYBRID",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      image_url:
+      imageUrl:
         "https://elmorent.ee/wp-content/uploads/2017/07/Elmo-rent-nissan-leaf-1.png",
       price: {
         km: 0.2,
@@ -114,7 +114,7 @@ export const elmo = {
       motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      image_url: "https://elmorent.ee/wp-content/uploads/2020/08/VW-e-Up20.png",
+      imageUrl: "https://elmorent.ee/wp-content/uploads/2020/08/VW-e-Up20.png",
       price: {
         km: 0.2,
         minute: 0.11,
@@ -140,7 +140,7 @@ export const elmo = {
       motorType: "HYBRID",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      image_url:
+      imageUrl:
         "https://elmorent.ee/wp-content/uploads/2021/07/Clio-600x338.png",
       price: {
         km: 0.2,
@@ -167,7 +167,7 @@ export const elmo = {
       motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      image_url:
+      imageUrl:
         "https://elmorent.ee/wp-content/uploads/2020/05/Renault-Zoe-20.png",
       price: {
         km: 0.2,
@@ -194,7 +194,7 @@ export const elmo = {
       motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      image_url:
+      imageUrl:
         "https://elmorent.ee/wp-content/uploads/2020/05/Renault-Zoe-20.png",
       price: {
         km: 0.2,
@@ -221,7 +221,7 @@ export const elmo = {
       motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      image_url:
+      imageUrl:
         "https://elmorent.ee/wp-content/uploads/2021/10/Arkana_kodulehele.png",
       price: {
         km: 0.22,
@@ -248,7 +248,7 @@ export const elmo = {
       motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      image_url:
+      imageUrl:
         "https://elmorent.ee/wp-content/uploads/2021/08/ELMO-Tesla.png",
       price: {
         km: 0.2,
