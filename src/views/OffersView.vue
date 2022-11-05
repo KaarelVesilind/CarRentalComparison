@@ -1,7 +1,7 @@
 <template>
   <main>
     <OffersHeader @search="search" />
-    <OffersContent :offers="offers" class="max-w-2xl mt-4" />
+    <OffersContent :offers="offers" />
   </main>
 </template>
 <script setup>

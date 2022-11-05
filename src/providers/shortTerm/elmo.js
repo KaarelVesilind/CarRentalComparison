@@ -7,7 +7,7 @@ export const elmo = {
       motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      imageUrl: "https://elmorent.ee/wp-content/uploads/2020/08/VW-e-Up20.png",
+      imageUrl: "/src/assets/providers/elmo/cars/VW-e-Up20.png",
       price: {
         km: 0.2,
         minute: 0.11,
@@ -33,8 +33,7 @@ export const elmo = {
       motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      imageUrl:
-        "https://elmorent.ee/wp-content/uploads/2020/08/Skoda-Citigo20.png",
+      imageUrl: "/src/assets/providers/elmo/cars/Skoda-Citigo.png",
       price: {
         km: 0.2,
         minute: 0.11,
@@ -60,8 +59,7 @@ export const elmo = {
       motorType: "HYBRID",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      imageUrl:
-        "https://elmorent.ee/wp-content/uploads/2020/08/Elmo-rent-toyota-vaiksem.png",
+      imageUrl: "/src/assets/providers/elmo/cars/Toyota-Yaris-Hybrid.png",
       price: {
         km: 0.2,
         minute: 0.11,
@@ -87,8 +85,7 @@ export const elmo = {
       motorType: "HYBRID",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      imageUrl:
-        "https://elmorent.ee/wp-content/uploads/2017/07/Elmo-rent-nissan-leaf-1.png",
+      imageUrl: "/src/assets/providers/elmo/cars/Nissan-Leaf.png",
       price: {
         km: 0.2,
         minute: 0.11,
@@ -114,7 +111,7 @@ export const elmo = {
       motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      imageUrl: "https://elmorent.ee/wp-content/uploads/2020/08/VW-e-Up20.png",
+      imageUrl: "/src/assets/providers/elmo/cars/VW-e-Up20.png",
       price: {
         km: 0.2,
         minute: 0.11,
@@ -140,8 +137,7 @@ export const elmo = {
       motorType: "HYBRID",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      imageUrl:
-        "https://elmorent.ee/wp-content/uploads/2021/07/Clio-600x338.png",
+      imageUrl: "/src/assets/providers/elmo/cars/Renault-Clio-Hybrid.png",
       price: {
         km: 0.2,
         minute: 0.11,
@@ -167,8 +163,7 @@ export const elmo = {
       motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      imageUrl:
-        "https://elmorent.ee/wp-content/uploads/2020/05/Renault-Zoe-20.png",
+      imageUrl: "/src/assets/providers/elmo/cars/Renault-Zoe.png",
       price: {
         km: 0.2,
         minute: 0.13,
@@ -189,13 +184,12 @@ export const elmo = {
       ],
     },
     {
-      name: "Peuget e-208 GT",
+      name: "Peugeot e-208 GT",
       bodyType: "HATCHBACK",
       motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      imageUrl:
-        "https://elmorent.ee/wp-content/uploads/2020/05/Renault-Zoe-20.png",
+      imageUrl: "/src/assets/providers/elmo/cars/Peugeot-e-208-GT.png",
       price: {
         km: 0.2,
         minute: 0.13,
@@ -222,7 +216,7 @@ export const elmo = {
       petFriendly: true,
       gearBox: "AUTOMATIC",
       imageUrl:
-        "https://elmorent.ee/wp-content/uploads/2021/10/Arkana_kodulehele.png",
+          "/src/assets/providers/elmo/cars/Renault-Arkana-Hybrid.png",
       price: {
         km: 0.22,
         minute: 0.15,
@@ -248,8 +242,7 @@ export const elmo = {
       motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      imageUrl:
-        "https://elmorent.ee/wp-content/uploads/2021/08/ELMO-Tesla.png",
+      imageUrl: "/src/assets/providers/elmo/cars/Tesla-Model-3-SR+.png",
       price: {
         km: 0.2,
         minute: 0.25,

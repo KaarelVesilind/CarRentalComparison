@@ -7,7 +7,7 @@ defineProps({
 });
 </script>
 <template>
-  <div>
+  <div class="max-w-2xl mt-4">
     <OffersListContent :offers="offers" />
   </div>
 </template>
