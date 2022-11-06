@@ -1,5 +1,76 @@
+<template>
+  <div
+    :class="'h-min-28 ' + backgroundColor"
+    @click="openDetails = !openDetails"
+  >
+    <div class="flex p-2 gap-2">
+      <img
+        :src="offer.car.imageUrl ?? '/src/assets/no-image-available.png'"
+        class="rounded self-center"
+        alt="car image"
+        style="width: 112px; height: 78px"
+        :style="offer.car.imageUrl ? '' : 'padding: 14px 18px'"
+      />
+      <div class="flex flex-col justify-center">
+        <div
+          class="flex flex-wrap gap-x-2 whitespace-nowrap content-center sm:max-w-sm max-w-xl"
+        >
+          <span class="text-xl font-semibold"> {{ price.toFixed(2) }} € </span>
+
+          <img
+            :src="`/src/assets/providers/${provider}/${provider}-logo.png`"
+            alt="provider logo"
+            style="height: 24px"
+            :class="provider === 'bolt' ? 'mt-1 mb-1' : ''"
+          />
+
+          <span>
+            {{ offer.car.name }}
+          </span>
+        </div>
+        <div
+          class="flex flex-wrap gap-2 whitespace-nowrap content-center sm:max-w-sm max-w-xl"
+        >
+          <img
+            v-for="icon in icons"
+            :src="icon.src"
+            :alt="icon.alt"
+            :key="icon.name"
+            style="height: 24px"
+          />
+        </div>
+
+        <span v-if="usePackage">📦 {{ extraInfo }}</span>
+        <div
+          v-if="usePackage || provider === 'citybee'"
+          class="flex justify-center"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            :class="openDetails ? 'transform rotate-180' : ''"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div v-if="openDetails">
+      <p v-if="provider === 'citybee'">💰 Cashback {{ getCashback }}€</p>
+      <p v-if="usePackage">Cost without package: {{ normalPrice }}€</p>
+    </div>
+  </div>
+</template>
 <script setup>
-import { computed } from "vue";
+import { computed, ref, watch } from "vue";
 
 const props = defineProps({
   offer: {
@@ -7,122 +78,116 @@ const props = defineProps({
   },
 });
 
+const price = ref(0);
+const extraInfo = ref("");
+const usePackage = ref(false);
+const normalPrice = ref(0);
+
+// watch offers prop and update price
+watch(
+  () => props.offer,
+  () => {
+    _initializePrice();
+  }
+);
+
+const _initializePrice = () => {
+  const offerPrice = props.offer.price;
+  if (typeof offerPrice === "object") {
+    if (offerPrice.package.price < offerPrice.normalPrice) {
+      const packageDetails = offerPrice.package;
+      const monthsText =
+        packageDetails.months > 0 ? packageDetails.months + " months " : "";
+      const weeksText =
+        packageDetails.weeks > 0 ? packageDetails.weeks + " weeks " : "";
+      const daysText =
+        packageDetails.days > 0 ? packageDetails.days + " days " : "";
+      const hoursText =
+        packageDetails.hours > 0 ? packageDetails.hours + " hours " : "";
+      extraInfo.value = `Use package: ${monthsText}${weeksText}${daysText}${hoursText}${packageDetails.distance} km `;
+      normalPrice.value = offerPrice.normalPrice;
+      price.value = offerPrice.package.price;
+      usePackage.value = true;
+    } else {
+      price.value = offerPrice.price;
+      normalPrice.value = offerPrice.price;
+      usePackage.value = false;
+    }
+  } else {
+    price.value = offerPrice;
+  }
+  return { extraInfo, price };
+};
+_initializePrice();
+
+const getCashback = computed(() => {
+  const cashback = price.value * 0.07;
+  return cashback.toFixed(2);
+});
+
+const openDetails = ref(false);
+
+const provider = ref(props.offer.provider.toLowerCase());
+
+const defaultIcons = [
+  {
+    name: "BodyType",
+    src: `/src/assets//car_body_types/${props.offer.car.bodyType.toLowerCase()}.png`,
+    alt: `car body type ${props.offer.car.bodyType.toLowerCase()}`,
+  },
+  {
+    name: "GearBox",
+    src: `/src/assets/${props.offer.car.gearBox.toLowerCase()}-logo.png`,
+    alt: `gearBox ${props.offer.car.gearBox.toLowerCase()}`,
+  },
+];
+
+const icons = computed(() => {
+  const icons = [...defaultIcons];
+  // Adding motorType icons
+  if (
+    props.offer.car.motorType === "ELECTRIC" ||
+    props.offer.car.motorType === "HYBRID"
+  ) {
+    icons.push({
+      name: "MotorType",
+      src: "/src/assets/electric-logo.png",
+      alt: "motortype electric",
+    });
+  }
+  if (
+    props.offer.car.motorType === "PETROL" ||
+    props.offer.car.motorType === "HYBRID"
+  ) {
+    icons.push({
+      name: "MotorType",
+      src: "/src/assets/petrol-logo.png",
+      alt: "motortype petrol",
+    });
+  }
+  // Adding petFriendly icon
+  if (props.offer.car.petFriendly) {
+    icons.push({
+      name: "PetFriendly",
+      src: "/src/assets/pet-friendly-logo.png",
+      alt: "pet friendly logo",
+    });
+  }
+  return icons;
+});
+
 const backgroundColor = computed(() => {
-  switch (props.offer.provider) {
-    case "BEAST":
+  switch (provider.value) {
+    case "beast":
       return "bg-gray-50";
-    case "BOLT":
+    case "bolt":
       return "bg-green-50";
-    case "CITYBEE":
+    case "citybee":
       return "bg-orange-50";
-    case "ELMO":
+    case "elmo":
       return "bg-blue-50";
     default:
       throw "missing provider: " + props.offer.provider;
   }
 });
-
-const providerLogo = computed(() => {
-  switch (props.offer.provider) {
-    case "BEAST":
-      return "/src/assets/providers/beast/beast-logo.png";
-    case "BOLT":
-      return "/src/assets/providers/bolt/bolt-logo.png";
-    case "CITYBEE":
-      return "/src/assets/providers/citybee/citybee-logo.png";
-    case "ELMO":
-      return "/src/assets/providers/elmo/elmo-logo.png";
-    default:
-      throw "missing provider: " + props.offer.provider;
-  }
-});
-const gearBoxLogo = computed(() => {
-  switch (props.offer.car.gearBox) {
-    case "AUTOMATIC":
-      return "/src/assets/automatic-logo.png";
-    case "MANUAL":
-      return "/src/assets/manual-logo.png";
-    default:
-      throw "missing gearbox: " + props.offer.car.gearBox;
-  }
-});
-const bodyTypeLogo = computed(() => {
-  switch (props.offer.car.bodyType) {
-    case "SEDAN":
-      return "/src/assets/car_body_types/sedan.png";
-    case "TOURING":
-      return "/src/assets/car_body_types/touring.png";
-    case "HATCHBACK":
-      return "/src/assets/car_body_types/hatchback.png";
-    case "CABRIOLET":
-      return "/src/assets/car_body_types/cabriolet.png";
-    case "VAN":
-      return "/src/assets/car_body_types/van.png";
-    default:
-      throw (
-        "missing car bodyType: " + props.offer.provider + props.offer.car.name
-      );
-  }
-});
 </script>
-<template>
-  <div :class="'flex p-2 gap-2 h-28 ' + backgroundColor">
-    <img
-      v-if="offer.car.imageUrl"
-      :src="offer.car.imageUrl"
-      class="rounded self-center"
-      alt="car image"
-      style="width: 112px; height: 78px"
-    />
-    <img
-      v-else
-      src="/src/assets/no-image-available.png"
-      class="rounded self-center"
-      alt="car image"
-      style="padding: 14px 18px; min-width: 112px; height: 78px"
-    />
-    <div
-      class="flex flex-wrap gap-2 whitespace-nowrap content-center sm:max-w-sm max-w-xl"
-    >
-      <span class="text-xl"> {{ offer.price }} € </span>
-
-      <img :src="providerLogo" alt="provider logo" style="height: 24px" />
-
-      <span>
-        {{ offer.car.name }}
-      </span>
-
-      <img
-        v-if="
-          offer.car.motorType === 'ELECTRIC' || offer.car.motorType === 'HYBRID'
-        "
-        src="/src/assets/electric-logo.png"
-        alt="motortype electric"
-        style="height: 24px"
-      />
-      <img
-        v-if="
-          offer.car.motorType === 'PETROL' || offer.car.motorType === 'HYBRID'
-        "
-        src="/src/assets/petrol-logo.png"
-        alt="motortype petrol"
-        style="height: 24px"
-      />
-      <img :src="bodyTypeLogo" alt="car body type logo" style="height: 24px" />
-      <img
-        v-if="offer.car.petFriendly"
-        src="/src/assets/pet-friendly-logo.png"
-        alt="pet friendly logo"
-        style="height: 24px"
-      />
-      <img
-        v-if="offer.car.gearBox"
-        :src="gearBoxLogo"
-        alt="gearBox logo"
-        style="height: 24px"
-      />
-    </div>
-  </div>
-</template>
-
-<style lang="scss" scoped></style>

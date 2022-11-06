@@ -82,7 +82,7 @@ export const elmo = {
     {
       name: "Nissan Leaf",
       bodyType: "HATCHBACK",
-      motorType: "HYBRID",
+      motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
       imageUrl: "/src/assets/providers/elmo/cars/Nissan-Leaf.png",
@@ -212,11 +212,10 @@ export const elmo = {
     {
       name: "Renault Arkana Hybrid",
       bodyType: "HATCHBACK",
-      motorType: "ELECTRIC",
+      motorType: "HYBRID",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      imageUrl:
-          "/src/assets/providers/elmo/cars/Renault-Arkana-Hybrid.png",
+      imageUrl: "/src/assets/providers/elmo/cars/Renault-Arkana-Hybrid.png",
       price: {
         km: 0.22,
         minute: 0.15,
