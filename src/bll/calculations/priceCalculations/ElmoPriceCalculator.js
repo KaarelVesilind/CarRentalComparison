@@ -43,6 +43,7 @@ export default class ElmoPriceCalculator {
       monthPrice: car.packages[1],
     });
 
+    const normalPrice = daysCost + hoursCost + minutesCost + distanceCost;
     let monthsCost = 0;
     let weeksCost = 0;
     if (
@@ -71,8 +72,8 @@ export default class ElmoPriceCalculator {
         ...this.cheapest,
         distance: this.cheapest.months * 3000 + this.cheapest.weeks * 700,
       },
-      normalPrice: totalCost,
-      price: this.cheapest.price < totalCost ? this.cheapest.price : totalCost,
+      normalPrice: normalPrice,
+      price: totalCost,
     };
   }
 
