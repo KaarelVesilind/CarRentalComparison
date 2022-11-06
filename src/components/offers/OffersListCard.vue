@@ -64,9 +64,7 @@
       </div>
     </div>
     <div v-if="openDetails">
-      <p v-if="provider === 'citybee'">
-        💰 Cashback {{ getCashback.toFixed(2) }}€
-      </p>
+      <p v-if="provider === 'citybee'">💰 Cashback {{ getCashback }}€</p>
       <p v-if="usePackage">
         Cost without package: {{ normalPrice.toFixed(2) }}€
       </p>
