@@ -8,7 +8,7 @@ export const beast = {
       petFriendly: true,
       gearBox: "AUTOMATIC",
       imageUrl:
-        "http://beast.rent/wp-content/uploads/2021/04/Model-3-Must-1.png",
+        "/src/assets/providers/beast/cars/Tesla-Model-3-Standard-Range.png",
       price: {
         km: 0.2,
         start: 4.99,
@@ -24,8 +24,7 @@ export const beast = {
       motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      imageUrl:
-        "http://beast.rent/wp-content/uploads/2021/06/Model-3-Punane-1.png",
+      imageUrl: "/src/assets/providers/beast/cars/Tesla-Model-3-Long-Range.png",
       price: {
         km: 0.2,
         start: 4.99,
@@ -41,7 +40,8 @@ export const beast = {
       motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      imageUrl: "http://beast.rent/wp-content/uploads/2021/04/M3P-png.png",
+      imageUrl:
+        "/src/assets/providers/beast/cars/Tesla-Model-3-Performance.png",
       price: {
         km: 0.2,
         start: 9.99,
@@ -57,8 +57,7 @@ export const beast = {
       motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      imageUrl:
-        "http://beast.rent/wp-content/uploads/2022/03/beast_mYlr_er_ib_r19-4.jpg",
+      imageUrl: "/src/assets/providers/beast/cars/Tesla-Model-Y-Long-Range.png",
       price: {
         km: 0.25,
         start: 9.99,
@@ -75,7 +74,7 @@ export const beast = {
       petFriendly: true,
       gearBox: "AUTOMATIC",
       imageUrl:
-        "http://beast.rent/wp-content/uploads/2021/04/P100D-X-Icon-V2.png",
+        "/src/assets/providers/beast/cars/Tesla-Model-X-Ludicrous-Perf.png",
       price: {
         km: 0.3,
         start: 9.99,

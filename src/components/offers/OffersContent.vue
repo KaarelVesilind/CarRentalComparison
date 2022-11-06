@@ -1,12 +1,13 @@
-<script setup></script>
+<script setup>
+import OffersListContent from "@/components/offers/OffersListContent.vue";
+defineProps({
+  offers: {
+    required: true,
+  },
+});
+</script>
 <template>
-  <div>
-    <OffersListContent />
+  <div class="max-w-2xl mt-4">
+    <OffersListContent :offers="offers" />
   </div>
 </template>
-<script>
-import OffersListContent from "@/components/offers/OffersListContent.vue";
-export default {
-  components: { OffersListContent },
-};
-</script>

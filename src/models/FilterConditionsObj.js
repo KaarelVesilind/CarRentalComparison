@@ -1,4 +1,4 @@
-export const filterConditionsObj = {
+export default {
   bodyType: {
     HATCHBACK: false,
     SEDAN: false,

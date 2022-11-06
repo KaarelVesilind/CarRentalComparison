@@ -21,43 +21,17 @@ export default class OffersCalculator {
           let price = this._calculatePrice(provider, car, {
             ...searchParamsObj,
           });
-          let extraInfo = "";
-          ({ extraInfo, price } = this._addExtraInfo(
-            provider,
-            extraInfo,
-            car,
-            price
-          ));
 
           offers.push({
             id: offers.length + 1,
-            price: price.toFixed(2),
-            car: car.name,
+            price: price,
+            car: car,
             provider: provider.toUpperCase(),
-            extraInfo: extraInfo,
           });
         }
       }
     }
-    return offers.sort((a, b) => a.price - b.price);
-  }
-
-  _addExtraInfo(provider, extraInfo, car, price) {
-    if (provider === "elmo") {
-      extraInfo = price.extraInfo;
-      price = price.price;
-    }
-    if (provider === "citybee") {
-      if (typeof price === "object") {
-        const daysText = price.days > 0 ? price.days + " days " : "";
-        const hoursText = price.hours > 0 ? price.hours + " hours " : "";
-        extraInfo += `Use package: ${daysText}${hoursText}${price.distance} km `;
-        price = price.price;
-      }
-      const cashback = price * 0.07;
-      extraInfo += `| Cashback ${cashback.toFixed(2)}€ `;
-    }
-    return { extraInfo, price };
+    return offers.sort((a, b) => getPrice(a.price) - getPrice(b.price));
   }
 
   _calculatePrice(provider, car, searchParamsObj) {
@@ -81,3 +55,10 @@ export default class OffersCalculator {
     }
   }
 }
+
+const getPrice = (price) => {
+  if (typeof price === "number") {
+    return price;
+  }
+  return price.price;
+};

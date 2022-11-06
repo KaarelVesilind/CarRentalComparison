@@ -21,15 +21,11 @@ export default class CityBeePriceCalculator {
       totalTime,
       price
     );
-    if (
-      usePackage.days > 0 ||
-      usePackage.hours > 0 ||
-      usePackage.distance > 0
-    ) {
-      return usePackage;
-    } else {
-      return totalCost;
-    }
+    return {
+      package: usePackage,
+      normalPrice: totalCost,
+      price: usePackage.price < totalCost ? usePackage.price : totalCost,
+    };
   }
 
   _calculatePackages(car, totalCost, searchParamsObj, totalTime, price) {

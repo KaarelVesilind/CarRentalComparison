@@ -11,7 +11,7 @@ export default class ElmoPriceCalculator {
       minutesCost: 0,
       distanceCost: 0,
     },
-    totalCost: Infinity,
+    price: Infinity,
   };
 
   // Price calculation function
@@ -43,13 +43,12 @@ export default class ElmoPriceCalculator {
       monthPrice: car.packages[1],
     });
 
+    const normalPrice = daysCost + hoursCost + minutesCost + distanceCost;
     let monthsCost = 0;
     let weeksCost = 0;
-    let extraInfo = "";
     if (
       (this.cheapest.months > 0 || this.cheapest.weeks > 0) &&
-      this.cheapest.totalCost <
-        distanceCost + daysCost + hoursCost + minutesCost
+      this.cheapest.price < distanceCost + daysCost + hoursCost + minutesCost
     ) {
       monthsCost = this.cheapest.months * car.packages[1].price;
       weeksCost = this.cheapest.weeks * car.packages[0].price;
@@ -57,17 +56,6 @@ export default class ElmoPriceCalculator {
       hoursCost = this.cheapest.withNormalPricing.hoursCost;
       minutesCost = this.cheapest.withNormalPricing.minutesCost;
       distanceCost = this.cheapest.withNormalPricing.distanceCost;
-
-      extraInfo += ` | Contact ELMO for`;
-      let and = false;
-      if (monthsCost > 0) {
-        extraInfo += ` ${this.cheapest.months} month(s) package`;
-        and = true;
-      }
-      if (weeksCost > 0) {
-        extraInfo += `${and ? " and " : ""}`;
-        extraInfo += ` ${this.cheapest.weeks} week(s) package`;
-      }
     }
     let totalCost =
       monthsCost +
@@ -80,7 +68,11 @@ export default class ElmoPriceCalculator {
       totalCost = 30;
     }
     return {
-      extraInfo: extraInfo,
+      package: {
+        ...this.cheapest,
+        distance: this.cheapest.months * 3000 + this.cheapest.weeks * 700,
+      },
+      normalPrice: normalPrice,
       price: totalCost,
     };
   }
@@ -96,12 +88,12 @@ export default class ElmoPriceCalculator {
     weekPrice,
     monthPrice,
   }) {
-    if (totalCost > this.cheapest.totalCost) {
+    if (totalCost > this.cheapest.price) {
       return;
     }
     if (timeLeft <= 0 && distanceLeft <= 0) {
-      if (totalCost < this.cheapest.totalCost) {
-        this.cheapest.totalCost = totalCost;
+      if (totalCost < this.cheapest.price) {
+        this.cheapest.price = totalCost;
         this.cheapest.months = months;
         this.cheapest.weeks = weeks;
         this.cheapest.withNormalPricing = {
@@ -131,10 +123,10 @@ export default class ElmoPriceCalculator {
           normalDistance = distanceLeft * 0.1;
           withNormalPricing += normalDistance;
         }
-        if (withNormalPricing < this.cheapest.totalCost) {
+        if (withNormalPricing < this.cheapest.price) {
           this.cheapest.months = months;
           this.cheapest.weeks = weeks;
-          this.cheapest.totalCost = withNormalPricing;
+          this.cheapest.price = withNormalPricing;
           this.cheapest.withNormalPricing = {
             daysCost: normalTime.daysCost,
             hoursCost: normalTime.hoursCost,

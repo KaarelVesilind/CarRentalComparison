@@ -1,6 +1,6 @@
 import OffersFilter from "../../src/bll/OffersFilter";
 import { offersTestData } from "../helpers/OffersTestData";
-import { filterConditionsObj } from "../../src/models/FilterConditionsObj";
+import filterConditionsObj from "../../src/models/FilterConditionsObj";
 
 describe("Offers filter", function () {
   const offersFilter = new OffersFilter();
