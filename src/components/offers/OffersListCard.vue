@@ -5,7 +5,7 @@
   >
     <div class="flex p-2 gap-2">
       <img
-        :src="offer.car.imageUrl ?? '/src/assets/no-image-available.png'"
+        :src="getAsset(offer.car.imageUrl ?? 'no-image-available.png')"
         class="rounded self-center"
         alt="car image"
         style="width: 112px; height: 78px"
@@ -18,7 +18,7 @@
           <span class="text-xl font-semibold"> {{ price.toFixed(2) }} € </span>
 
           <img
-            :src="`/src/assets/providers/${provider}/${provider}-logo.png`"
+            :src="getAsset(`providers/${provider}/${provider}-logo.png`)"
             alt="provider logo"
             style="height: 24px"
             :class="provider === 'bolt' ? 'mt-1 mb-1' : ''"
@@ -72,6 +72,7 @@
   </div>
 </template>
 <script setup>
+import getAsset from "@/utils";
 import { computed, ref, watch } from "vue";
 
 const props = defineProps({
@@ -134,12 +135,14 @@ const provider = ref(props.offer.provider.toLowerCase());
 const defaultIcons = [
   {
     name: "BodyType",
-    src: `/src/assets//car_body_types/${props.offer.car.bodyType.toLowerCase()}.png`,
+    src: getAsset(
+      `car_body_types/${props.offer.car.bodyType.toLowerCase()}.png`
+    ),
     alt: `car body type ${props.offer.car.bodyType.toLowerCase()}`,
   },
   {
     name: "GearBox",
-    src: `/src/assets/${props.offer.car.gearBox.toLowerCase()}-logo.png`,
+    src: getAsset(`${props.offer.car.gearBox.toLowerCase()}-logo.png`),
     alt: `gearBox ${props.offer.car.gearBox.toLowerCase()}`,
   },
 ];
@@ -153,7 +156,7 @@ const icons = computed(() => {
   ) {
     icons.push({
       name: "MotorType",
-      src: "/src/assets/electric-logo.png",
+      src: getAsset("electric-logo.png"),
       alt: "motortype electric",
     });
   }
@@ -163,7 +166,7 @@ const icons = computed(() => {
   ) {
     icons.push({
       name: "MotorType",
-      src: "/src/assets/petrol-logo.png",
+      src: getAsset("petrol-logo.png"),
       alt: "motortype petrol",
     });
   }
@@ -171,7 +174,7 @@ const icons = computed(() => {
   if (props.offer.car.petFriendly) {
     icons.push({
       name: "PetFriendly",
-      src: "/src/assets/pet-friendly-logo.png",
+      src: getAsset("pet-friendly-logo.png"),
       alt: "pet friendly logo",
     });
   }

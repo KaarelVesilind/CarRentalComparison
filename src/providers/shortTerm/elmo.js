@@ -7,7 +7,7 @@ export const elmo = {
       motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      imageUrl: "/src/assets/providers/elmo/cars/VW-e-Up20.png",
+      imageUrl: "providers/elmo/cars/VW-e-Up20.png",
       price: {
         km: 0.2,
         minute: 0.11,
@@ -33,7 +33,7 @@ export const elmo = {
       motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      imageUrl: "/src/assets/providers/elmo/cars/Skoda-Citigo.png",
+      imageUrl: "providers/elmo/cars/Skoda-Citigo.png",
       price: {
         km: 0.2,
         minute: 0.11,
@@ -59,7 +59,7 @@ export const elmo = {
       motorType: "HYBRID",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      imageUrl: "/src/assets/providers/elmo/cars/Toyota-Yaris-Hybrid.png",
+      imageUrl: "providers/elmo/cars/Toyota-Yaris-Hybrid.png",
       price: {
         km: 0.2,
         minute: 0.11,
@@ -85,7 +85,7 @@ export const elmo = {
       motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      imageUrl: "/src/assets/providers/elmo/cars/Nissan-Leaf.png",
+      imageUrl: "providers/elmo/cars/Nissan-Leaf.png",
       price: {
         km: 0.2,
         minute: 0.11,
@@ -111,7 +111,7 @@ export const elmo = {
       motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      imageUrl: "/src/assets/providers/elmo/cars/VW-e-Up20.png",
+      imageUrl: "providers/elmo/cars/VW-e-Up20.png",
       price: {
         km: 0.2,
         minute: 0.11,
@@ -137,7 +137,7 @@ export const elmo = {
       motorType: "HYBRID",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      imageUrl: "/src/assets/providers/elmo/cars/Renault-Clio-Hybrid.png",
+      imageUrl: "providers/elmo/cars/Renault-Clio-Hybrid.png",
       price: {
         km: 0.2,
         minute: 0.11,
@@ -163,7 +163,7 @@ export const elmo = {
       motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      imageUrl: "/src/assets/providers/elmo/cars/Renault-Zoe.png",
+      imageUrl: "providers/elmo/cars/Renault-Zoe.png",
       price: {
         km: 0.2,
         minute: 0.13,
@@ -189,7 +189,7 @@ export const elmo = {
       motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      imageUrl: "/src/assets/providers/elmo/cars/Peugeot-e-208-GT.png",
+      imageUrl: "providers/elmo/cars/Peugeot-e-208-GT.png",
       price: {
         km: 0.2,
         minute: 0.13,
@@ -215,7 +215,7 @@ export const elmo = {
       motorType: "HYBRID",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      imageUrl: "/src/assets/providers/elmo/cars/Renault-Arkana-Hybrid.png",
+      imageUrl: "providers/elmo/cars/Renault-Arkana-Hybrid.png",
       price: {
         km: 0.22,
         minute: 0.15,
@@ -241,7 +241,7 @@ export const elmo = {
       motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      imageUrl: "/src/assets/providers/elmo/cars/Tesla-Model-3-SR+.png",
+      imageUrl: "providers/elmo/cars/Tesla-Model-3-SR+.png",
       price: {
         km: 0.2,
         minute: 0.25,
