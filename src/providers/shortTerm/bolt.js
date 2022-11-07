@@ -295,7 +295,7 @@ export const bolt = {
       bodyType: "VAN",
       motorType: "PETROL",
       petFriendly: false,
-      gearBox: "AUTOMATIC",
+      gearBox: "MANUAL",
       imageUrl: "/src/assets/providers/bolt/cars/Mercedes-Sprinter.png",
       price: {
         km: 0.27,
@@ -309,7 +309,7 @@ export const bolt = {
       bodyType: "VAN",
       motorType: "PETROL",
       petFriendly: false,
-      gearBox: "AUTOMATIC",
+      gearBox: "MANUAL",
       imageUrl: "/src/assets/providers/bolt/cars/VW-e-Crafter.png",
       price: {
         km: 0.27,
@@ -323,7 +323,7 @@ export const bolt = {
       bodyType: "VAN",
       motorType: "ELECTRIC",
       petFriendly: false,
-      gearBox: "AUTOMATIC",
+      gearBox: "MANUAL",
       imageUrl: "/src/assets/providers/bolt/cars/VW-e-Crafter.png",
       price: {
         km: 0.27,
