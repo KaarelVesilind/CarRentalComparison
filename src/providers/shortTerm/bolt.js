@@ -7,7 +7,7 @@ export const bolt = {
       motorType: "HYBRID",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      imageUrl: "/src/assets/providers/bolt/cars/Toyota-Corolla.png",
+      imageUrl: "providers/bolt/cars/Toyota-Corolla.png",
       price: {
         km: 0.24,
         minute: 0.14,
@@ -30,7 +30,7 @@ export const bolt = {
       motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      imageUrl: "/src/assets/providers/bolt/cars/Audi-A1.png",
+      imageUrl: "providers/bolt/cars/Audi-A1.png",
       price: {
         km: 0.22,
         minute: 0.16,
@@ -58,7 +58,7 @@ export const bolt = {
       motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      imageUrl: "/src/assets/providers/bolt/cars/Hyundai-i20.png",
+      imageUrl: "providers/bolt/cars/Hyundai-i20.png",
       price: {
         km: 0.23,
         minute: 0.12,
@@ -72,7 +72,7 @@ export const bolt = {
       motorType: "HYBRID",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      imageUrl: "/src/assets/providers/bolt/cars/Toyota-Yaris.png",
+      imageUrl: "providers/bolt/cars/Toyota-Yaris.png",
       price: {
         km: 0.2,
         minute: 0.12,
@@ -86,7 +86,7 @@ export const bolt = {
       motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      imageUrl: "/src/assets/providers/bolt/cars/Skoda-Scala.png",
+      imageUrl: "providers/bolt/cars/Skoda-Scala.png",
       price: {
         km: 0.24,
         minute: 0.14,
@@ -100,7 +100,7 @@ export const bolt = {
       motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      imageUrl: "/src/assets/providers/bolt/cars/Skoda-Fabia.png",
+      imageUrl: "providers/bolt/cars/Skoda-Fabia.png",
       price: {
         km: 0.23,
         minute: 0.12,
@@ -114,7 +114,7 @@ export const bolt = {
       motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      imageUrl: "/src/assets/providers/bolt/cars/VW-ID3.png",
+      imageUrl: "providers/bolt/cars/VW-ID3.png",
       price: {
         km: 0.24,
         minute: 0.14,
@@ -128,7 +128,7 @@ export const bolt = {
       motorType: "HYBRID",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      imageUrl: "/src/assets/providers/bolt/cars/Toyota-Yaris-Cross.png",
+      imageUrl: "providers/bolt/cars/Toyota-Yaris-Cross.png",
       price: {
         km: 0.24,
         minute: 0.14,
@@ -142,7 +142,7 @@ export const bolt = {
       motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      imageUrl: "/src/assets/providers/bolt/cars/VW-T-Cross.png",
+      imageUrl: "providers/bolt/cars/VW-T-Cross.png",
       price: {
         km: 0.24,
         minute: 0.15,
@@ -156,7 +156,7 @@ export const bolt = {
       motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      imageUrl: "/src/assets/providers/bolt/cars/Audi-Q2.png",
+      imageUrl: "providers/bolt/cars/Audi-Q2.png",
       price: {
         km: 0.24,
         minute: 0.16,
@@ -170,7 +170,7 @@ export const bolt = {
       motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      imageUrl: "/src/assets/providers/bolt/cars/VW-T-Roc.png",
+      imageUrl: "providers/bolt/cars/VW-T-Roc.png",
       price: {
         km: 0.24,
         minute: 0.15,
@@ -184,7 +184,7 @@ export const bolt = {
       motorType: "PETROL",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      imageUrl: "/src/assets/providers/bolt/cars/Skoda-Kamiq.png",
+      imageUrl: "providers/bolt/cars/Skoda-Kamiq.png",
       price: {
         km: 0.24,
         minute: 0.14,
@@ -198,7 +198,7 @@ export const bolt = {
       motorType: "HYBRID",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      imageUrl: "/src/assets/providers/bolt/cars/Toyota-C-HR.png",
+      imageUrl: "providers/bolt/cars/Toyota-C-HR.png",
       price: {
         km: 0.24,
         minute: 0.14,
@@ -212,7 +212,7 @@ export const bolt = {
       motorType: "ELECTRIC",
       petFriendly: false,
       gearBox: "AUTOMATIC",
-      imageUrl: "/src/assets/providers/bolt/cars/Audi-e-tron.png",
+      imageUrl: "providers/bolt/cars/Audi-e-tron.png",
       price: {
         km: 0.25,
         minute: 0.69,
@@ -226,7 +226,7 @@ export const bolt = {
       motorType: "PETROL",
       petFriendly: false,
       gearBox: "AUTOMATIC",
-      imageUrl: "/src/assets/providers/bolt/cars/Toyota-RAV4.png",
+      imageUrl: "providers/bolt/cars/Toyota-RAV4.png",
       price: {
         km: 0.25,
         minute: 0.3,
@@ -254,7 +254,7 @@ export const bolt = {
       motorType: "PETROL",
       petFriendly: false,
       gearBox: "AUTOMATIC",
-      imageUrl: "/src/assets/providers/bolt/cars/VW-T-Roc-Cabrio.png",
+      imageUrl: "providers/bolt/cars/VW-T-Roc-Cabrio.png",
       price: {
         km: 0.25,
         minute: 0.3,
@@ -268,7 +268,7 @@ export const bolt = {
       motorType: "PETROL",
       petFriendly: false,
       gearBox: "AUTOMATIC",
-      imageUrl: "/src/assets/providers/bolt/cars/VW-Arteon.png",
+      imageUrl: "providers/bolt/cars/VW-Arteon.png",
       price: {
         km: 0.25,
         minute: 0.3,
@@ -282,7 +282,7 @@ export const bolt = {
       motorType: "PETROL",
       petFriendly: false,
       gearBox: "AUTOMATIC",
-      imageUrl: "/src/assets/providers/bolt/cars/Toyota-Land-Cruiser.png",
+      imageUrl: "providers/bolt/cars/Toyota-Land-Cruiser.png",
       price: {
         km: 0.34,
         minute: 0.49,
@@ -296,7 +296,7 @@ export const bolt = {
       motorType: "PETROL",
       petFriendly: false,
       gearBox: "MANUAL",
-      imageUrl: "/src/assets/providers/bolt/cars/Mercedes-Sprinter.png",
+      imageUrl: "providers/bolt/cars/Mercedes-Sprinter.png",
       price: {
         km: 0.27,
         minute: 0.15,
@@ -310,7 +310,7 @@ export const bolt = {
       motorType: "PETROL",
       petFriendly: false,
       gearBox: "MANUAL",
-      imageUrl: "/src/assets/providers/bolt/cars/VW-e-Crafter.png",
+      imageUrl: "providers/bolt/cars/VW-e-Crafter.png",
       price: {
         km: 0.27,
         minute: 0.13,
@@ -324,7 +324,7 @@ export const bolt = {
       motorType: "ELECTRIC",
       petFriendly: false,
       gearBox: "MANUAL",
-      imageUrl: "/src/assets/providers/bolt/cars/VW-e-Crafter.png",
+      imageUrl: "providers/bolt/cars/VW-e-Crafter.png",
       price: {
         km: 0.27,
         minute: 0.13,
@@ -351,7 +351,7 @@ export const bolt = {
       motorType: "PETROL",
       petFriendly: false,
       gearBox: "AUTOMATIC",
-      imageUrl: "/src/assets/providers/bolt/cars/Audi-Q5.png",
+      imageUrl: "providers/bolt/cars/Audi-Q5.png",
       price: {
         min: 7.99,
         km: 0.35,

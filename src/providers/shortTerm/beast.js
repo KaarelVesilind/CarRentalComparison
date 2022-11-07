@@ -7,8 +7,7 @@ export const beast = {
       motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      imageUrl:
-        "/src/assets/providers/beast/cars/Tesla-Model-3-Standard-Range.png",
+      imageUrl: "providers/beast/cars/Tesla-Model-3-Standard-Range.png",
       price: {
         km: 0.2,
         start: 4.99,
@@ -24,7 +23,7 @@ export const beast = {
       motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      imageUrl: "/src/assets/providers/beast/cars/Tesla-Model-3-Long-Range.png",
+      imageUrl: "providers/beast/cars/Tesla-Model-3-Long-Range.png",
       price: {
         km: 0.2,
         start: 4.99,
@@ -40,8 +39,7 @@ export const beast = {
       motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      imageUrl:
-        "/src/assets/providers/beast/cars/Tesla-Model-3-Performance.png",
+      imageUrl: "providers/beast/cars/Tesla-Model-3-Performance.png",
       price: {
         km: 0.2,
         start: 9.99,
@@ -57,7 +55,7 @@ export const beast = {
       motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      imageUrl: "/src/assets/providers/beast/cars/Tesla-Model-Y-Long-Range.png",
+      imageUrl: "providers/beast/cars/Tesla-Model-Y-Long-Range.png",
       price: {
         km: 0.25,
         start: 9.99,
@@ -73,8 +71,7 @@ export const beast = {
       motorType: "ELECTRIC",
       petFriendly: true,
       gearBox: "AUTOMATIC",
-      imageUrl:
-        "/src/assets/providers/beast/cars/Tesla-Model-X-Ludicrous-Perf.png",
+      imageUrl: "providers/beast/cars/Tesla-Model-X-Ludicrous-Perf.png",
       price: {
         km: 0.3,
         start: 9.99,
