@@ -142,8 +142,8 @@ const defaultIcons = [
   },
   {
     name: "GearBox",
-    src: getAsset(`${props.offer.car.gearBox.toLowerCase()}-logo.png`),
-    alt: `gearBox ${props.offer.car.gearBox.toLowerCase()}`,
+    src: getAsset(`${props.offer.car.gearbox.toLowerCase()}-logo.png`),
+    alt: `gearbox ${props.offer.car.gearbox.toLowerCase()}`,
   },
 ];
 
