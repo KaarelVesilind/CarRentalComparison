@@ -18,15 +18,14 @@ export default class OffersSort {
           offer1.car.name.localeCompare(offer2.car.name)
         );
         break;
-      case "gearBox":
+      case "gearbox":
         offers.sort((offer1, offer2) =>
-          offer1.car.gearBox.localeCompare(offer2.car.gearBox)
+          offer1.car.gearbox.localeCompare(offer2.car.gearbox)
         );
         break;
-      // TODO bodyType
       case "bodyType":
         offers.sort((offer1, offer2) =>
-		      offer1.car.bodyType.localeCompare(offer2.car.bodyType)
+          offer1.car.bodyType.localeCompare(offer2.car.bodyType)
         );
         break;
     }

@@ -13,7 +13,7 @@ export default {
     ELECTRIC: false,
   },
   petFriendly: false,
-  gearBox: {
+  gearbox: {
     MANUAL: false,
     AUTOMATIC: false,
   },
