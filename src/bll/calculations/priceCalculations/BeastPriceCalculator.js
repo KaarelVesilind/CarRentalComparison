@@ -60,14 +60,16 @@ export default class BeastPriceCalculator {
 
     const distanceCost =
       Math.max(searchParamsObj.distance - freeDistance, 0) * price.km;
-    return (
-      weeksCost +
-      threeDaysCost +
-      daysCost +
-      minutesCost +
-      distanceCost +
-      price.start
-    );
+    return {
+      price:
+        weeksCost +
+        threeDaysCost +
+        daysCost +
+        minutesCost +
+        distanceCost +
+        price.start,
+      preOrder: weeksCost + threeDaysCost + daysCost > 0 ? 0 : -1,
+    };
   }
 
   calculateMinute(totalMinutes, price) {

@@ -41,33 +41,48 @@
         </div>
 
         <span v-if="usePackage">📦 {{ extraInfo }}</span>
-        <div
-          v-if="usePackage || provider === 'citybee'"
-          class="flex justify-center"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            :class="openDetails ? 'transform rotate-180' : ''"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M19 9l-7 7-7-7"
-            />
-          </svg>
-        </div>
       </div>
     </div>
+    <div class="flex justify-center">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        :class="openDetails ? 'transform rotate-180' : ''"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M19 9l-7 7-7-7"
+        />
+      </svg>
+    </div>
     <div v-if="openDetails">
-      <p v-if="provider === 'citybee'">💰 Cashback {{ getCashback }}€</p>
-      <p v-if="usePackage">
-        Cost without package: {{ normalPrice.toFixed(2) }}€
-      </p>
+      <div class="text-center mb-2">
+        <p v-if="provider === 'citybee'" class="inline">
+          💰 Cashback {{ getCashback }}€
+        </p>
+      </div>
+      <div class="flex flex-row justify-around mb-2">
+        <a :href="appLink" target="”_blank”">
+          <button
+            class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+          >
+            To {{ provider.toUpperCase() }} App
+          </button>
+        </a>
+        <a v-if="canPreOrder" :href="preOrderLink" target="”_blank”">
+          <button
+            class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded"
+            @click="openDetails = !openDetails"
+          >
+            Pre-Order for {{ preOrderCost === 0 ? "FREE" : preOrderCost + "€" }}
+          </button>
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -84,7 +99,8 @@ const props = defineProps({
 const price = ref(0);
 const extraInfo = ref("");
 const usePackage = ref(false);
-const normalPrice = ref(0);
+const canPreOrder = ref(false);
+const preOrderCost = ref(-1);
 
 // watch offers prop and update price
 watch(
@@ -94,32 +110,33 @@ watch(
   }
 );
 
+const provider = ref(props.offer.provider.toLowerCase());
 const _initializePrice = () => {
   const offerPrice = props.offer.price;
-  if (typeof offerPrice === "object") {
-    if (offerPrice.package.price < offerPrice.normalPrice) {
-      const packageDetails = offerPrice.package;
-      const monthsText =
-        packageDetails.months > 0 ? packageDetails.months + " months " : "";
-      const weeksText =
-        packageDetails.weeks > 0 ? packageDetails.weeks + " weeks " : "";
-      const daysText =
-        packageDetails.days > 0 ? packageDetails.days + " days " : "";
-      const hoursText =
-        packageDetails.hours > 0 ? packageDetails.hours + " hours " : "";
-      extraInfo.value = `Use package: ${monthsText}${weeksText}${daysText}${hoursText}${packageDetails.distance} km `;
-      normalPrice.value = offerPrice.normalPrice;
-      price.value = offerPrice.package.price;
-      usePackage.value = true;
-    } else {
-      price.value = offerPrice.price;
-      normalPrice.value = offerPrice.price;
-      usePackage.value = false;
-    }
+  if (offerPrice.package && offerPrice.package.price < offerPrice.normalPrice) {
+    const packageDetails = offerPrice.package;
+    const monthsText =
+      packageDetails.months > 0 ? packageDetails.months + " months " : "";
+    const weeksText =
+      packageDetails.weeks > 0 ? packageDetails.weeks + " weeks " : "";
+    const daysText =
+      packageDetails.days > 0 ? packageDetails.days + " days " : "";
+    const hoursText =
+      packageDetails.hours > 0 ? packageDetails.hours + " hours " : "";
+    extraInfo.value = `${monthsText}${weeksText}${daysText}${hoursText}${packageDetails.distance} km `;
+    price.value = offerPrice.package.price;
+    usePackage.value = true;
   } else {
-    price.value = offerPrice;
+    price.value = offerPrice.price;
+    usePackage.value = false;
   }
-  return { extraInfo, price };
+  if (offerPrice.preOrder >= 0) {
+    canPreOrder.value = true;
+    preOrderCost.value = offerPrice.preOrder;
+  } else {
+    canPreOrder.value = false;
+    preOrderCost.value = -1;
+  }
 };
 _initializePrice();
 
@@ -129,8 +146,6 @@ const getCashback = computed(() => {
 });
 
 const openDetails = ref(false);
-
-const provider = ref(props.offer.provider.toLowerCase());
 
 const defaultIcons = [
   {
@@ -193,6 +208,34 @@ const backgroundColor = computed(() => {
       return "bg-blue-50";
     default:
       throw "missing provider: " + props.offer.provider;
+  }
+});
+
+const preOrderLink = computed(() => {
+  switch (provider.value) {
+    case "beast":
+      return "https://beast.rent/booking";
+    case "citybee":
+      return "https://citybee.ee/en/car-delivery/";
+    case "elmo":
+      return "https://rent.elmorent.ee/et/PreOrders";
+    default:
+      throw "/";
+  }
+});
+
+const appLink = computed(() => {
+  switch (provider.value) {
+    case "beast":
+      return "https://beast.rent/";
+    case "bolt":
+      return "https://bolt.eu/en/drive/";
+    case "citybee":
+      return "https://citybee.ee/";
+    case "elmo":
+      return "https://elmorent.ee/";
+    default:
+      throw "/";
   }
 });
 </script>
