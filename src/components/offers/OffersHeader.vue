@@ -32,6 +32,7 @@ const search = () => {
     <OffersFilter />
     <div class="flex justify-between">
       <button
+      id="search-button"
           class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-xl"
           :class="invalidValues ? 'opacity-50 cursor-not-allowed' : ''"
           @click="search"

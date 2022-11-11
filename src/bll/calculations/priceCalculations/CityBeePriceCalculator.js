@@ -11,7 +11,7 @@ export default class CityBeePriceCalculator {
     let { daysCost, hoursCost, minutesCost } = calculateTime(totalTime, price);
     const totalCost = 0.5 + distanceCost + daysCost + hoursCost + minutesCost;
     if (totalCost < 2.29) {
-      return 2.29;
+      return { price: 2.29, preOrder: -1 };
     }
     // Calculate packages
     let usePackage = this._calculatePackages(
@@ -23,8 +23,8 @@ export default class CityBeePriceCalculator {
     );
     return {
       package: usePackage,
-      normalPrice: totalCost,
       price: usePackage.price < totalCost ? usePackage.price : totalCost,
+      preOrder: usePackage.hours ? 5 : usePackage.price < totalCost ? 0 : -1,
     };
   }
 

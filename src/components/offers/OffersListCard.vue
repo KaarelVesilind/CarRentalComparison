@@ -41,33 +41,54 @@
         </div>
 
         <span v-if="usePackage">📦 {{ extraInfo }}</span>
-        <div
-          v-if="usePackage || provider === 'citybee'"
-          class="flex justify-center"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            :class="openDetails ? 'transform rotate-180' : ''"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M19 9l-7 7-7-7"
-            />
-          </svg>
-        </div>
       </div>
     </div>
+    <div class="flex justify-center">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        :class="openDetails ? 'transform rotate-180' : ''"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M19 9l-7 7-7-7"
+        />
+      </svg>
+    </div>
     <div v-if="openDetails">
-      <p v-if="provider === 'citybee'">💰 Cashback {{ getCashback }}€</p>
-      <p v-if="usePackage">
-        Cost without package: {{ normalPrice.toFixed(2) }}€
-      </p>
+      <div class="text-center mb-2">
+        <p v-if="provider === 'citybee'" class="inline" id="to-app">
+          💰 Cashback {{ getCashback }}€
+        </p>
+      </div>
+      <div class="flex flex-row justify-around mb-2">
+        <a :href="appLink" target="”_blank”">
+          <button
+            class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+          >
+            To {{ provider.toUpperCase() }} App
+          </button>
+        </a>
+        <a
+          v-if="canPreOrder"
+          :href="preOrderLink"
+          target="”_blank”"
+          id="pre-order"
+        >
+          <button
+            class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded"
+            @click="openDetails = !openDetails"
+          >
+            Pre-Order for
+            {{ preOrderCost === 0 ? "FREE" : preOrderCost + "€" }}
+          </button>
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -84,7 +105,8 @@ const props = defineProps({
 const price = ref(0);
 const extraInfo = ref("");
 const usePackage = ref(false);
-const normalPrice = ref(0);
+const canPreOrder = ref(false);
+const preOrderCost = ref(-1);
 
 // watch offers prop and update price
 watch(
@@ -94,32 +116,38 @@ watch(
   }
 );
 
+const provider = ref(props.offer.provider.toLowerCase());
 const _initializePrice = () => {
-  const offerPrice = props.offer.price;
-  if (typeof offerPrice === "object") {
-    if (offerPrice.package.price < offerPrice.normalPrice) {
-      const packageDetails = offerPrice.package;
-      const monthsText =
-        packageDetails.months > 0 ? packageDetails.months + " months " : "";
-      const weeksText =
-        packageDetails.weeks > 0 ? packageDetails.weeks + " weeks " : "";
-      const daysText =
-        packageDetails.days > 0 ? packageDetails.days + " days " : "";
-      const hoursText =
-        packageDetails.hours > 0 ? packageDetails.hours + " hours " : "";
-      extraInfo.value = `Use package: ${monthsText}${weeksText}${daysText}${hoursText}${packageDetails.distance} km `;
-      normalPrice.value = offerPrice.normalPrice;
-      price.value = offerPrice.package.price;
-      usePackage.value = true;
-    } else {
-      price.value = offerPrice.price;
-      normalPrice.value = offerPrice.price;
-      usePackage.value = false;
-    }
-  } else {
-    price.value = offerPrice;
+  price.value = props.offer.price;
+  const priceDetails = props.offer.priceDetails;
+  if (
+    priceDetails.package &&
+    priceDetails.package.price < priceDetails.normalPrice
+  ) {
+    const packageDetails = priceDetails.package;
+    const monthsText =
+      packageDetails.months > 0 ? packageDetails.months + " months " : "";
+    const weeksText =
+      packageDetails.weeks > 0 ? packageDetails.weeks + " weeks " : "";
+    const daysText =
+      packageDetails.days > 0 ? packageDetails.days + " days " : "";
+    const hoursText =
+      packageDetails.hours > 0 ? packageDetails.hours + " hours " : "";
+    extraInfo.value = `${monthsText}${weeksText}${daysText}${hoursText}${packageDetails.distance} km `;
+    price.value = priceDetails.package.price;
+    usePackage.value = true;
   }
-  return { extraInfo, price };
+
+  if (priceDetails.preOrder >= 0) {
+    canPreOrder.value = true;
+    preOrderCost.value = priceDetails.preOrder;
+    if (Math.round(priceDetails.preOrder) !== priceDetails.preOrder) {
+      preOrderCost.value = priceDetails.preOrder.toFixed(2);
+    }
+    return;
+  }
+  canPreOrder.value = false;
+  preOrderCost.value = -1;
 };
 _initializePrice();
 
@@ -129,8 +157,6 @@ const getCashback = computed(() => {
 });
 
 const openDetails = ref(false);
-
-const provider = ref(props.offer.provider.toLowerCase());
 
 const defaultIcons = [
   {
@@ -193,6 +219,64 @@ const backgroundColor = computed(() => {
       return "bg-blue-50";
     default:
       throw "missing provider: " + props.offer.provider;
+  }
+});
+
+const preOrderLink = computed(() => {
+  switch (provider.value) {
+    case "beast":
+      return "https://beast.rent/booking";
+    case "citybee":
+      return "https://citybee.ee/en/car-delivery/";
+    case "elmo":
+      return "https://rent.elmorent.ee/et/PreOrders";
+    default:
+      throw "/";
+  }
+});
+
+const appLink = computed(() => {
+  if (provider.value === "bolt") {
+    return "https://bolt.onelink.me/sbJ2/7c3bdcee";
+  }
+
+  // Let's make sure what platform is used
+  const isAndroid = navigator.userAgent.toLowerCase().indexOf("android") > -1;
+  const isIOS =
+    /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  if (isAndroid) {
+    switch (provider.value) {
+      case "beast":
+        return "https://play.google.com/store/apps/details?id=co.electricbeast.beast";
+      case "citybee":
+        return "https://play.google.com/store/apps/details?id=com.primeleasing.citybee";
+      case "elmo":
+        return "https://play.google.com/store/apps/details?id=ee.elmorent.rent&hl=en&gl=US";
+      default:
+        throw "/";
+    }
+  } else if (isIOS) {
+    switch (provider.value) {
+      case "beast":
+        return "https://apps.apple.com/us/app/beast-rent/id1521729069";
+      case "citybee":
+        return "https://apps.apple.com/ee/app/citybee-shared-mobility/id966537355";
+      case "elmo":
+        return "https://apps.apple.com/ee/app/elmo-rent/id1567760991";
+      default:
+        throw "/";
+    }
+  } else {
+    switch (provider.value) {
+      case "beast":
+        return "https://beast.rent/";
+      case "citybee":
+        return "https://citybee.ee/";
+      case "elmo":
+        return "https://elmorent.ee/";
+      default:
+        throw "/";
+    }
   }
 });
 </script>

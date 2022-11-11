@@ -32,11 +32,10 @@ export default class BoltPriceCalculator {
         minutesCost += searchParamsObj.minutes * price.minute;
       }
     }
-    const totalCost = distanceCost + daysCost + hoursCost + minutesCost;
+    let totalCost = distanceCost + daysCost + hoursCost + minutesCost;
     if (totalCost < (price.min ?? 1.99)) {
-      return price.min ?? 1.99;
-    } else {
-      return totalCost;
+      totalCost = price.min ?? 1.99;
     }
+    return { price: totalCost, preOrder: -1 };
   }
 }

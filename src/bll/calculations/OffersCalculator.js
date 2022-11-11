@@ -18,13 +18,14 @@ export default class OffersCalculator {
         this.providers[provider].cities.includes(searchParamsObj.end)
       ) {
         for (const car of this.providers[provider].cars) {
-          let price = this._calculatePrice(provider, car, {
+          let priceDetails = this._calculatePrice(provider, car, {
             ...searchParamsObj,
           });
 
           offers.push({
             id: offers.length + 1,
-            price: price,
+            price: priceDetails.price,
+            priceDetails: priceDetails,
             car: car,
             provider: provider.toUpperCase(),
           });
@@ -55,10 +56,3 @@ export default class OffersCalculator {
     }
   }
 }
-
-const getPrice = (price) => {
-  if (typeof price === "number") {
-    return price;
-  }
-  return price.price;
-};

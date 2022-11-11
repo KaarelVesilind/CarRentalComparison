@@ -20,6 +20,7 @@
         class="w-14"
         @keydown="allowNumbersOnly"
         placeholder="0"
+        id="hours"
       />
       <p>Minutes</p>
       <input
@@ -30,6 +31,7 @@
         id="minutes"
         placeholder="0"
         @keydown="allowNumbersOnly"
+
       />
     </div>
     <div class="flex flex-row my-1">
