@@ -79,7 +79,8 @@
             class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded"
             @click="openDetails = !openDetails"
           >
-            Pre-Order for {{ preOrderCost === 0 ? "FREE" : preOrderCost + "€" }}
+            Pre-Order for
+            {{ preOrderCost === 0 ? "FREE" : preOrderCost + "€" }}
           </button>
         </a>
       </div>
@@ -112,9 +113,13 @@ watch(
 
 const provider = ref(props.offer.provider.toLowerCase());
 const _initializePrice = () => {
-  const offerPrice = props.offer.price;
-  if (offerPrice.package && offerPrice.package.price < offerPrice.normalPrice) {
-    const packageDetails = offerPrice.package;
+  price.value = props.offer.price;
+  const priceDetails = props.offer.priceDetails;
+  if (
+    priceDetails.package &&
+    priceDetails.package.price < priceDetails.normalPrice
+  ) {
+    const packageDetails = priceDetails.package;
     const monthsText =
       packageDetails.months > 0 ? packageDetails.months + " months " : "";
     const weeksText =
@@ -124,19 +129,20 @@ const _initializePrice = () => {
     const hoursText =
       packageDetails.hours > 0 ? packageDetails.hours + " hours " : "";
     extraInfo.value = `${monthsText}${weeksText}${daysText}${hoursText}${packageDetails.distance} km `;
-    price.value = offerPrice.package.price;
+    price.value = priceDetails.package.price;
     usePackage.value = true;
-  } else {
-    price.value = offerPrice.price;
-    usePackage.value = false;
   }
-  if (offerPrice.preOrder >= 0) {
+
+  if (priceDetails.preOrder >= 0) {
     canPreOrder.value = true;
-    preOrderCost.value = offerPrice.preOrder;
-  } else {
-    canPreOrder.value = false;
-    preOrderCost.value = -1;
+    preOrderCost.value = priceDetails.preOrder;
+    if (Math.round(priceDetails.preOrder) !== priceDetails.preOrder) {
+      preOrderCost.value = priceDetails.preOrder.toFixed(2);
+    }
+    return;
   }
+  canPreOrder.value = false;
+  preOrderCost.value = -1;
 };
 _initializePrice();
 
