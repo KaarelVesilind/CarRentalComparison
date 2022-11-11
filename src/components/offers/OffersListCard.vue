@@ -231,17 +231,47 @@ const preOrderLink = computed(() => {
 });
 
 const appLink = computed(() => {
-  switch (provider.value) {
-    case "beast":
-      return "https://beast.rent/";
-    case "bolt":
-      return "https://bolt.eu/en/drive/";
-    case "citybee":
-      return "https://citybee.ee/";
-    case "elmo":
-      return "https://elmorent.ee/";
-    default:
-      throw "/";
+  if (provider.value === "bolt") {
+    return "https://bolt.onelink.me/sbJ2/7c3bdcee";
+  }
+
+  // Let's make sure what platform is used
+  const isAndroid = navigator.userAgent.toLowerCase().indexOf("android") > -1;
+  const isIOS =
+    /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  if (isAndroid) {
+    switch (provider.value) {
+      case "beast":
+        return "https://play.google.com/store/apps/details?id=co.electricbeast.beast";
+      case "citybee":
+        return "https://play.google.com/store/apps/details?id=com.primeleasing.citybee";
+      case "elmo":
+        return "https://play.google.com/store/apps/details?id=ee.elmorent.rent&hl=en&gl=US";
+      default:
+        throw "/";
+    }
+  } else if (isIOS) {
+    switch (provider.value) {
+      case "beast":
+        return "https://apps.apple.com/us/app/beast-rent/id1521729069";
+      case "citybee":
+        return "https://apps.apple.com/ee/app/citybee-shared-mobility/id966537355";
+      case "elmo":
+        return "https://apps.apple.com/ee/app/elmo-rent/id1567760991";
+      default:
+        throw "/";
+    }
+  } else {
+    switch (provider.value) {
+      case "beast":
+        return "https://beast.rent/";
+      case "citybee":
+        return "https://citybee.ee/";
+      case "elmo":
+        return "https://elmorent.ee/";
+      default:
+        throw "/";
+    }
   }
 });
 </script>
