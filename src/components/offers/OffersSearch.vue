@@ -30,7 +30,6 @@
         class="w-14"
         id="minutes"
         placeholder="0"
-        id="minutes"
         @keydown="allowNumbersOnly"
 
       />

@@ -56,10 +56,3 @@ export default class OffersCalculator {
     }
   }
 }
-
-const getPrice = (price) => {
-  if (typeof price === "number") {
-    return price;
-  }
-  return price.price;
-};
