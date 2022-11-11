@@ -62,7 +62,7 @@
     </div>
     <div v-if="openDetails">
       <div class="text-center mb-2">
-        <p v-if="provider === 'citybee'" class="inline">
+        <p v-if="provider === 'citybee'" class="inline" id="to-app">
           💰 Cashback {{ getCashback }}€
         </p>
       </div>
@@ -74,7 +74,12 @@
             To {{ provider.toUpperCase() }} App
           </button>
         </a>
-        <a v-if="canPreOrder" :href="preOrderLink" target="”_blank”">
+        <a
+          v-if="canPreOrder"
+          :href="preOrderLink"
+          target="”_blank”"
+          id="pre-order"
+        >
           <button
             class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded"
             @click="openDetails = !openDetails"

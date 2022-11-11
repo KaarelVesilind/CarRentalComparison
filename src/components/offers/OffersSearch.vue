@@ -16,6 +16,7 @@
         v-model="searchParamsObj.hours"
         class="w-14"
         placeholder="0"
+        id="hours"
       />
       <p>Minutes</p>
       <input
@@ -23,6 +24,7 @@
         v-model="searchParamsObj.minutes"
         class="w-14"
         placeholder="0"
+        id="minutes"
       />
     </div>
     <div class="flex flex-row my-1">
@@ -32,16 +34,17 @@
         v-model="searchParamsObj.distance"
         class="w-20"
         placeholder="0"
+        id="distance"
       />
       <p>Kilometers</p>
     </div>
     <div class="flex flex-row">
       <p>Start</p>
-      <select class="w-24" v-model="searchParamsObj.start">
+      <select class="w-24" v-model="searchParamsObj.start" id="start">
         <option v-for="city in cities" :key="city">{{ city }}</option>
       </select>
       <p>End</p>
-      <select class="w-24" v-model="searchParamsObj.end">
+      <select class="w-24" v-model="searchParamsObj.end" id="finish">
         <option v-for="city in cities" :key="city">{{ city }}</option>
       </select>
     </div>
