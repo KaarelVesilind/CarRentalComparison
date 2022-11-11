@@ -69,12 +69,12 @@ describe("Offers sort", function () {
   test("gearbox in descending order", async () => {
     const offers = offersTestData;
 
-    const result = offersSort.sort(offers, SortState.DOWN, "gearBox");
+    const result = offersSort.sort(offers, SortState.DOWN, "gearbox");
     
     expect(
       result.every(
         (offer, index) =>
-          index === 0 || offer.car.gearBox <= result[index - 1].car.gearBox
+          index === 0 || offer.car.gearbox <= result[index - 1].car.gearbox
       ),
       `List is not in descending order \n received: ${JSON.stringify(result)}`
     ).toBe(true);

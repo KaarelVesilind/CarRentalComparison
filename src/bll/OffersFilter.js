@@ -22,7 +22,7 @@ export default class OffersFilter {
             filterConditionsObj[condition]
           );
           break;
-        case "gearBox":
+        case "gearbox":
           filteredOffers = this._searchGearBox(
             filteredOffers,
             filterConditionsObj[condition]
@@ -60,9 +60,9 @@ export default class OffersFilter {
   }
 
   _searchGearBox(offers, value) {
-    const haveSomeGearBox = Object.values(value).some((gearBox) => gearBox);
+    const haveSomeGearBox = Object.values(value).some((gearbox) => gearbox);
     if (!haveSomeGearBox) return offers;
-    return offers.filter((offer) => value[offer.car.gearBox]);
+    return offers.filter((offer) => value[offer.car.gearbox]);
   }
 
   _searchProvider(offers, value) {

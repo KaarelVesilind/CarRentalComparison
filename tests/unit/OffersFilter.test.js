@@ -51,11 +51,11 @@ describe("Offers filter", function () {
     );
   });
 
-  test("gearBox MANUAL", async () => {
+  test("gearbox MANUAL", async () => {
     const expectedOffersIds = [6];
     const offers = offersTestData;
     const conditionsObj = JSON.parse(JSON.stringify(filterConditionsObj));
-    conditionsObj.gearBox.MANUAL = true;
+    conditionsObj.gearbox.MANUAL = true;
 
     const result = offersFilter.filter(offers, conditionsObj);
 

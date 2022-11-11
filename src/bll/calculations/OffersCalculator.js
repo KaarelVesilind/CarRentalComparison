@@ -32,7 +32,7 @@ export default class OffersCalculator {
         }
       }
     }
-    return offers.sort((a, b) => getPrice(a.price) - getPrice(b.price));
+    return offers;
   }
 
   _calculatePrice(provider, car, searchParamsObj) {

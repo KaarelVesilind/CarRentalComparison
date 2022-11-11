@@ -6,7 +6,7 @@ export const elmo = {
       bodyType: "HATCHBACK",
       motorType: "ELECTRIC",
       petFriendly: true,
-      gearBox: "AUTOMATIC",
+      gearbox: "AUTOMATIC",
       imageUrl: "providers/elmo/cars/VW-e-Up20.png",
       price: {
         km: 0.2,
@@ -32,7 +32,7 @@ export const elmo = {
       bodyType: "HATCHBACK",
       motorType: "ELECTRIC",
       petFriendly: true,
-      gearBox: "AUTOMATIC",
+      gearbox: "AUTOMATIC",
       imageUrl: "providers/elmo/cars/Skoda-Citigo.png",
       price: {
         km: 0.2,
@@ -58,7 +58,7 @@ export const elmo = {
       bodyType: "HATCHBACK",
       motorType: "HYBRID",
       petFriendly: true,
-      gearBox: "AUTOMATIC",
+      gearbox: "AUTOMATIC",
       imageUrl: "providers/elmo/cars/Toyota-Yaris-Hybrid.png",
       price: {
         km: 0.2,
@@ -84,7 +84,7 @@ export const elmo = {
       bodyType: "HATCHBACK",
       motorType: "ELECTRIC",
       petFriendly: true,
-      gearBox: "AUTOMATIC",
+      gearbox: "AUTOMATIC",
       imageUrl: "providers/elmo/cars/Nissan-Leaf.png",
       price: {
         km: 0.2,
@@ -110,7 +110,7 @@ export const elmo = {
       bodyType: "HATCHBACK",
       motorType: "ELECTRIC",
       petFriendly: true,
-      gearBox: "AUTOMATIC",
+      gearbox: "AUTOMATIC",
       imageUrl: "providers/elmo/cars/VW-e-Up20.png",
       price: {
         km: 0.2,
@@ -136,7 +136,7 @@ export const elmo = {
       bodyType: "HATCHBACK",
       motorType: "HYBRID",
       petFriendly: true,
-      gearBox: "AUTOMATIC",
+      gearbox: "AUTOMATIC",
       imageUrl: "providers/elmo/cars/Renault-Clio-Hybrid.png",
       price: {
         km: 0.2,
@@ -162,7 +162,7 @@ export const elmo = {
       bodyType: "HATCHBACK",
       motorType: "ELECTRIC",
       petFriendly: true,
-      gearBox: "AUTOMATIC",
+      gearbox: "AUTOMATIC",
       imageUrl: "providers/elmo/cars/Renault-Zoe.png",
       price: {
         km: 0.2,
@@ -188,7 +188,7 @@ export const elmo = {
       bodyType: "HATCHBACK",
       motorType: "ELECTRIC",
       petFriendly: true,
-      gearBox: "AUTOMATIC",
+      gearbox: "AUTOMATIC",
       imageUrl: "providers/elmo/cars/Peugeot-e-208-GT.png",
       price: {
         km: 0.2,
@@ -214,7 +214,7 @@ export const elmo = {
       bodyType: "HATCHBACK",
       motorType: "HYBRID",
       petFriendly: true,
-      gearBox: "AUTOMATIC",
+      gearbox: "AUTOMATIC",
       imageUrl: "providers/elmo/cars/Renault-Arkana-Hybrid.png",
       price: {
         km: 0.22,
@@ -240,7 +240,7 @@ export const elmo = {
       bodyType: "SEDAN",
       motorType: "ELECTRIC",
       petFriendly: true,
-      gearBox: "AUTOMATIC",
+      gearbox: "AUTOMATIC",
       imageUrl: "providers/elmo/cars/Tesla-Model-3-SR+.png",
       price: {
         km: 0.2,

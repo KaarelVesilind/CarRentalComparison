@@ -6,7 +6,7 @@ export const citybee = {
       bodyType: "HATCHBACK",
       motorType: "PETROL",
       petFriendly: true,
-      gearBox: "AUTOMATIC",
+      gearbox: "AUTOMATIC",
       imageUrl: "providers/citybee/cars/Toyota-Yaris.png",
       price: {
         km: 0.22,
@@ -136,7 +136,7 @@ export const citybee = {
       bodyType: "HATCHBACK",
       motorType: "PETROL",
       petFriendly: true,
-      gearBox: "AUTOMATIC",
+      gearbox: "AUTOMATIC",
       imageUrl: "providers/citybee/cars/Skoda-Fabia.png",
       price: {
         km: 0.22,
@@ -266,7 +266,7 @@ export const citybee = {
       bodyType: "HATCHBACK",
       motorType: "PETROL",
       petFriendly: true,
-      gearBox: "AUTOMATIC",
+      gearbox: "AUTOMATIC",
       imageUrl: "providers/citybee/cars/Peugeot-208.png",
       price: {
         km: 0.22,
@@ -396,7 +396,7 @@ export const citybee = {
       bodyType: "HATCHBACK",
       motorType: "PETROL",
       petFriendly: true,
-      gearBox: "AUTOMATIC",
+      gearbox: "AUTOMATIC",
       imageUrl: "providers/citybee/cars/Citroen-C3.png",
       price: {
         km: 0.22,
@@ -526,7 +526,7 @@ export const citybee = {
       bodyType: "HATCHBACK",
       motorType: "PETROL",
       petFriendly: true,
-      gearBox: "AUTOMATIC",
+      gearbox: "AUTOMATIC",
       imageUrl: "providers/citybee/cars/Renault-Clio.png",
       price: {
         km: 0.22,
@@ -656,7 +656,7 @@ export const citybee = {
       bodyType: "HATCHBACK",
       motorType: "PETROL",
       petFriendly: true,
-      gearBox: "AUTOMATIC",
+      gearbox: "AUTOMATIC",
       imageUrl: "providers/citybee/cars/Ford-Fiesta.png",
       price: {
         km: 0.22,
@@ -786,7 +786,7 @@ export const citybee = {
       bodyType: "HATCHBACK",
       motorType: "PETROL",
       petFriendly: true,
-      gearBox: "AUTOMATIC",
+      gearbox: "AUTOMATIC",
       imageUrl: "providers/citybee/cars/Toyota-Corolla.png",
       price: {
         km: 0.24,
@@ -916,7 +916,7 @@ export const citybee = {
       bodyType: "HATCHBACK",
       motorType: "PETROL",
       petFriendly: true,
-      gearBox: "AUTOMATIC",
+      gearbox: "AUTOMATIC",
       imageUrl: "providers/citybee/cars/VW-Golf8.png",
       price: {
         km: 0.24,
@@ -1046,7 +1046,7 @@ export const citybee = {
       bodyType: "HATCHBACK",
       motorType: "PETROL",
       petFriendly: true,
-      gearBox: "AUTOMATIC",
+      gearbox: "AUTOMATIC",
       imageUrl: "providers/citybee/cars/Ford-Focus.png",
       price: {
         km: 0.24,
@@ -1176,7 +1176,7 @@ export const citybee = {
       bodyType: "HATCHBACK",
       motorType: "PETROL",
       petFriendly: true,
-      gearBox: "AUTOMATIC",
+      gearbox: "AUTOMATIC",
       imageUrl: "providers/citybee/cars/BMW-118i.png",
       price: {
         km: 0.26,
@@ -1306,7 +1306,7 @@ export const citybee = {
       bodyType: "TOURING",
       motorType: "PETROL",
       petFriendly: true,
-      gearBox: "AUTOMATIC",
+      gearbox: "AUTOMATIC",
       imageUrl: "providers/citybee/cars/VW-T-Cross.png",
       price: {
         km: 0.24,
@@ -1436,7 +1436,7 @@ export const citybee = {
       bodyType: "TOURING",
       motorType: "PETROL",
       petFriendly: true,
-      gearBox: "AUTOMATIC",
+      gearbox: "AUTOMATIC",
       imageUrl: "providers/citybee/cars/Nissan-Juke.png",
       price: {
         km: 0.24,
@@ -1566,7 +1566,7 @@ export const citybee = {
       bodyType: "TOURING",
       motorType: "PETROL",
       petFriendly: true,
-      gearBox: "AUTOMATIC",
+      gearbox: "AUTOMATIC",
       imageUrl: "providers/citybee/cars/VW-T-Roc.png",
       price: {
         km: 0.24,
@@ -1696,7 +1696,7 @@ export const citybee = {
       bodyType: "TOURING",
       motorType: "PETROL",
       petFriendly: true,
-      gearBox: "AUTOMATIC",
+      gearbox: "AUTOMATIC",
       imageUrl: "providers/citybee/cars/VW-T-Roc-R-Line.png",
       price: {
         km: 0.26,
@@ -1826,7 +1826,7 @@ export const citybee = {
       bodyType: "TOURING",
       motorType: "PETROL",
       petFriendly: true,
-      gearBox: "AUTOMATIC",
+      gearbox: "AUTOMATIC",
       imageUrl: "providers/citybee/cars/Toyota-C-HR.png",
       price: {
         km: 0.24,
@@ -1956,7 +1956,7 @@ export const citybee = {
       bodyType: "TOURING",
       motorType: "PETROL",
       petFriendly: true,
-      gearBox: "AUTOMATIC",
+      gearbox: "AUTOMATIC",
       imageUrl: "providers/citybee/cars/Toyota-Yaris-Cross.png",
       price: {
         km: 0.24,
@@ -2086,7 +2086,7 @@ export const citybee = {
       bodyType: "TOURING",
       motorType: "PETROL",
       petFriendly: true,
-      gearBox: "AUTOMATIC",
+      gearbox: "AUTOMATIC",
       imageUrl: "providers/citybee/cars/VW-Taigo.png",
       price: {
         km: 0.24,
@@ -2216,7 +2216,7 @@ export const citybee = {
     // bodyType: "TOURING",
     // motorType: "PETROL",
     // petFriendly: true,
-    // gearBox: "AUTOMATIC",
+    // gearbox: "AUTOMATIC",
     // price: {
     //   km: 0.24,
     //   minute: 0.21,
@@ -2230,7 +2230,7 @@ export const citybee = {
       bodyType: "TOURING",
       motorType: "PETROL",
       petFriendly: true,
-      gearBox: "AUTOMATIC",
+      gearbox: "AUTOMATIC",
       imageUrl: "providers/citybee/cars/Jeep-Compass.png",
       price: {
         km: 0.26,
@@ -2360,7 +2360,7 @@ export const citybee = {
       bodyType: "TOURING",
       motorType: "PETROL",
       petFriendly: true,
-      gearBox: "AUTOMATIC",
+      gearbox: "AUTOMATIC",
       imageUrl: "providers/citybee/cars/Ford-Kuga.png",
       price: {
         km: 0.26,
@@ -2490,7 +2490,7 @@ export const citybee = {
       bodyType: "TOURING",
       motorType: "PETROL",
       petFriendly: true,
-      gearBox: "AUTOMATIC",
+      gearbox: "AUTOMATIC",
       imageUrl: "providers/citybee/cars/Toyota-RAV4.png",
       price: {
         km: 0.27,
@@ -2620,7 +2620,7 @@ export const citybee = {
       bodyType: "TOURING",
       motorType: "PETROL",
       petFriendly: true,
-      gearBox: "AUTOMATIC",
+      gearbox: "AUTOMATIC",
       imageUrl: "providers/citybee/cars/BMW-X1.png",
       price: {
         km: 0.29,
@@ -2750,7 +2750,7 @@ export const citybee = {
       bodyType: "TOURING",
       motorType: "PETROL",
       petFriendly: true,
-      gearBox: "AUTOMATIC",
+      gearbox: "AUTOMATIC",
       imageUrl: "providers/citybee/cars/Skoda-Kamiq.png",
       price: {
         km: 0.25,
@@ -2880,7 +2880,7 @@ export const citybee = {
       bodyType: "TOURING",
       motorType: "PETROL",
       petFriendly: true,
-      gearBox: "AUTOMATIC",
+      gearbox: "AUTOMATIC",
       imageUrl: "providers/citybee/cars/Nissan-Qashqai.png",
       price: {
         km: 0.26,
@@ -3010,7 +3010,7 @@ export const citybee = {
       bodyType: "TOURING",
       motorType: "PETROL",
       petFriendly: true,
-      gearBox: "AUTOMATIC",
+      gearbox: "AUTOMATIC",
       imageUrl: "providers/citybee/cars/Renult-Arkana.png",
       price: {
         km: 0.25,
@@ -3140,7 +3140,7 @@ export const citybee = {
       bodyType: "VAN",
       motorType: "PETROL",
       petFriendly: true,
-      gearBox: "MANUAL",
+      gearbox: "MANUAL",
       imageUrl: "providers/citybee/cars/VW-Crafter.png",
       price: {
         km: 0.27,
@@ -3211,7 +3211,7 @@ export const citybee = {
       bodyType: "VAN",
       motorType: "PETROL",
       petFriendly: true,
-      gearBox: "MANUAL",
+      gearbox: "MANUAL",
       imageUrl: "providers/citybee/cars/Renault-Master.png",
       price: {
         km: 0.27,
@@ -3282,7 +3282,7 @@ export const citybee = {
       bodyType: "VAN",
       motorType: "PETROL",
       petFriendly: true,
-      gearBox: "MANUAL",
+      gearbox: "MANUAL",
       imageUrl: "providers/citybee/cars/Ford-Transit.png",
       price: {
         km: 0.27,
