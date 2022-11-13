@@ -2,7 +2,7 @@ import { SortState } from "../../src/models/enums/SortState";
 
 export default class OffersSort {
   sort(offers, sortState, fieldName) {
-    if (sortState === SortState.NONE) return offers;
+    if (sortState === SortState.NONE || offers.length === 0) return offers;
 
     switch (fieldName) {
       case "price":

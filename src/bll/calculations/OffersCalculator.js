@@ -27,7 +27,7 @@ export default class OffersCalculator {
             price: priceDetails.price,
             priceDetails: priceDetails,
             car: car,
-            provider: provider.toUpperCase(),
+            provider: provider,
           });
         }
       }

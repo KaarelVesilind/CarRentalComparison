@@ -1,9 +1,6 @@
 <template>
-  <div
-    :class="'h-min-28 ' + backgroundColor"
-    @click="openDetails = !openDetails"
-  >
-    <div class="flex p-2 gap-2">
+  <div :class="'h-min-28 ' + backgroundColor">
+    <div class="flex p-2 gap-2 hover:cursor-pointer" @click="openDetails">
       <img
         :src="getAsset(offer.car.imageUrl ?? 'no-image-available.png')"
         class="rounded self-center"
@@ -43,58 +40,48 @@
         <span v-if="usePackage">📦 {{ extraInfo }}</span>
       </div>
     </div>
-    <div class="flex justify-center">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-6 w-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        :class="openDetails ? 'transform rotate-180' : ''"
+    <div
+      class="transition-[height] ease-in-out delay-100 duration-500 overflow-hidden h-0"
+      :id="`offer-details-grow-${offer.id}`"
+    >
+      <div
+        class="grid p-2 gap-2 justify-center"
+        :id="`offer-details-wrapper-${offer.id}`"
       >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M19 9l-7 7-7-7"
-        />
-      </svg>
-    </div>
-    <div v-if="openDetails">
-      <div class="text-center mb-2">
-        <p v-if="provider === 'citybee'" class="inline" id="to-app">
-          💰 Cashback {{ getCashback }}€
-        </p>
-      </div>
-      <div class="flex flex-row justify-around mb-2">
-        <a :href="appLink" target="”_blank”">
-          <button
-            class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+        <div>
+          <p v-if="provider === 'citybee'" class="inline" id="to-app">
+            💰 Cashback {{ getCashback }}€
+          </p>
+        </div>
+        <div class="flex gap-2">
+          <a :href="appLink" target="”_blank”">
+            <button
+              class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+            >
+              To {{ provider.toUpperCase() }} App
+            </button>
+          </a>
+          <a
+            v-if="canPreOrder"
+            :href="preOrderLink"
+            target="”_blank”"
+            id="pre-order"
           >
-            To {{ provider.toUpperCase() }} App
-          </button>
-        </a>
-        <a
-          v-if="canPreOrder"
-          :href="preOrderLink"
-          target="”_blank”"
-          id="pre-order"
-        >
-          <button
-            class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded"
-            @click="openDetails = !openDetails"
-          >
-            Pre-Order for
-            {{ preOrderCost === 0 ? "FREE" : preOrderCost + "€" }}
-          </button>
-        </a>
+            <button
+              class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded"
+            >
+              Pre-Order for
+              {{ preOrderCost === 0 ? "FREE" : preOrderCost + "€" }}
+            </button>
+          </a>
+        </div>
       </div>
     </div>
   </div>
 </template>
 <script setup>
 import getAsset from "@/utils";
-import { computed, ref, watch } from "vue";
+import { computed, onMounted, ref, watch } from "vue";
 
 const props = defineProps({
   offer: {
@@ -107,6 +94,12 @@ const extraInfo = ref("");
 const usePackage = ref(false);
 const canPreOrder = ref(false);
 const preOrderCost = ref(-1);
+const detailsOpen = ref(false);
+const provider = ref(props.offer.provider.toLowerCase());
+
+onMounted(() => {
+  _initializePrice();
+});
 
 // watch offers prop and update price
 watch(
@@ -116,7 +109,6 @@ watch(
   }
 );
 
-const provider = ref(props.offer.provider.toLowerCase());
 const _initializePrice = () => {
   price.value = props.offer.price;
   const priceDetails = props.offer.priceDetails;
@@ -149,14 +141,30 @@ const _initializePrice = () => {
   canPreOrder.value = false;
   preOrderCost.value = -1;
 };
-_initializePrice();
+
+const openDetails = () => {
+  detailsOpen.value = !detailsOpen.value;
+  const growDiv = document.getElementById(
+    `offer-details-grow-${props.offer.id}`
+  );
+  if (growDiv.clientHeight) {
+    growDiv.style.height = 0;
+    growDiv.style.overflow = "hidden";
+  } else {
+    const wrapper = document.getElementById(
+      `offer-details-wrapper-${props.offer.id}`
+    );
+    growDiv.style.height = wrapper.clientHeight + "px";
+    setTimeout(() => {
+      growDiv.style.overflow = "inherit";
+    }, 500);
+  }
+};
 
 const getCashback = computed(() => {
   const cashback = price.value * 0.07;
   return cashback.toFixed(2);
 });
-
-const openDetails = ref(false);
 
 const defaultIcons = [
   {

@@ -1,4 +1,4 @@
-import { citybee } from "../../../src/providers/shortTerm/citybee";
+import { citybee } from "@/providers/shortTerm/citybee";
 import CityBeePriceCalculator from "../../../src/bll/calculations/priceCalculations/CityBeePriceCalculator";
 
 describe("CityBee price calculator", function () {

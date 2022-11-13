@@ -20,7 +20,7 @@ export default {
   provider: {
     beast: false,
     bolt: false,
-    cityBee: false,
+    citybee: false,
     elmo: false,
   },
 };
