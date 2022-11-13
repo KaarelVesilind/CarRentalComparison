@@ -11,7 +11,7 @@
         id="days"
         autocomplete="off"
         @keydown="allowNumbersOnly"
-        @change="intOutput('days')"
+        @input="intOutput('days')"
       />
       <p>Hours</p>
       <input
@@ -22,7 +22,7 @@
         @keydown="allowNumbersOnly"
         placeholder="0"
         id="hours"
-        @change="intOutput('hours')"
+        @input="intOutput('hours')"
       />
       <p>Minutes</p>
       <input
@@ -32,7 +32,7 @@
         class="w-14"
         id="minutes"
         placeholder="0"
-        @change="intOutput('minutes')"
+        @input="intOutput('minutes')"
         @keydown="allowNumbersOnly"
       />
     </div>
@@ -46,7 +46,7 @@
         placeholder="0"
         id="distance"
         @keydown="allowNumbersOnly"
-        @change="intOutput('distance')"
+        @input="intOutput('distance')"
       />
       <p>kilometers</p>
     </div>
@@ -80,7 +80,19 @@ const searchParamsObj = computed(() => {
   return store.searchParamsObj;
 });
 const intOutput = (field) => {
-  store.searchParamsObj[field] = parseInt(store.searchParamsObj[field]);
+  const value = parseInt(store.searchParamsObj[field]);
+  const floatValue = parseFloat(store.searchParamsObj[field]);
+  if (
+    !(
+      typeof value === "number" &&
+      isFinite(value) &&
+      Math.floor(floatValue) === value
+    )
+  ) {
+    store.searchParamsObj[field] = 0;
+    return;
+  }
+  store.searchParamsObj[field] = parseInt(value);
 };
 
 const cities = ref(
