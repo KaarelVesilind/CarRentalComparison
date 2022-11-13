@@ -44,7 +44,7 @@ export const bolt = {
       motorType: "PETROL",
       petFriendly: true,
       gearbox: "AUTOMATIC",
-      imageUrl: null,
+      imageUrl: "providers/bolt/cars/Audi-A3.png",
       price: {
         km: 0.24,
         minute: 0.16,

@@ -1,14 +1,18 @@
 <template>
   <main>
-    <OffersHeader @search="search" />
+    <OffersHeader
+      :offers-count="offers.length"
+      @search="search"
+      @clear="clearOnPress"
+    />
     <OffersContent :offers="offers" />
-    <div v-if="offers.length === 0" class="grid text-center gap-4">
+    <div v-if="offers.length === 0" class="grid text-center">
       <h2>No results!</h2>
       <span
-        class="text-blue-900 font-bold no-underline hover:underline"
+        class="text-blue-900 font-bold hover:cursor-pointer"
         @click="clearOnPress"
       >
-        Clear all search conditions
+        Clear all search and filter conditions
       </span>
     </div>
   </main>
@@ -22,17 +26,16 @@ import OffersFilter from "@/bll/OffersFilter";
 import { onMounted, ref, watchEffect } from "vue";
 import OffersSort from "@/bll/OffersSort";
 import FilterConditionsObj from "@/models/FilterConditionsObj";
+import SearchParamsObj from "@/models/SearchParamsObj";
 
 const offers = ref([]);
 const store = useStore();
-let filterConditionsObj = ref(store.filterConditionsObj);
 
 onMounted(() => {
   search();
 });
 
 const sortOffers = (offers, sortState, sortingFieldName) => {
-  if (offers.length === 0) return [];
   const offersSort = new OffersSort();
   return offersSort.sort(offers, sortState, sortingFieldName);
 };
@@ -45,7 +48,7 @@ const search = () => {
   );
   const filteredOffers = offersFilter.filter(
     calculatedOffers,
-    filterConditionsObj.value
+    store.filterConditionsObj
   );
   const sortState = store.sortParamsObj.sortState;
   const sortingFieldName = store.sortParamsObj.sortingFieldName;
@@ -53,8 +56,8 @@ const search = () => {
 };
 
 const clearOnPress = () => {
-  filterConditionsObj = JSON.parse(JSON.stringify(FilterConditionsObj));
-  // Maybe also clear searchParamsObj?
+  store.searchParamsObj = JSON.parse(JSON.stringify(SearchParamsObj));
+  store.filterConditionsObj = JSON.parse(JSON.stringify(FilterConditionsObj));
   search();
 };
 
