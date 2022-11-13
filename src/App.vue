@@ -12,7 +12,9 @@
 
 <template>
   <div class="flex justify-center sm:mt-10 sm:mb-10 app">
-    <div class="rounded-lg shadow-2xl shadow-gray-500 bg-white sm:w-2/3 md:w-1/2 max-w-lg">
+    <div
+      class="rounded-lg shadow-2xl shadow-gray-500 bg-white sm:w-2/3 md:w-1/2 max-w-lg"
+    >
       <TopNavBar />
 
       <h2 class="text-center font-bold">Short term car rental comparison</h2>

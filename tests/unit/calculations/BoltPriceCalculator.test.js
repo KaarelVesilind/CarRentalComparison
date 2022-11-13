@@ -17,7 +17,7 @@ describe("Bolt price calculator", function () {
     const result = boltPriceCalculator.calculatePrice(car, searchParamsObj);
 
     // ASSERT
-    expect(result).toBe(4.5);
+    expect(result.price).toBe(4.5);
   });
   test("Volkswagen T-Roc - 1day 9h 50min", async () => {
     // ARRANGE
@@ -33,7 +33,7 @@ describe("Bolt price calculator", function () {
     const result = boltPriceCalculator.calculatePrice(car, searchParamsObj);
 
     // ASSERT
-    expect(result).toBe(61.8);
+    expect(result.price).toBe(61.8);
   });
   test("Volkswagen T-Roc -  2h 50min", async () => {
     // ARRANGE
@@ -49,7 +49,7 @@ describe("Bolt price calculator", function () {
     const result = boltPriceCalculator.calculatePrice(car, searchParamsObj);
 
     // ASSERT
-    expect(result).toBe(20.37);
+    expect(result.price).toBe(20.37);
   });
 
   test("Volkswagen T-Roc - 10min", async () => {
@@ -66,6 +66,6 @@ describe("Bolt price calculator", function () {
     const result = boltPriceCalculator.calculatePrice(car, searchParamsObj);
 
     // ASSERT
-    expect(result).toBe(1.99);
+    expect(result.price).toBe(1.99);
   });
 });

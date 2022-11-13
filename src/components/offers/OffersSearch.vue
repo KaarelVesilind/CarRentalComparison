@@ -1,11 +1,11 @@
 <template>
-  <div v-if="searchParamsObj">
-    <div class="flex flex-row">
+  <div class="grid gap-2">
+    <div class="flex">
       <p>Days</p>
       <input
         type="text"
         inputmode="numeric"
-        v-model="searchParamsObj.days"
+        v-model="store.searchParamsObj.days"
         class="w-14"
         placeholder="0"
         id="days"
@@ -16,7 +16,7 @@
       <input
         type="text"
         inputmode="numeric"
-        v-model="searchParamsObj.hours"
+        v-model="store.searchParamsObj.hours"
         class="w-14"
         @keydown="allowNumbersOnly"
         placeholder="0"
@@ -26,34 +26,33 @@
       <input
         type="text"
         inputmode="numeric"
-        v-model="searchParamsObj.minutes"
+        v-model="store.searchParamsObj.minutes"
         class="w-14"
         id="minutes"
         placeholder="0"
         @keydown="allowNumbersOnly"
-
       />
     </div>
-    <div class="flex flex-row my-1">
+    <div class="flex">
       <p>Distance</p>
       <input
         type="text"
         inputmode="numeric"
-        v-model="searchParamsObj.distance"
+        v-model="store.searchParamsObj.distance"
         class="w-20"
         placeholder="0"
         id="distance"
         @keydown="allowNumbersOnly"
       />
-      <p>Kilometers</p>
+      <p>kilometers</p>
     </div>
-    <div class="flex flex-row">
+    <div class="flex">
       <p>Start</p>
-      <select class="w-24" v-model="searchParamsObj.start" id="startCity">
+      <select class="w-24" v-model="store.searchParamsObj.start" id="startCity">
         <option v-for="city in cities" :key="city">{{ city }}</option>
       </select>
       <p>End</p>
-      <select class="w-24" v-model="searchParamsObj.end" id="endCity">
+      <select class="w-24" v-model="store.searchParamsObj.end" id="endCity">
         <option v-for="city in cities" :key="city">{{ city }}</option>
       </select>
     </div>
@@ -68,7 +67,7 @@ import { elmo } from "@/providers/shortTerm/elmo";
 import { ref } from "vue";
 
 const allowNumbersOnly = (e) => {
-  if (e.key.length == 1 && !parseInt(e.key) && e.key !== "0") {
+  if (e.key.length === 1 && !parseInt(e.key) && e.key !== "0") {
     e.preventDefault();
   }
 };
@@ -77,5 +76,13 @@ const cities = ref(
   new Set(beast.cities, bolt.cities, citybee.cities, elmo.cities)
 );
 const store = useStore();
-const searchParamsObj = ref(store.searchParamsObj);
 </script>
+
+<style scoped>
+input,
+select {
+  border: 1px solid #e8e8e8 !important;
+  border-radius: 5px !important;
+  background: white !important;
+}
+</style>
