@@ -128,7 +128,7 @@
 <script setup>
 import getAsset from "@/utils";
 import Multiselect from "vue-multiselect";
-import { computed, ref } from "vue";
+import { ref, watch } from "vue";
 import { useStore } from "@/stores/rental";
 import GearboxSelector from "@/components/global/GearboxSelector.vue";
 const store = useStore();
@@ -155,24 +155,24 @@ const motorTypeOptions = [
   { name: "Electric", value: "ELECTRIC" },
 ];
 
-const providerValues = computed(() => {
-  return providerOptions.filter(
-    (providerOption) => store.filterConditionsObj.provider[providerOption.value]
-  );
-});
+const providerValues = ref([]);
+const bodyTypeValues = ref([]);
+const motorTypeValues = ref([]);
 
-const bodyTypeValues = computed(() => {
-  return bodyTypeOptions.filter(
-    (bodyTypeOption) => store.filterConditionsObj.bodyType[bodyTypeOption.value]
-  );
-});
-
-const motorTypeValues = computed(() => {
-  return motorTypeOptions.filter(
-    (motorTypeOption) =>
-      store.filterConditionsObj.motorType[motorTypeOption.value]
-  );
-});
+watch(
+  () => store.filterConditionsObj,
+  (newVal) => {
+    bodyTypeValues.value = bodyTypeOptions.filter(
+      (bodyTypeOption) => newVal.bodyType[bodyTypeOption.value]
+    );
+    motorTypeValues.value = motorTypeOptions.filter(
+      (motorTypeOption) => newVal.motorType[motorTypeOption.value]
+    );
+    providerValues.value = providerOptions.filter(
+      (providerOption) => newVal.provider[providerOption.value]
+    );
+  }
+);
 
 const selectOption = (fieldName, option) => {
   store.filterConditionsObj[fieldName][option.value] = true;
