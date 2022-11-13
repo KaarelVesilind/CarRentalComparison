@@ -68,7 +68,7 @@ import { beast } from "@/providers/shortTerm/beast";
 import { bolt } from "@/providers/shortTerm/bolt";
 import { citybee } from "@/providers/shortTerm/citybee";
 import { elmo } from "@/providers/shortTerm/elmo";
-import { ref } from "vue";
+import { ref, computed } from "vue";
 
 const allowNumbersOnly = (e) => {
   if (e.key.length === 1 && !parseInt(e.key) && e.key !== "0") {
@@ -76,7 +76,9 @@ const allowNumbersOnly = (e) => {
   }
 };
 
-const searchParamsObj = ref(useStore().searchParamsObj);
+const searchParamsObj = computed(() => {
+  return store.searchParamsObj;
+});
 const intOutput = (field) => {
   store.searchParamsObj[field] = parseInt(store.searchParamsObj[field]);
 };
