@@ -24,7 +24,7 @@ const invalidValues = computed(() => {
   );
 });
 
-const emit = defineEmits(["search"]);
+const emit = defineEmits(["search", "clear"]);
 const search = () => {
   if (invalidValues.value) {
     return;
@@ -64,4 +64,3 @@ const search = () => {
     </div>
   </div>
 </template>
-
