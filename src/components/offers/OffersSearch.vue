@@ -5,31 +5,34 @@
       <input
         type="text"
         inputmode="numeric"
-        v-model="store.searchParamsObj.days"
+        v-model="searchParamsObj.days"
         class="w-14"
         placeholder="0"
         id="days"
         autocomplete="off"
         @keydown="allowNumbersOnly"
+        @change="intOutput('days')"
       />
       <p>Hours</p>
       <input
         type="text"
         inputmode="numeric"
-        v-model="store.searchParamsObj.hours"
+        v-model="searchParamsObj.hours"
         class="w-14"
         @keydown="allowNumbersOnly"
         placeholder="0"
         id="hours"
+        @change="intOutput('hours')"
       />
       <p>Minutes</p>
       <input
         type="text"
         inputmode="numeric"
-        v-model="store.searchParamsObj.minutes"
+        v-model="searchParamsObj.minutes"
         class="w-14"
         id="minutes"
         placeholder="0"
+        @change="intOutput('minutes')"
         @keydown="allowNumbersOnly"
       />
     </div>
@@ -38,11 +41,12 @@
       <input
         type="text"
         inputmode="numeric"
-        v-model="store.searchParamsObj.distance"
+        v-model="searchParamsObj.distance"
         class="w-20"
         placeholder="0"
         id="distance"
         @keydown="allowNumbersOnly"
+        @change="intOutput('distance')"
       />
       <p>kilometers</p>
     </div>
@@ -64,12 +68,19 @@ import { beast } from "@/providers/shortTerm/beast";
 import { bolt } from "@/providers/shortTerm/bolt";
 import { citybee } from "@/providers/shortTerm/citybee";
 import { elmo } from "@/providers/shortTerm/elmo";
-import { ref } from "vue";
+import { ref, computed } from "vue";
 
 const allowNumbersOnly = (e) => {
   if (e.key.length === 1 && !parseInt(e.key) && e.key !== "0") {
     e.preventDefault();
   }
+};
+
+const searchParamsObj = computed(() => {
+  return store.searchParamsObj;
+});
+const intOutput = (field) => {
+  store.searchParamsObj[field] = parseInt(store.searchParamsObj[field]);
 };
 
 const cities = ref(
