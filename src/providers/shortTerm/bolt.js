@@ -338,6 +338,7 @@ export const bolt = {
       motorType: "PETROL",
       petFriendly: false,
       gearbox: "AUTOMATIC",
+      imageUrl: "providers/bolt/cars/Audi-Q8.png",
       price: {
         min: 7.99,
         km: 0.35,
