@@ -12,6 +12,7 @@
         autocomplete="off"
         @keydown="allowNumbersOnly"
         @input="intOutput('days')"
+        @change="emptyToZero('days')"
       />
       <p>Hours</p>
       <input
@@ -23,6 +24,7 @@
         placeholder="0"
         id="hours"
         @input="intOutput('hours')"
+        @change="emptyToZero('hours')"
       />
       <p>Minutes</p>
       <input
@@ -33,6 +35,7 @@
         id="minutes"
         placeholder="0"
         @input="intOutput('minutes')"
+        @change="emptyToZero('minutes')"
         @keydown="allowNumbersOnly"
       />
     </div>
@@ -47,6 +50,7 @@
         id="distance"
         @keydown="allowNumbersOnly"
         @input="intOutput('distance')"
+        @change="emptyToZero('distance')"
       />
       <p>kilometers</p>
     </div>
@@ -79,6 +83,11 @@ const allowNumbersOnly = (e) => {
 const searchParamsObj = computed(() => {
   return store.searchParamsObj;
 });
+const emptyToZero = (field) => {
+  if (store.searchParamsObj[field] === "") {
+    store.searchParamsObj[field] = 0;
+  }
+};
 const intOutput = (field) => {
   if (store.searchParamsObj[field] === "") {
     return;
