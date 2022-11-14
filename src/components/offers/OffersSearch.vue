@@ -80,6 +80,10 @@ const searchParamsObj = computed(() => {
   return store.searchParamsObj;
 });
 const intOutput = (field) => {
+  if (store.searchParamsObj[field] === "") {
+    return;
+  }
+
   const value = parseInt(store.searchParamsObj[field]);
   const floatValue = parseFloat(store.searchParamsObj[field]);
   if (

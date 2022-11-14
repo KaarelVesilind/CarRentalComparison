@@ -15,6 +15,10 @@ defineProps({
 
 const invalidValues = computed(() => {
   return (
+    searchParamsObj.value.days === "" ||
+    searchParamsObj.value.hours === "" ||
+    searchParamsObj.value.minutes === "" ||
+    searchParamsObj.value.distance === "" ||
     searchParamsObj.value.days < 0 ||
     searchParamsObj.value.hours < 0 ||
     searchParamsObj.value.minutes < 0 ||
