@@ -4,7 +4,7 @@
     style="padding: 0 3px"
   >
     <div
-      class="bg-white -rotate-90 leading-none text-lg"
+      class="bg-white -rotate-90 leading-none text-lg cursor-pointer"
       style="padding: 7px; border-radius: 4px 4px 0 0"
       :style="
         sortParamsObj.sortState === SortState.UP ? 'background: #e5e7eb' : ''
@@ -14,7 +14,7 @@
       ➜
     </div>
     <div
-      class="bg-white rotate-90 leading-none text-lg"
+      class="bg-white rotate-90 leading-none text-lg cursor-pointer"
       style="padding: 7px; border-radius: 4px 4px 0 0"
       :style="
         sortParamsObj.sortState === SortState.DOWN ? 'background: #e5e7eb' : ''
