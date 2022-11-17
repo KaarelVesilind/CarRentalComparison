@@ -240,7 +240,7 @@ export const bolt = {
       motorType: "PETROL",
       petFriendly: false,
       gearbox: "AUTOMATIC",
-      imageUrl: null,
+      imageUrl: "providers/bolt/cars/BMW-4-Convertible.png",
       price: {
         km: 0.35,
         minute: 0.49,
