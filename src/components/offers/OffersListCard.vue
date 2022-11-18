@@ -115,7 +115,8 @@ const _initializePrice = () => {
 
   if (
     priceDetails.package &&
-    priceDetails.package.price <= priceDetails.price
+    priceDetails.package.price <= priceDetails.price &&
+    priceDetails.package.price > 0
   ) {
     const packageDetails = priceDetails.package;
     const monthsText =
