@@ -33,7 +33,7 @@ const getJoke = async () => {
       class="bg-slate-500 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-lg"
       @click="getJoke"
     >
-      click here for chuck norris joke of the day :)
+      click here for chuck norris joke :)
     </button>
     <p>{{ joke }}</p>
   </main>

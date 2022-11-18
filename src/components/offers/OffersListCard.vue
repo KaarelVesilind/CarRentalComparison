@@ -112,9 +112,10 @@ watch(
 const _initializePrice = () => {
   price.value = props.offer.price;
   const priceDetails = props.offer.priceDetails;
+
   if (
     priceDetails.package &&
-    priceDetails.package.price < priceDetails.normalPrice
+    priceDetails.package.price <= priceDetails.price
   ) {
     const packageDetails = priceDetails.package;
     const monthsText =
