@@ -60,10 +60,10 @@ export const bolt = {
       gearbox: "AUTOMATIC",
       imageUrl: "providers/bolt/cars/Hyundai-i20.png",
       price: {
-        km: 0.19,
-        minute: 0.07,
-        hour: 3.99,
-        day: 19.9,
+        km: 0.23,
+        minute: 0.12,
+        hour: 4.99,
+        day: 27.9,
       },
     },
     {
@@ -74,9 +74,9 @@ export const bolt = {
       gearbox: "AUTOMATIC",
       imageUrl: "providers/bolt/cars/Toyota-Yaris.png",
       price: {
-        km: 0.19,
-        minute: 0.07,
-        hour: 3.99,
+        km: 0.2,
+        minute: 0.12,
+        hour: 4.49,
         day: 19.9,
       },
     },
@@ -88,10 +88,10 @@ export const bolt = {
       gearbox: "AUTOMATIC",
       imageUrl: "providers/bolt/cars/Skoda-Scala.png",
       price: {
-        km: 0.19,
-        minute: 0.07,
-        hour: 3.99,
-        day: 19.9,
+        km: 0.24,
+        minute: 0.14,
+        hour: 5.89,
+        day: 27.9,
       },
     },
     {
@@ -102,10 +102,10 @@ export const bolt = {
       gearbox: "AUTOMATIC",
       imageUrl: "providers/bolt/cars/Skoda-Fabia.png",
       price: {
-        km: 0.19,
-        minute: 0.07,
-        hour: 3.99,
-        day: 19.9,
+        km: 0.23,
+        minute: 0.12,
+        hour: 4.99,
+        day: 27.9,
       },
     },
     {
