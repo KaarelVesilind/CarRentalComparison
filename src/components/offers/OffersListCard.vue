@@ -112,6 +112,7 @@ watch(
 const _initializePrice = () => {
   price.value = props.offer.price;
   const priceDetails = props.offer.priceDetails;
+  usePackage.value = false;
 
   if (
     priceDetails.package &&
