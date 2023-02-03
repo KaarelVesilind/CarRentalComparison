@@ -263,7 +263,7 @@ export const citybee = {
     },
     {
       // TODO update prices
-      name: "Peugeot 208",
+      name: "Peugeot 208 not updated",
       bodyType: "HATCHBACK",
       motorType: "PETROL",
       petFriendly: true,
@@ -1044,7 +1044,7 @@ export const citybee = {
     },
     {
       // TODO update prices
-      name: "Ford Focus",
+      name: "Ford Focus not updated",
       bodyType: "HATCHBACK",
       motorType: "PETROL",
       petFriendly: true,
@@ -1435,7 +1435,7 @@ export const citybee = {
     },
     {
       // TODO update prices
-      name: "Nissan Juke",
+      name: "Nissan Juke not updated",
       bodyType: "TOURING",
       motorType: "PETROL",
       petFriendly: true,
@@ -1826,7 +1826,7 @@ export const citybee = {
     },
     {
       // TODO update pricing
-      name: "Toyota C-HR",
+      name: "Toyota C-HR not updated",
       bodyType: "TOURING",
       motorType: "PETROL",
       petFriendly: true,
@@ -2751,7 +2751,7 @@ export const citybee = {
     // },
     {
       // TODO add prices
-      name: "Skoda Kamiq",
+      name: "Skoda Kamiq not updated",
       bodyType: "TOURING",
       motorType: "PETROL",
       petFriendly: true,
