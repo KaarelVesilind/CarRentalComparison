@@ -139,6 +139,7 @@ const providerOptions = [
   { name: "Bolt", value: "bolt" },
   { name: "CityBee", value: "citybee" },
   { name: "Elmo", value: "elmo" },
+  { name: "Avis", value: "avis" },
 ];
 
 const bodyTypeOptions = [

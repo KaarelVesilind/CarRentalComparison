@@ -2,13 +2,15 @@ import { beast } from "@/providers/shortTerm/beast";
 import { bolt } from "@/providers/shortTerm/bolt";
 import { citybee } from "@/providers/shortTerm/citybee";
 import { elmo } from "@/providers/shortTerm/elmo";
+import { avis } from "@/providers/shortTerm/avis";
 import BeastPriceCalculator from "./priceCalculations/BeastPriceCalculator";
 import BoltPriceCalculator from "./priceCalculations/BoltPriceCalculator";
 import CityBeePriceCalculator from "./priceCalculations/CityBeePriceCalculator";
 import ElmoPriceCalculator from "./priceCalculations/ElmoPriceCalculator";
+import AvisPriceCalculator from "./priceCalculations/AvisPriceCalculator";
 
 export default class OffersCalculator {
-  providers = { beast, bolt, citybee, elmo };
+  providers = { beast, bolt, citybee, elmo, avis };
 
   calculateOffers(searchParamsObj) {
     let offers = [];
@@ -52,6 +54,10 @@ export default class OffersCalculator {
       case "citybee": {
         const cityBeePriceCalculator = new CityBeePriceCalculator();
         return cityBeePriceCalculator.calculatePrice(car, searchParamsObj);
+      }
+      case "avis": {
+        const avisPriceCalculator = new AvisPriceCalculator();
+        return avisPriceCalculator.calculatePrice(car, searchParamsObj);
       }
     }
   }

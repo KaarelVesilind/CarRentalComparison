@@ -228,6 +228,8 @@ const backgroundColor = computed(() => {
       return "bg-orange-50";
     case "elmo":
       return "bg-blue-50";
+    case "avis":
+      return "bg-red-50";
     default:
       throw "missing provider: " + props.offer.provider;
   }
@@ -286,7 +288,7 @@ const appLink = computed(() => {
       case "elmo":
         return "https://elmorent.ee/";
       default:
-        throw "/";
+        return "/";
     }
   }
 });
