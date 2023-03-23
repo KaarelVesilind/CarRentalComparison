@@ -81,6 +81,20 @@ export const bolt = {
       },
     },
     {
+      name: "Kia Picanto",
+      bodyType: "HATCHBACK",
+      motorType: "PETROL",
+      petFriendly: true,
+      gearbox: "AUTOMATIC",
+      imageUrl: "no-image-available.png",
+      price: {
+        km: 0.22,
+        minute: 0.13,
+        hour: 4.99,
+        day: 24.89,
+      },
+    },
+    {
       name: "Škoda Scala",
       bodyType: "TOURING",
       motorType: "PETROL",
