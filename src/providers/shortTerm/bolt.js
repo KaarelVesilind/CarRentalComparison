@@ -77,7 +77,7 @@ export const bolt = {
         km: 0.22,
         minute: 0.13,
         hour: 4.99,
-        day: 24.89,
+        day: 27.89,
       },
     },
     {
@@ -91,7 +91,7 @@ export const bolt = {
         km: 0.22,
         minute: 0.13,
         hour: 4.99,
-        day: 24.89,
+        day: 27.89,
       },
     },
     {
@@ -105,7 +105,7 @@ export const bolt = {
         km: 0.22,
         minute: 0.13,
         hour: 4.99,
-        day: 24.89,
+        day: 27.89,
       },
     },
     {
